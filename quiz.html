@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"The Camel" - Fed II Medicine Past Paper Database</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>"The Camel" - Fed II Medicine Past Paper Database</h1>
+  </header>
+
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="about.html">info</a>
+  <a href="quiz.html">quiz</a>
+</div>
+
+
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()">open</span>
+
+
+  <main>
+    <section id="settings">
+      <label for="numQuestions">Enter the number of questions:</label>
+      <input type="number" id="numQuestions" min="1" required>
+      <button id="startQuiz">Start Quiz</button>
+    </section>
+
+
+<!-- Module Selection Dropdown -->
+<label for="moduleSelect">Choose a module:</label>
+<select id="moduleSelect">
+  <option value="">All Modules</option>
+  <option value="Chemistry">Chemistry</option>
+  <option value="Human Anatomy">Human Anatomy</option>
+  <option value="Biochemistry">Biochemistry</option>
+  <option value="Methodology I">Methodology I</option>
+  <option value="Methodology II">Methodology II</option>
+  <option value="Pharmacology I">Pharmacology I</option>
+  <option value="Pharmacology II">Pharmacology II</option>
+  <option value="Hygiene and Community Medicine">Hygiene</option>
+  <!-- Add other options here as needed -->
+</select>
+
+
+    <section id="quiz" style="display: none;"></section>
+    <section id="result" style="display: none;">
+      <h2>Your Results</h2>
+      <p id="score"></p>
+    </section>
+  </main>
+
+  <script src="quiz.js"></script>
+  <script src="menu.js"></script>
+
+</body>
+</html>
