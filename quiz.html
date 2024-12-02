@@ -17,18 +17,17 @@
   <a href="quiz.html">quiz</a>
 </div>
 
-
 <!-- Use any element to open the sidenav -->
-<span onclick="openNav()">open</span>
-
+<span onclick="openNav()">menu</span>
 
   <main>
     <section id="settings">
       <label for="numQuestions">Enter the number of questions:</label>
       <input type="number" id="numQuestions" min="1" required>
       <button id="startQuiz">Start Quiz</button>
+      <button id="startTimerButton">Start Timer</button>
+      <button id="stopTimerButton" style="display: none;">Stop Timer</button>
     </section>
-
 
 <!-- Module Selection Dropdown -->
 <label for="moduleSelect">Choose a module:</label>
@@ -44,7 +43,6 @@
   <option value="Hygiene and Community Medicine">Hygiene</option>
   <!-- Add other options here as needed -->
 </select>
-
 
     <section id="quiz" style="display: none;"></section>
     <section id="result" style="display: none;">

@@ -1,13 +1,3 @@
-/* Open the sidenav */
-function openNav() {
-  document.getElementById("mySidenav").style.width = "15%";
-}
-
-/* Close/hide the sidenav */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-} 
-
 document.getElementById('startQuiz').addEventListener('click', startQuiz);
 
 async function startQuiz() {
@@ -68,7 +58,7 @@ function displayQuiz(questions) {
   questions.forEach((q, index) => {
     const questionDiv = document.createElement('div');
     questionDiv.innerHTML = `
-      <h3>Question ${index + 1}: ${q.question}</h3>
+      <h3>Question ${index + 1} (${q.language}): ${q.question}</h3>
       <label><input type="radio" name="q${index}" value="${q.option_a}"> ${q.option_a}</label><br>
       <label><input type="radio" name="q${index}" value="${q.option_b}"> ${q.option_b}</label><br>
       <label><input type="radio" name="q${index}" value="${q.option_c}"> ${q.option_c}</label><br>
@@ -80,20 +70,117 @@ function displayQuiz(questions) {
 
   const submitButton = document.createElement('button');
   submitButton.textContent = 'Submit Answers';
+  submitButton.id = 'submitButton';
   submitButton.addEventListener('click', () => gradeQuiz(questions));
   quizSection.appendChild(submitButton);
+
+  const retryButton = document.createElement('button');
+  retryButton.textContent = 'Retry';
+  retryButton.id = 'retryButton';
+  retryButton.style.display = 'none'; // Hidden initially
+  retryButton.addEventListener('click', resetFeedback);
+  quizSection.appendChild(retryButton);
 }
+
+
+
+
 
 function gradeQuiz(questions) {
   let score = 0;
 
   questions.forEach((q, index) => {
     const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
+    const questionDiv = document.querySelector(`#quiz div:nth-child(${index + 1})`);
+
+    const resultMessage = document.createElement('p');
+    resultMessage.style.fontWeight = 'bold';
+
     if (selectedOption && selectedOption.value.trim() === q.correct_option.trim()) {
       score++;
+      resultMessage.textContent = 'Correct!';
+      resultMessage.style.color = 'green';
+    } else {
+      resultMessage.textContent = `Incorrect. Correct answer: ${q.correct_option}`;
+      resultMessage.style.color = 'red';
     }
+
+    questionDiv.appendChild(resultMessage);
   });
 
   document.getElementById('result').style.display = 'block';
   document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}`;
+
+  // Disable submit button and show retry button
+  document.getElementById('submitButton').disabled = true;
+  document.getElementById('retryButton').style.display = 'inline';
 }
+
+
+function resetFeedback() {
+  const quizSection = document.getElementById('quiz');
+  quizSection.querySelectorAll('div').forEach(questionDiv => {
+    const feedback = questionDiv.querySelector('p');
+    if (feedback) feedback.remove();
+  });
+
+  // Enable inputs and submit button again
+  document.getElementById('submitButton').disabled = false;
+  document.getElementById('retryButton').style.display = 'none';
+
+  // Clear all selected answers
+  quizSection.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.checked = false;
+  });
+
+  document.getElementById('result').style.display = 'none';
+
+  // Display final score
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}`;
+}
+
+let timerInterval;
+
+function startTimer(duration) {
+  const timerDisplay = document.getElementById('timer');
+  let timeRemaining = duration;
+
+  // Disable the start timer button after starting the timer
+  document.getElementById('startTimerButton').disabled = true;
+
+  // Update the timer every second
+  timerInterval = setInterval(() => {
+    const minutes = Math.floor(timeRemaining / 60);
+    const seconds = timeRemaining % 60;
+    timerDisplay.textContent = `Time Left: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+
+    timeRemaining--;
+
+    if (timeRemaining < 0) {
+      clearInterval(timerInterval);
+      alert('Time is up! Submitting your quiz.');
+      document.getElementById('submitButton').click(); // Auto-submit the quiz
+    }
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+  document.getElementById('timer').textContent = 'Timer stopped.';
+  document.getElementById('startTimerButton').disabled = false; // Re-enable the start button if needed
+}
+
+
+
+document.getElementById('startTimerButton').addEventListener('click', () => {
+  const duration = 300; // Set timer duration (e.g., 5 minutes = 300 seconds)
+  startTimer(duration);
+  document.getElementById('stopTimerButton').style.display = 'inline';
+});
+
+document.getElementById('stopTimerButton').addEventListener('click', () => {
+  stopTimer();
+  document.getElementById('stopTimerButton').style.display = 'none';
+});
+
