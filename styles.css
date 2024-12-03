@@ -15,6 +15,10 @@ main {
   margin: 0 auto;
 }
 
+pre {
+    color: blue;
+}
+
 #settings, #quiz, #result {
   background: #fffec7;
   padding: 20px;
