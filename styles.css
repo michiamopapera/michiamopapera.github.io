@@ -64,7 +64,7 @@ button:hover {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #87f5ff; 
+  background-color: blue; 
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.2s; /* 0.2 second transition effect to slide in the sidenav */
@@ -103,5 +103,5 @@ button:hover {
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav a {font-size: 14px;}
 } 
