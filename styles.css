@@ -15,8 +15,22 @@ main {
   margin: 0 auto;
 }
 
+.disclaimer {
+  font-family: Times New Roman, sans-serif;
+  background-color: #fffec7;
+  text-align: center;
+  color: #ff0000;
+  font-size: 100%;
+  padding: 20px;
+}
+
 pre {
     color: blue;
+}
+
+span {
+    color: blue;
+    font-size: 150%;
 }
 
 #settings, #quiz, #result {
