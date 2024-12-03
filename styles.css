@@ -15,6 +15,24 @@ main {
   margin: 0 auto;
 }
 
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #03eeff;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
 .disclaimer {
   font-family: Times New Roman, sans-serif;
   background-color: #fffec7;
