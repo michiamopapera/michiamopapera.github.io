@@ -24,8 +24,12 @@
     <section id="settings">
       <label for="numQuestions">Enter the number of questions:</label>
       <input type="number" id="numQuestions" min="1" required>
+      <input type="number" id="minutesQuiz" min="1" required>
+    
       <button id="startQuiz">Start Quiz</button>
       <button id="startTimerButton">Start Timer</button>
+      <select id="timerSelect">
+        <option value="1">1min</option>
       <button id="stopTimerButton" style="display: none;">Stop Timer</button>
     </section>
 
@@ -46,6 +50,11 @@
   <!-- Add other options here as needed -->
 </select>
 
+<label for="randomiseSelect">Randomise questions?</label>
+<select id="randomiseSelect">
+  <option value="Randomise">Yes</option>
+  <option value="NoRandomise">No</option>
+    
     <section id="quiz" style="display: none;"></section>
     <section id="result" style="display: none;">
       <h2>Your Results</h2>
