@@ -10,6 +10,10 @@ header {
   margin-bottom: 20px;
 }
 
+header-container {
+  font-size: max(0.2rem, 1vmin);
+}
+
 main {
   max-width: 800px;
   margin: 0 auto;
