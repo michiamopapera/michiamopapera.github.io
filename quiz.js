@@ -42,7 +42,9 @@ function parseCSV(csv, selectedModule) {
 }
 
 // Fisher-Yates Shuffle to randomize question order
-function shuffleArray(array) {
+  const Randomisation = document.getElementById('randomiseSelect').value; 
+  if ( value = Randomise) {
+    function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]]; // Swap elements
@@ -81,10 +83,6 @@ function displayQuiz(questions) {
   retryButton.addEventListener('click', resetFeedback);
   quizSection.appendChild(retryButton);
 }
-
-
-
-
 
 function gradeQuiz(questions) {
   let score = 0;
@@ -170,7 +168,6 @@ function stopTimer() {
   document.getElementById('timer').textContent = 'Timer stopped.';
   document.getElementById('startTimerButton').disabled = false; // Re-enable the start button if needed
 }
-
 
 
 document.getElementById('startTimerButton').addEventListener('click', () => {
