@@ -3,27 +3,7 @@ body {
   background-color: #fffec7;
   color: #000000;
   padding: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: minmax(2.5rem, 12vmin) 1fr 5rem;
-  grid-template-areas: "header header" "main sidebar" "footer footer";
-  min-height: 100vh;
 }
-
-header {
-  text-align: center;
-  margin-bottom: 20px;
-  grid-area: header;
-}
-header pre {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-  font-size: max(0.2rem, 1vmin);
-}
-
-
 
 main {
   max-width: 800px;
@@ -138,6 +118,6 @@ button:hover {
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 14px;}
+  .sidenav {padding-top: 35px;}
+  .sidenav a {font-size: 12px;}
 } 
