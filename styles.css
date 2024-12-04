@@ -126,8 +126,12 @@ button:hover {
   padding: 20px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 10px;}
-  .sidenav a {font-size: 10px;}
-} 
+  .sidenav {
+    padding-top: 10px; /* Reduced padding for mobile */
+  }
+
+  .sidenav a {
+    font-size: 10px; /* Smaller font size for mobile */
+  }
+}
