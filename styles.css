@@ -10,8 +10,20 @@ header {
   margin-bottom: 20px;
 }
 
-header-container {
+header-container-title {
   font-size: max(0.2rem, 1vmin);
+}
+
+body-container-title {
+ grid-template-rows: minmax(2.5rem, 12vmin) 1fr 5rem;
+}
+
+title {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 7.25rem auto 5rem;
+  grid-template-areas: "header header" "main sidebar" "footer footer";
+  min-height: 100vh;
 }
 
 main {
