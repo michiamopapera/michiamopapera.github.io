@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Question Browser</title>
-  <style>
+  <title>"The Camel" - Fed II Medicine Past Paper Database</title>
+  <link rel="stylesheet" href="styles.css">
+
+    <style>
     table {
       width: 100%;
       border-collapse: collapse;
@@ -25,7 +27,32 @@
       margin-right: 10px;
     }
   </style>
+  
 </head>
+<body>
+<header>
+    <div class="header-container">
+      <pre>███   █     █   █ ▄███▄       ▄█▄    ██   █▀▄▀█ ▄███▄   █     
+█  █  █     █   █ █▀   ▀      █▀ ▀▄  █ █  █ █ █ █▀   ▀  █     
+█ ▀ ▄ █     █   █ ██▄▄        █   ▀  █▄▄█ █ ▄ █ ██▄▄    █     
+█  ▄▀ ███▄  █▄ ▄█ █▄   ▄▀     █▄  ▄▀ █  █ █   █ █▄   ▄▀ ███▄  
+███               ▀███▀       ▀███▀             ▀███▀        
+                                                             
+                                                             </pre>
+    </div>
+    <h1>Fed II Medicine Past Paper Database</h1>
+  </header>
+
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="about.html">info</a>
+  <a href="quiz.html">quiz</a>
+  <a href="browse.html">browse (beta)</a>
+</div>
+
+<!-- Use any element to open the sidenav AND THIS IS ME CHANGING CODE SO IT REDEPLOYS TO GITHUB PAGES -->
+<span onclick="openNav()">open menu>>></span>
+  
 <body>
 
   <h1>Browse Questions</h1>
@@ -54,8 +81,8 @@
     <label for="verifiedFilter">Verified Answer:</label>
     <select id="verifiedFilter">
       <option value="">All</option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
+      <option value="Verified">Yes</option>
+      <option value="Unverified">No</option>
     </select>
   </div>
 
@@ -75,5 +102,6 @@
   </table>
 
   <script src="browse.js"></script>
+  <script src="menu.js></script>
 </body>
 </html>
