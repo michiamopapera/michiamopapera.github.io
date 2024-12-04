@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question Browser</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    #filters {
+      margin-bottom: 20px;
+    }
+    label {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Browse Questions</h1>
+
+  <div id="filters">
+    <label for="searchInput">Search:</label>
+    <input type="text" id="searchInput" placeholder="Enter keywords...">
+
+    <label for="moduleFilter">Module:</label>
+    <select id="moduleFilter">
+      <option value="">All</option>
+    </select>
+
+    <label for="yearFilter">Year:</label>
+    <select id="yearFilter">
+      <option value="">All</option>
+    </select>
+
+    <label for="languageFilter">Language:</label>
+    <select id="languageFilter">
+      <option value="">All</option>
+      <option value="EN">English</option>
+      <option value="IT">Italian</option>
+    </select>
+
+    <label for="verifiedFilter">Verified Answer:</label>
+    <select id="verifiedFilter">
+      <option value="">All</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+
+  <table id="questionTable">
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Module</th>
+        <th>Year</th>
+        <th>Language</th>
+        <th>Verified</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows will be dynamically inserted -->
+    </tbody>
+  </table>
+
+  <script src="browse.js"></script>
+</body>
+</html>
