@@ -18,9 +18,22 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 async function fetchQuestions() {
+  try {
+    const response = await fetch('cameldb_v1.csv'); // Ensure the file name is correct here
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    const csvData = await response.text();
+    return parseCSV(csvData);
+  } catch (error) {
+    console.error('Error fetching the CSV file:', error);
+    alert('Failed to load questions. Please check the file name or its location.');
+    return [];
+  }
+}
+
+async function fetchQuestions(selectedModule) {
   const response = await fetch('cameldb_v1.csv');
   const csvData = await response.text();
-  return parseCSV(csvData);
+  return parseCSV(csvData, selectedModule); // Pass the module to the parser
 }
 
 function parseCSV(csv) {
