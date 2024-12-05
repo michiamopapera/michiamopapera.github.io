@@ -29,7 +29,7 @@ function parseCSV(csv) {
   const lines = csv.trim().split('\n').slice(1); // Skip header row
   return lines.map(line => {
     const [question, wahlA, wahlB, wahlC, wahlD, wahlE, answer, module, language, tags, year, verified] = line.split(';');
-    return { question, module, year, language, verified: verified.trim() === "Yes" ? "Yes" : "No" };
+    return { question, module, year, language, verified: verified.trim() === "Verified" ? "Yes" : "No" };
   });
 }
 
