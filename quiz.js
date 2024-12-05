@@ -18,10 +18,17 @@ async function startQuiz() {
   displayQuiz(selectedQuestions);
 }
 
-async function fetchQuestions(selectedModule) {
-  const response = await fetch('cameldb_v1.csv');
-  const csvData = await response.text();
-  return parseCSV(csvData, selectedModule); // Pass the module to the parser
+async function fetchQuestions() {
+  try {
+    const response = await fetch('cameldb_v1.csv'); // Ensure the file name is correct here
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    const csvData = await response.text();
+    return parseCSV(csvData);
+  } catch (error) {
+    console.error('Error fetching the CSV file:', error);
+    alert('Failed to load questions. Please check the file name or its location.');
+    return [];
+  }
 }
 
 // Parse the CSV, filter by module, and randomize the questions
