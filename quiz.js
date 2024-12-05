@@ -18,17 +18,10 @@ async function startQuiz() {
   displayQuiz(selectedQuestions);
 }
 
-async function fetchQuestions() {
-  try {
-    const response = await fetch('cameldb_v1.csv'); // Ensure the file name is correct here
-    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-    const csvData = await response.text();
-    return parseCSV(csvData);
-  } catch (error) {
-    console.error('Error fetching the CSV file:', error);
-    alert('Failed to load questions. Please check the file name or its location.');
-    return [];
-  }
+async function fetchQuestions(selectedModule) {
+  const response = await fetch('cameldb_v1.csv');
+  const csvData = await response.text();
+  return parseCSV(csvData, selectedModule); // Pass the module to the parser
 }
 
 // Parse the CSV, filter by module, and randomize the questions
@@ -89,10 +82,6 @@ function displayQuiz(questions) {
   quizSection.appendChild(retryButton);
 }
 
-
-
-
-
 function gradeQuiz(questions) {
   let score = 0;
 
@@ -146,48 +135,4 @@ function resetFeedback() {
   document.getElementById('result').style.display = 'block';
   document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}`;
 }
-
-let timerInterval;
-
-function startTimer(duration) {
-  const timerDisplay = document.getElementById('timer');
-  let timeRemaining = duration;
-
-  // Disable the start timer button after starting the timer
-  document.getElementById('startTimerButton').disabled = true;
-
-  // Update the timer every second
-  timerInterval = setInterval(() => {
-    const minutes = Math.floor(timeRemaining / 60);
-    const seconds = timeRemaining % 60;
-    timerDisplay.textContent = `Time Left: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-
-    timeRemaining--;
-
-    if (timeRemaining < 0) {
-      clearInterval(timerInterval);
-      alert('Time is up! Submitting your quiz.');
-      document.getElementById('submitButton').click(); // Auto-submit the quiz
-    }
-  }, 1000);
-}
-
-function stopTimer() {
-  clearInterval(timerInterval);
-  document.getElementById('timer').textContent = 'Timer stopped.';
-  document.getElementById('startTimerButton').disabled = false; // Re-enable the start button if needed
-}
-
-
-
-document.getElementById('startTimerButton').addEventListener('click', () => {
-  const duration = 300; // Set timer duration (e.g., 5 minutes = 300 seconds)
-  startTimer(duration);
-  document.getElementById('stopTimerButton').style.display = 'inline';
-});
-
-document.getElementById('stopTimerButton').addEventListener('click', () => {
-  stopTimer();
-  document.getElementById('stopTimerButton').style.display = 'none';
-});
 
