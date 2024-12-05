@@ -2,50 +2,43 @@ document.getElementById('startQuiz').addEventListener('click', startQuiz);
 
 async function startQuiz() {
   const numQuestions = parseInt(document.getElementById('numQuestions').value, 10);
-  const selectedModule = document.getElementById('moduleSelect').value; // Get selected module value
+  const selectedModule = document.getElementById('moduleSelect').value;
+
   if (isNaN(numQuestions) || numQuestions < 1) {
     alert('Please enter a valid number of questions.');
     return;
   }
 
-  const questions = await fetchQuestions(selectedModule); // Pass selected module to filter questions
+  const questions = await fetchQuestions(selectedModule);
   if (questions.length === 0) {
     alert('No questions found for the selected module.');
     return;
   }
 
-  const selectedQuestions = questions.slice(0, numQuestions); // Select the requested number of questions
+  const selectedQuestions = questions.slice(0, numQuestions);
   displayQuiz(selectedQuestions);
 }
 
 async function fetchQuestions(selectedModule) {
   const response = await fetch('cameldb_v1.csv');
   const csvData = await response.text();
-  return parseCSV(csvData, selectedModule); // Pass the module to the parser
+  return parseCSV(csvData, selectedModule);
 }
 
-// Parse the CSV, filter by module, and randomize the questions
 function parseCSV(csv, selectedModule) {
-  const lines = csv.split('\n').slice(1); // Skip the header row
+  const lines = csv.split('\n').slice(1).filter(line => line.trim().length > 0); 
   const questions = lines.map(line => {
     const [question, option_a, option_b, option_c, option_d, option_e, correct_option, module] = line.split(';');
     return { question, option_a, option_b, option_c, option_d, option_e, correct_option, module };
-  });
+  }).filter(q => q.question && q.correct_option);
 
-  // Filter by selected module if one is chosen
-  const filteredQuestions = selectedModule && selectedModule !== "" 
-    ? questions.filter(q => q.module === selectedModule) 
-    : questions; // If no module is selected, show all questions
-
-  // Randomize the questions
-  return shuffleArray(filteredQuestions);
+  return shuffleArray(selectedModule ? questions.filter(q => q.module === selectedModule) : questions);
 }
 
-// Fisher-Yates Shuffle to randomize question order
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
 }
@@ -77,7 +70,7 @@ function displayQuiz(questions) {
   const retryButton = document.createElement('button');
   retryButton.textContent = 'Retry';
   retryButton.id = 'retryButton';
-  retryButton.style.display = 'none'; // Hidden initially
+  retryButton.style.display = 'none';
   retryButton.addEventListener('click', resetFeedback);
   quizSection.appendChild(retryButton);
 }
@@ -107,11 +100,9 @@ function gradeQuiz(questions) {
   document.getElementById('result').style.display = 'block';
   document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}`;
 
-  // Disable submit button and show retry button
   document.getElementById('submitButton').disabled = true;
   document.getElementById('retryButton').style.display = 'inline';
 }
-
 
 function resetFeedback() {
   const quizSection = document.getElementById('quiz');
@@ -120,19 +111,10 @@ function resetFeedback() {
     if (feedback) feedback.remove();
   });
 
-  // Enable inputs and submit button again
   document.getElementById('submitButton').disabled = false;
   document.getElementById('retryButton').style.display = 'none';
-
-  // Clear all selected answers
-  quizSection.querySelectorAll('input[type="radio"]').forEach(input => {
-    input.checked = false;
-  });
-
+  quizSection.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
+  
   document.getElementById('result').style.display = 'none';
-
-  // Display final score
-  document.getElementById('result').style.display = 'block';
-  document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}`;
+  document.getElementById('score').textContent = '';
 }
-
