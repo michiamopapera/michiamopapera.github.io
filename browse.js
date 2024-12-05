@@ -68,17 +68,17 @@ function populateFilters(questions) {
 
 function filterQuestions(questions) {
   const searchText = document.getElementById('searchInput').value.toLowerCase();
-  const module = document.getElementById('moduleFilter').value;
+  const module = document.getElementById('moduleFilter').value; // Can be empty
   const year = document.getElementById('yearFilter').value;
   const language = document.getElementById('languageFilter').value;
   const verified = document.getElementById('verifiedFilter').value;
 
   return questions.filter(q =>
-    (q.question.toLowerCase().includes(searchText) || !searchText) &&
-    (q.module === module || !module) &&
-    (q.year === year || !year) &&
-    (q.language === language || !language) &&
-    (q.verified === verified || !verified)
+    (!searchText || q.question.toLowerCase().includes(searchText)) && // Match search if entered
+    (!module || q.module === module) && // Match module if selected, otherwise all
+    (!year || q.year === year) && // Match year if selected
+    (!language || q.language === language) && // Match language if selected
+    (!verified || q.verified === verified) // Match verified if selected
   );
 }
 
