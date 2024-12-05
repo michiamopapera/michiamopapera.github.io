@@ -4,12 +4,16 @@ async function startQuiz() {
   const numQuestions = parseInt(document.getElementById('numQuestions').value, 10);
   const selectedModule = document.getElementById('moduleSelect').value;
 
+  console.log("Selected Module:", selectedModule); // Debug
+  
   if (isNaN(numQuestions) || numQuestions < 1) {
     alert('Please enter a valid number of questions.');
     return;
   }
 
   const questions = await fetchQuestions(selectedModule);
+  console.log("Fetched Questions:", questions); // Debug
+
   if (questions.length === 0) {
     alert('No questions found for the selected module.');
     return;
