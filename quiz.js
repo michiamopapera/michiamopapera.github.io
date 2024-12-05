@@ -20,7 +20,7 @@ async function startQuiz() {
 }
 
 async function fetchQuestions(selectedModule) {
-  const response = await fetch('cameldb_v1.csv');
+  const response = await fetch('cameldb.csv');
   const csvData = await response.text();
   return parseCSV(csvData, selectedModule);
 }
