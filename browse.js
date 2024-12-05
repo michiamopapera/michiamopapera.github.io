@@ -17,11 +17,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   );
 });
 
-async function fetchQuestions() {
-  const response = await fetch('cameldb_draft.csv');
+async function fetchQuestions(selectedModule) {
+  const timestamp = new Date().getTime();  // Generate a timestamp
+  const response = await fetch(`cameldb_v1.csv?timestamp=${timestamp}`);  // Append the timestamp to avoid cache
   const csvData = await response.text();
-  return parseCSV(csvData);
+  return parseCSV(csvData, selectedModule); // Pass the module to the parser
 }
+
 
 function parseCSV(csv) {
   const lines = csv.trim().split('\n').slice(1); // Skip header row

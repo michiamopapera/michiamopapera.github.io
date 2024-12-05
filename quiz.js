@@ -3,43 +3,69 @@ document.getElementById('startQuiz').addEventListener('click', startQuiz);
 async function startQuiz() {
   const numQuestions = parseInt(document.getElementById('numQuestions').value, 10);
   const selectedModule = document.getElementById('moduleSelect').value; // Get selected module value
+ 
+  console.log(`Number of Questions: ${numQuestions}`);
+  console.log(`Selected Module: ${selectedModule}`);
+ 
   if (isNaN(numQuestions) || numQuestions < 1) {
     alert('Please enter a valid number of questions.');
     return;
   }
 
   const questions = await fetchQuestions(selectedModule); // Pass selected module to filter questions
+  console.log(`Fetched Questions: ${JSON.stringify(questions)}`);
   if (questions.length === 0) {
     alert('No questions found for the selected module.');
     return;
   }
-
   const selectedQuestions = questions.slice(0, numQuestions); // Select the requested number of questions
   displayQuiz(selectedQuestions);
 }
 
 async function fetchQuestions(selectedModule) {
-  const response = await fetch('cameldb_draft.csv');
+  const timestamp = new Date().getTime();  // Generate a timestamp
+  const response = await fetch(`cameldb_v1.csv?timestamp=${timestamp}`);  // Append the timestamp to avoid cache
   const csvData = await response.text();
+  console.log('Fetched CSV Data:', csvData); // Log the raw CSV data
   return parseCSV(csvData, selectedModule); // Pass the module to the parser
 }
 
-// Parse the CSV, filter by module, and randomize the questions
 function parseCSV(csv, selectedModule) {
-  const lines = csv.split('\n').slice(1); // Skip the header row
-  const questions = lines.map(line => {
-    const [question, option_a, option_b, option_c, option_d, option_e, correct_option, module] = line.split(';');
+  console.log('Fetched CSV Data:', csv);  // Log the raw CSV data to check it's correctly fetched
+
+  const lines = csv.split('\n')   // Split by line breaks
+    .map(line => line.trim())      // Remove any extra spaces at the start or end
+    .filter(line => line.length > 0);  // Remove any empty lines
+
+  console.log('Lines after split:', lines); // Log the resulting array of lines
+  
+  // Skip the header row (first row) and process only data rows
+  const questions = lines.slice(1).map(line => {
+    const columns = line.split(';');
+    console.log('Parsed row:', columns);  // Check each parsed row
+
+    if (columns.length < 8) {
+      console.error('Malformed row detected:', line);
+    }
+
+    const [question, option_a, option_b, option_c, option_d, option_e, correct_option, module] = columns;
     return { question, option_a, option_b, option_c, option_d, option_e, correct_option, module };
   });
 
-  // Filter by selected module if one is chosen
-  const filteredQuestions = selectedModule && selectedModule !== "" 
-    ? questions.filter(q => q.module === selectedModule) 
-    : questions; // If no module is selected, show all questions
+  console.log('Parsed Questions:', questions);
 
-  // Randomize the questions
-  return shuffleArray(filteredQuestions);
+  // Filter questions by the selected module (if any)
+  const filteredQuestions = selectedModule && selectedModule !== "" 
+    ? questions.filter(q => q.module.trim().toLowerCase() === selectedModule.trim().toLowerCase()) 
+    : questions;
+
+  console.log('Filtered Questions:', filteredQuestions);
+
+  return shuffleArray(filteredQuestions);  // Shuffle and return the filtered questions
 }
+
+
+console.log('Selected Module:', selectedModule);
 
 // Fisher-Yates Shuffle to randomize question order
 function shuffleArray(array) {
@@ -83,7 +109,7 @@ function displayQuiz(questions) {
 }
 
 
-
+console.log('Selected Module:', selectedModule);
 
 
 function gradeQuiz(questions) {
