@@ -30,16 +30,10 @@ async function fetchQuestions() {
   }
 }
 
-async function fetchQuestions(selectedModule) {
-  const response = await fetch('cameldb_v1.csv');
-  const csvData = await response.text();
-  return parseCSV(csvData, selectedModule); // Pass the module to the parser
-}
-
 function parseCSV(csv) {
   const lines = csv.trim().split('\n').slice(1); // Skip header row
   return lines.map(line => {
-    const [question, wahlA, wahlB, wahlC, wahlD, wahlE, answer, module, language, tags, year, verified, expandedDate, notes, explanation] = line.split(';');
+    const [question, wahlA, wahlB, wahlC, wahlD, wahlE, answer, module, language, tags, year, verified, expandedDate, notes, explanation, blank] = line.split(';');
     return { question, module, year, language, verified: verified.trim() === "Yes" ? "Yes" : "No" };
   });
 }
