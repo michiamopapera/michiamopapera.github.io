@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"The Camel" - Fed II Medicine Past Paper Database</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+      <pre> ██████  █████  ███    ███ ███████ ██          ██████  ███████ ███████ ██ ███    ██ ███████ ██████  ██    ██ 
+██      ██   ██ ████  ████ ██      ██          ██   ██ ██      ██      ██ ████   ██ ██      ██   ██  ██  ██  
+██      ███████ ██ ████ ██ █████   ██          ██████  █████   █████   ██ ██ ██  ██ █████   ██████    ████   
+██      ██   ██ ██  ██  ██ ██      ██          ██   ██ ██      ██      ██ ██  ██ ██ ██      ██   ██    ██    
+ ██████ ██   ██ ██      ██ ███████ ███████     ██   ██ ███████ ██      ██ ██   ████ ███████ ██   ██    ██    
+                                                                                                             
+                                                                                                             </pre>
+    </div>
+    <h1></h1>
+  </header>
+
+  <p class=disclaimer>This page is for our testing groups.</p>
+  
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="about.html">info</a>
+  <a href="quiz.html">quiz</a>
+  <a href="browse.html">browse (beta)</a>
+  <a href="browse.html">refinery</a>
+</div>
+
+<!-- Use any element to open the sidenav AND THIS IS ME CHANGING CODE SO IT REDEPLOYS TO GITHUB PAGES -->
+<span onclick="openNav()">open menu>>></span>
+
+  <main>
+    <section id="settings">
+      <label for="numQuestions">Number of questions:</label>
+      <input type="number" id="numQuestions" min="1" required>
+      <button id="startQuiz">Start Quiz</button>
+      <button id="reportQuestion"><a href="https://forms.gle/K8A1Hix2akDoBSnB7" target="_blank">Refining Form</a> 
+    </section>
+
+<!-- Module Selection Dropdown -->
+<label for="moduleSelect">Choose a module:</label>
+<select id="moduleSelect">
+  <option value="">All Modules</option>
+  <option value="Chemistry">!!! Chemistry</option>
+  <option value="Human Anatomy">!!! Human Anatomy</option>
+  <option value="Histology and Embryology">Histology and Embryology</option>
+  <option value="Biochemistry">!!! Biochemistry</option>
+  <option value="Methodology I">Methodology I</option>
+  <option value="Methodology II">Methodology II</option>
+  <option value="Pharmacology I">!!! Pharmacology I</option>
+  <option value="Pharmacology II">!!! Pharmacology II</option>
+  <option value="Hygiene and Community Medicine">Hygiene</option>
+  <option value="Cardiology and Respiratory Medicine">!!! Cardiology and Respiratory Medicine</option>
+  <option value="Microbiology and Immunology">!!! Microbiology and Immunology</option>
+  <!-- Add other options here as needed -->
+</select>
+
+    <section id="quiz" style="display: none;"></section>
+    <section id="result" style="display: none;">
+      <h2>Your Results</h2>
+      <p id="score"></p>
+    </section>
+  </main>
+
+  <script src="refine.js"></script>
+  <script src="menu.js"></script>
+
+</body>
+</html>
