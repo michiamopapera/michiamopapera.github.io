@@ -3,12 +3,10 @@ document.getElementById('startQuiz').addEventListener('click', startQuiz);
 async function startQuiz() {
   const numQuestions = parseInt(document.getElementById('numQuestions').value, 10);
   const selectedModule = document.getElementById('moduleSelect').value; // Get selected module value
-  const selectedLanguage = document.getElementById('languageSelect').value;
-  
+ 
   console.log(`Number of Questions: ${numQuestions}`);
   console.log(`Selected Module: ${selectedModule}`);
-  console.log(`Selected Language: ${selectedLanguage}`);
-
+ 
   if (isNaN(numQuestions) || numQuestions < 1) {
     alert('Please enter a valid number of questions.');
     return;
@@ -28,6 +26,7 @@ async function fetchQuestions(selectedModule) {
   const timestamp = new Date().getTime();  // Generate a timestamp
   const response = await fetch(`cameldb_v1.csv?timestamp=${timestamp}`);  // Append the timestamp to avoid cache
   const csvData = await response.text();
+  console.log('Fetched CSV Data:', csvData); // Log the raw CSV data
   return parseCSV(csvData, selectedModule); // Pass the module to the parser
 }
 
@@ -49,16 +48,15 @@ function parseCSV(csv, selectedModule) {
       console.error('Malformed row detected:', line);
     }
 
-    const [question, option_a, option_b, option_c, option_d, option_e, correct_option, module, language] = columns;
-    return { question, option_a, option_b, option_c, option_d, option_e, correct_option, module, language };
+    const [question, option_a, option_b, option_c, option_d, option_e, correct_option, module] = columns;
+    return { question, option_a, option_b, option_c, option_d, option_e, correct_option, module };
   });
 
   console.log('Parsed Questions:', questions);
 
-  // Filter questions by the selected module (if any) - I DONT KNOW IF THIS WILL WORK
+  // Filter questions by the selected module (if any)
   const filteredQuestions = selectedModule && selectedModule !== "" 
     ? questions.filter(q => q.module.trim().toLowerCase() === selectedModule.trim().toLowerCase()) 
-    ? questions.filter(q => q.langauge.trim().toLowerCase() === selectedModule.trim().toLowerCase()) 
     : questions;
 
   console.log('Filtered Questions:', filteredQuestions);
