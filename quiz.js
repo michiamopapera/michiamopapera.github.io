@@ -1,71 +1,104 @@
+// HTML Setup (Add this where you define your dropdowns in the HTML)
+// <select id="languageSelect">
+//   <option value="EN">English</option>
+//   <option value="IT">Italian</option>
+// </select>
+
 document.getElementById('startQuiz').addEventListener('click', startQuiz);
 
 async function startQuiz() {
   const numQuestions = parseInt(document.getElementById('numQuestions').value, 10);
   const selectedModule = document.getElementById('moduleSelect').value; // Get selected module value
- 
+  const selectedLanguage = document.getElementById('languageSelect').value; // Get selected language
+
   console.log(`Number of Questions: ${numQuestions}`);
   console.log(`Selected Module: ${selectedModule}`);
- 
+  console.log(`Selected Language: ${selectedLanguage}`);
+
   if (isNaN(numQuestions) || numQuestions < 1) {
     alert('Please enter a valid number of questions.');
     return;
   }
 
-  const questions = await fetchQuestions(selectedModule); // Pass selected module to filter questions
+  const questions = await fetchQuestions(selectedModule, selectedLanguage); // Pass module and language to filter questions
   console.log(`Fetched Questions: ${JSON.stringify(questions)}`);
+
   if (questions.length === 0) {
-    alert('No questions found for the selected module.');
+    alert('No questions found for the selected module and language.');
     return;
   }
-  const selectedQuestions = questions.slice(0, numQuestions); // Select the requested number of questions
+
+  const shuffledQuestions = shuffleArray(questions); // Shuffle the questions
+  const selectedQuestions = shuffledQuestions.slice(0, numQuestions); // Select the requested number of questions
+
   displayQuiz(selectedQuestions);
 }
 
-async function fetchQuestions(selectedModule) {
-  const timestamp = new Date().getTime();  // Generate a timestamp
-  const response = await fetch(`cameldb_v1.csv?timestamp=${timestamp}`);  // Append the timestamp to avoid cache
+async function fetchQuestions(selectedModule, selectedLanguage) {
+  const timestamp = new Date().getTime(); // Generate a timestamp
+  const response = await fetch(`cameldb_v1.csv?timestamp=${timestamp}`); // Append the timestamp to avoid cache
   const csvData = await response.text();
   console.log('Fetched CSV Data:', csvData); // Log the raw CSV data
-  return parseCSV(csvData, selectedModule); // Pass the module to the parser
+  return parseCSV(csvData, selectedModule, selectedLanguage); // Pass the module and language to the parser
 }
 
-function parseCSV(csv, selectedModule) {
-  console.log('Fetched CSV Data:', csv);  // Log the raw CSV data to check it's correctly fetched
+function parseCSV(csv, selectedModule, selectedLanguage) {
+  console.log('Fetched CSV Data:', csv); // Log the raw CSV data to check it's correctly fetched
 
-  const lines = csv.split('\n')   // Split by line breaks
-    .map(line => line.trim())      // Remove any extra spaces at the start or end
-    .filter(line => line.length > 0);  // Remove any empty lines
+  const lines = csv
+    .split('\n') // Split by line breaks
+    .map(line => line.trim()) // Remove any extra spaces at the start or end
+    .filter(line => line.length > 0); // Remove any empty lines
 
   console.log('Lines after split:', lines); // Log the resulting array of lines
-  
+
   // Skip the header row (first row) and process only data rows
   const questions = lines.slice(1).map(line => {
     const columns = line.split(';');
-    console.log('Parsed row:', columns);  // Check each parsed row
+    console.log('Parsed row:', columns); // Check each parsed row
 
     if (columns.length < 8) {
       console.error('Malformed row detected:', line);
     }
 
-    const [question, option_a, option_b, option_c, option_d, option_e, correct_option, module] = columns;
-    return { question, option_a, option_b, option_c, option_d, option_e, correct_option, module };
+    const [
+      question,
+      option_a,
+      option_b,
+      option_c,
+      option_d,
+      option_e,
+      correct_option,
+      module,
+      language
+    ] = columns;
+
+    return {
+      question,
+      option_a,
+      option_b,
+      option_c,
+      option_d,
+      option_e,
+      correct_option,
+      module,
+      language
+    };
   });
 
   console.log('Parsed Questions:', questions);
 
-  // Filter questions by the selected module (if any)
-  const filteredQuestions = selectedModule && selectedModule !== "" 
-    ? questions.filter(q => q.module.trim().toLowerCase() === selectedModule.trim().toLowerCase()) 
-    : questions:
+  // Filter questions by the selected module and language (if any)
+  const filteredQuestions = questions.filter(q => {
+    const matchesModule = !selectedModule || q.module.trim().toLowerCase() === selectedModule.trim().toLowerCase();
+    const matchesLanguage = !selectedLanguage || q.language.trim().toLowerCase() === selectedLanguage.trim().toLowerCase();
+    return matchesModule && matchesLanguage;
+  });
 
   console.log('Filtered Questions:', filteredQuestions);
 
-  return shuffleArray(filteredQuestions);  // Shuffle and return the filtered questions
+  return filteredQuestions;
 }
-
-
-console.log('Selected Module:', selectedModule);
 
 // Fisher-Yates Shuffle to randomize question order
 function shuffleArray(array) {
@@ -107,62 +140,3 @@ function displayQuiz(questions) {
   retryButton.addEventListener('click', resetFeedback);
   quizSection.appendChild(retryButton);
 }
-
-
-console.log('Selected Module:', selectedModule);
-
-
-function gradeQuiz(questions) {
-  let score = 0;
-
-  questions.forEach((q, index) => {
-    const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
-    const questionDiv = document.querySelector(`#quiz div:nth-child(${index + 1})`);
-
-    const resultMessage = document.createElement('p');
-    resultMessage.style.fontWeight = 'bold';
-
-    if (selectedOption && selectedOption.value.trim() === q.correct_option.trim()) {
-      score++;
-      resultMessage.textContent = 'Correct!';
-      resultMessage.style.color = 'green';
-    } else {
-      resultMessage.textContent = `Incorrect. Correct answer: ${q.correct_option}`;
-      resultMessage.style.color = 'red';
-    }
-
-    questionDiv.appendChild(resultMessage);
-  });
-
-  document.getElementById('result').style.display = 'block';
-  document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}`;
-
-  // Disable submit button and show retry button
-  document.getElementById('submitButton').disabled = true;
-  document.getElementById('retryButton').style.display = 'inline';
-}
-
-
-function resetFeedback() {
-  const quizSection = document.getElementById('quiz');
-  quizSection.querySelectorAll('div').forEach(questionDiv => {
-    const feedback = questionDiv.querySelector('p');
-    if (feedback) feedback.remove();
-  });
-
-  // Enable inputs and submit button again
-  document.getElementById('submitButton').disabled = false;
-  document.getElementById('retryButton').style.display = 'none';
-
-  // Clear all selected answers
-  quizSection.querySelectorAll('input[type="radio"]').forEach(input => {
-    input.checked = false;
-  });
-
-  document.getElementById('result').style.display = 'none';
-
-  // Display final score
-  document.getElementById('result').style.display = 'block';
-  document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}`;
-}
-
