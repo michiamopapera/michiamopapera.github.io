@@ -3,10 +3,12 @@ document.getElementById('startQuiz').addEventListener('click', startQuiz);
 async function startQuiz() {
   const numQuestions = parseInt(document.getElementById('numQuestions').value, 10);
   const selectedModule = document.getElementById('moduleSelect').value; // Get selected module value
- 
+  const selectedLanguage = document.getElementById('languageSelect').value; // Get selected language value
+
   console.log(`Number of Questions: ${numQuestions}`);
   console.log(`Selected Module: ${selectedModule}`);
- 
+  console.log(`Selected Language: ${selectedLanguage}`);
+
   if (isNaN(numQuestions) || numQuestions < 1) {
     alert('Please enter a valid number of questions.');
     return;
@@ -55,9 +57,11 @@ function parseCSV(csv, selectedModule) {
   console.log('Parsed Questions:', questions);
 
   // Filter questions by the selected module (if any)
-  const filteredQuestions = selectedModule && selectedModule !== "" 
-    ? questions.filter(q => q.module.trim().toLowerCase() === selectedModule.trim().toLowerCase()) 
-    : questions;
+  const filteredQuestions = questions.filter(q => {
+    const matchesModule = selectedModule === '' || q.module.trim().toLowerCase() === selectedModule.trim().toLowerCase();
+    const matchesLanguage = selectedLanguage === '' || q.language.trim().toLowerCase() === selectedLanguage.trim().toLowerCase();
+    return matchesModule && matchesLanguage;
+  });
 
   console.log('Filtered Questions:', filteredQuestions);
 
