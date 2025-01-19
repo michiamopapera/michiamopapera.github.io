@@ -46,6 +46,15 @@ a:hover {
   padding: 20px;
 }
 
+.goodnews {
+  font-family: Times New Roman, sans-serif;
+  background-color: #fffec7;
+  text-align: center;
+  color: #66ff00;
+  font-size: 100%;
+  padding: 20px;
+}
+
 pre {
    color: blue;
    max-width:100%;
