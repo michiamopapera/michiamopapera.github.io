@@ -58,7 +58,7 @@ function parseCSV(csv, selectedModule, selectedLanguage) {
     console.log('Parsed row:', columns); // Check each parsed row
 
     if (columns.length < 8) {
-      console.error('Malformed row detected:', line);
+      console.error('Malformed row detected', line);
     }
 
     const [
