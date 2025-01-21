@@ -150,16 +150,16 @@ function gradeQuiz(questions) {
 
     // Create a result message element to display feedback for the current question
     const resultMessage = document.createElement('p');
-    resultMessage.style.fontWeight = 'bold';
 
     if (selectedOption && selectedOption.value.trim() === q.correct_option.trim()) {
       // If the selected option matches the correct answer, increment the score
       score++;
       resultMessage.textContent = 'Correct!';
       resultMessage.style.color = 'green';
+      resultMessage.style.fontWeight = 'bold';
     } else {
       // If the answer is incorrect or no option is selected, display the correct answer
-      resultMessage.textContent = `Incorrect. Correct answer: ${q.correct_option}`;
+      resultMessage.textContent = `Incorrect.<br>Correct answer: ${q.correct_option}`;
       resultMessage.style.color = 'red';
     }
 
