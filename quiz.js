@@ -125,6 +125,7 @@ function displayQuiz(questions) {
     `;
     quizSection.appendChild(questionDiv);
   });
+  
   const submitButton = document.createElement('button');
   submitButton.textContent = 'Submit Answers';
   submitButton.id = 'submitButton';
@@ -140,35 +141,46 @@ function displayQuiz(questions) {
 }
 
 function gradeQuiz(questions) {
-  let score = 0;
+  let score = 0; // Initialize the score to 0
 
   questions.forEach((q, index) => {
+    // Find the selected option for the current question
     const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
     const questionDiv = document.querySelector(`#quiz div:nth-child(${index + 1})`);
 
+    // Create a result message element to display feedback for the current question
     const resultMessage = document.createElement('p');
     resultMessage.style.fontWeight = 'bold';
 
     if (selectedOption && selectedOption.value.trim() === q.correct_option.trim()) {
+      // If the selected option matches the correct answer, increment the score
       score++;
       resultMessage.textContent = 'Correct!';
       resultMessage.style.color = 'green';
     } else {
+      // If the answer is incorrect or no option is selected, display the correct answer
       resultMessage.textContent = `Incorrect. Correct answer: ${q.correct_option}`;
       resultMessage.style.color = 'red';
     }
 
+    // Append the feedback message to the corresponding question div
     questionDiv.appendChild(resultMessage);
   });
 
-  document.getElementById('result').style.display = 'block';
-  document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}`;
+  // Display the total score in the results section
+  const resultSection = document.getElementById('result');
+  resultSection.style.display = 'block';
+  const scoreElement = document.getElementById('score');
+  scoreElement.textContent = `You scored ${score} out of ${questions.length}`;
 
-  // Disable submit button and show retry button
-  document.getElementById('submitButton').disabled = true;
-  document.getElementById('retryButton').style.display = 'inline';
+  // Disable the submit button to prevent multiple submissions
+  const submitButton = document.getElementById('submitButton');
+  if (submitButton) submitButton.disabled = true;
+
+  // Show the retry button to allow the user to reset the quiz
+  const retryButton = document.getElementById('retryButton');
+  if (retryButton) retryButton.style.display = 'inline';
 }
-
 
 function resetFeedback() {
   const quizSection = document.getElementById('quiz');
@@ -187,8 +199,4 @@ function resetFeedback() {
   });
 
   document.getElementById('result').style.display = 'none';
-
-  // Display final score
-  document.getElementById('result').style.display = 'block';
-  document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}`;
 }
