@@ -140,3 +140,57 @@ function displayQuiz(questions) {
   retryButton.addEventListener('click', resetFeedback);
   quizSection.appendChild(retryButton);
 }
+
+function gradeQuiz(questions) {
+  let score = 0;
+
+  questions.forEach((q, index) => {
+    const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
+    const questionDiv = document.querySelector(`#quiz div:nth-child(${index + 1})`);
+
+    const resultMessage = document.createElement('p');
+    resultMessage.style.fontWeight = 'bold';
+
+    if (selectedOption && selectedOption.value.trim() === q.correct_option.trim()) {
+      score++;
+      resultMessage.textContent = 'Correct!';
+      resultMessage.style.color = 'green';
+    } else {
+      resultMessage.textContent = `Incorrect. Correct answer: ${q.correct_option}`;
+      resultMessage.style.color = 'red';
+    }
+
+    questionDiv.appendChild(resultMessage);
+  });
+
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}`;
+
+  // Disable submit button and show retry button
+  document.getElementById('submitButton').disabled = true;
+  document.getElementById('retryButton').style.display = 'inline';
+}
+
+
+function resetFeedback() {
+  const quizSection = document.getElementById('quiz');
+  quizSection.querySelectorAll('div').forEach(questionDiv => {
+    const feedback = questionDiv.querySelector('p');
+    if (feedback) feedback.remove();
+  });
+
+  // Enable inputs and submit button again
+  document.getElementById('submitButton').disabled = false;
+  document.getElementById('retryButton').style.display = 'none';
+
+  // Clear all selected answers
+  quizSection.querySelectorAll('input[type="radio"]').forEach(input => {
+    input.checked = false;
+  });
+
+  document.getElementById('result').style.display = 'none';
+
+  // Display final score
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('score').textContent = `You scored ${score} out of ${questions.length}`;
+}
