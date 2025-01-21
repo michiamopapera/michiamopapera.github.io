@@ -86,8 +86,6 @@ function parseCSV(csv, selectedModule, selectedLanguage) {
     };
   });
 
-  console.log('Parsed Questions:', questions);
-
   // Filter questions by the selected module and language (if any)
   const filteredQuestions = questions.filter(q => {
     const matchesModule = !selectedModule || q.module.trim().toLowerCase() === selectedModule.trim().toLowerCase();
@@ -109,18 +107,6 @@ function shuffleArray(array) {
   return array;
 }
 
-  const submitButton = document.createElement('button');
-  submitButton.textContent = 'Submit Answers';
-  submitButton.id = 'submitButton';
-  submitButton.addEventListener('click', () => gradeQuiz(questions));
-  quizSection.appendChild(submitButton);
-
-  const retryButton = document.createElement('button');
-  retryButton.textContent = 'Retry';
-  retryButton.id = 'retryButton';
-  retryButton.style.display = 'none'; // Hidden initially
-  retryButton.addEventListener('click', resetFeedback);
-  quizSection.appendChild(retryButton);
 
 function displayQuiz(questions) {
   const quizSection = document.getElementById('quiz');
@@ -139,7 +125,18 @@ function displayQuiz(questions) {
     `;
     quizSection.appendChild(questionDiv);
   });
+  const submitButton = document.createElement('button');
+  submitButton.textContent = 'Submit Answers';
+  submitButton.id = 'submitButton';
+  submitButton.addEventListener('click', () => gradeQuiz(questions));
+  quizSection.appendChild(submitButton);
 
+  const retryButton = document.createElement('button');
+  retryButton.textContent = 'Retry';
+  retryButton.id = 'retryButton';
+  retryButton.style.display = 'none'; // Hidden initially
+  retryButton.addEventListener('click', resetFeedback);
+  quizSection.appendChild(retryButton);
 }
 
 function gradeQuiz(questions) {
