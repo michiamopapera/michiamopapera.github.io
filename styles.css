@@ -12,6 +12,7 @@ header {
 
 header-container {
   font-size: max(0.2rem, 1vmin);
+  text-align: center;
 }
 
 main {
@@ -55,15 +56,24 @@ a:hover {
   padding: 20px;
 }
 
-.tinylogo {
-  width: 70%;
+#tinylogo {
+  width: 100%;
   max-width: 100px;
+  float: right;
   height: auto;
   text-align: right;
 }
 
-.logowriting {
+#asciilogo {
+  width: 100%;
+  max-width: 100px;
+  float: center;
+  height: auto;
   text-align: center;
+}
+
+#clear {
+  clear: both;
 }
 
 .responsive {
