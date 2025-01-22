@@ -125,6 +125,7 @@ button:hover {
 
  /* The side navigation menu */
 .sidenav {
+  text-align: left;
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   max-width:100%;
@@ -142,6 +143,7 @@ button:hover {
 
 /* The navigation menu links */
 .sidenav a {
+  text-align: left;
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 20px;
