@@ -56,8 +56,8 @@ a:hover {
 }
 
 .tinylogo {
-  width: 45%;
-  max-width: 50px;
+  width: 70%;
+  max-width: 100px;
   height: auto;
   text-align: right;
 }
@@ -67,12 +67,12 @@ a:hover {
 }
 
 .responsive {
-  width: 50%;
-  max-width: 50px;
+  width: 70%;
+  max-width: 100px;
   height: auto;
 }
 
-img:hover{
+img:hover {
   transform: scaleX(-1);
 }
 
