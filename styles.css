@@ -59,17 +59,17 @@ a:hover {
 #tinylogo {
   width: 100%;
   max-width: 100px;
-  float: right;
   height: auto;
-  text-align: right;
+  display: inline-block; 
+  vertical-align: top;
 }
 
 #asciilogo {
   width: 100%;
   max-width: 100px;
-  float: center;
   height: auto;
-  text-align: center;
+  display: inline-block; 
+  vertical-align: top;
 }
 
 #clear {
