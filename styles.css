@@ -65,15 +65,13 @@ a:hover {
   vertical-align: top;
 }
 
-@media screen and (max-width: 600px) {
-  #asciilogo {
-    visibility: hidden;
-    width: 100%;
-    max-width: 100px;
-    height: auto;
-    display: inline-block; 
-    vertical-align: top;
-    padding-right: 200px;
+#asciilogo {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  display: inline-block; 
+  vertical-align: top;
+  padding-right: 200px;
 }
 
 #clear {
