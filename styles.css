@@ -55,6 +55,12 @@ a:hover {
   padding: 20px;
 }
 
+.responsive {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
 pre {
    color: blue;
    max-width:100%;
