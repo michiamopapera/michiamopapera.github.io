@@ -72,6 +72,10 @@ a:hover {
   height: auto;
 }
 
+img:hover{
+  transform: scaleX(-1);
+}
+
 pre {
    color: blue;
    max-width:100%;
