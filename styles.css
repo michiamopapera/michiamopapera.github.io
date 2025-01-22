@@ -57,6 +57,13 @@ a:hover {
   padding: 20px;
 }
 
+#menubutton {
+  display: inline-block; 
+  font-family: Times New Roman, sans-serif;
+  color: #0000ff;
+  text-align: left;
+}
+
 #tinylogo {
   width: 100%;
   max-width: 100px;
