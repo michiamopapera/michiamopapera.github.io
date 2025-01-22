@@ -59,7 +59,7 @@ a:hover {
 
 #tinylogo {
   width: 100%;
-  max-width: 120px;
+  max-width: 100px;
   height: auto;
   display: inline-block; 
   vertical-align: top;
