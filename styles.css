@@ -62,6 +62,10 @@ a:hover {
   text-align: right;
 }
 
+.logowriting {
+  text-align: center;
+}
+
 .responsive {
   width: 50%;
   max-width: 50px;
