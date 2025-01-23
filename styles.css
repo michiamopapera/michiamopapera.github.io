@@ -194,4 +194,8 @@ button:hover {
   .sidenav a {
     font-size: 10px; /* Smaller font size for mobile */
   }
+
+  #asciilogo {
+  visibility: hidden;
+}
 }
