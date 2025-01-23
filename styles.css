@@ -130,6 +130,13 @@ button:hover {
   background-color: #02abad;
 }
 
+#reportQuestion {
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+}
+
  /* The side navigation menu */
 .sidenav {
   text-align: left;
