@@ -1,11 +1,11 @@
 body {
-  font-family: Garamond, Times, serif;
+  font-family: Baskerville, Times New Roman, serif;
   background-color: #feffe0;
   color:#444444;
   padding: 20px;
   text-align: left;
   margin:40px
-  auto;max-width:650px;
+  auto;max-width:700px;
   line-height:1.6;
   font-size:16px;
   padding:10px
@@ -17,9 +17,31 @@ header {
   line-height:1.2
 }
 
-header-container {
+.logo-container {
   font-size: max(0.2rem, 1vmin);
   text-align: center;
+  display: flex;                /* Use flexbox */
+  justify-content: center;       /* Center items horizontally */
+  align-items: flex-start;       /* Align items to the top */
+  height: 15vh;                 /* Make the container full height */
+  width: 100%;                   /* Full width of the page */
+  padding: 5px;                 /* Optional padding around the content */
+  box-sizing: border-box;        /* Make sure padding doesn't mess up layout */
+}
+
+.asciilogo {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  display: inline-block; 
+  vertical-align: top;
+  padding-right: 200px;
+}
+
+.pnglogo {
+  width: 70%;
+  max-width: 100px;
+  height: auto;
 }
 
 main {
@@ -57,51 +79,13 @@ a:hover {
 
 #menubutton {
   color: #065BA7;
-  position: absolute;
-  top: 20px;   /* Distance from top margin */
-  right: 20px; /* Distance from right margin */
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 50%;
-  font-size: 24px;
+  position: fixed;
+  top: 100px;   /* Distance from top margin */
+  left: 20px; /* Distance from right margin */
+  width: auto;
+  height: 30px;
+  font-size: 14px;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  
-}
-
-#tinylogo {
-  width: 100%;
-  max-width: 100px;
-  height: auto;
-  display: inline-block; 
-  vertical-align: top;
-}
-
-#asciilogo {
-  width: 100%;
-  max-width: 100px;
-  height: auto;
-  display: inline-block; 
-  vertical-align: top;
-  padding-right: 200px;
-}
-
-#clear {
-  clear: both;
-}
-
-.responsive {
-  width: 70%;
-  max-width: 100px;
-  height: auto;
-}
-
-img:hover {
-  transform: scaleX(-1);
 }
 
 pre {
@@ -120,7 +104,7 @@ span {
 #settings, #quiz, #result {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: left;
-  auto;max-width:650px;
+  auto;max-width:700px;
   line-height:1.6;
   font-size:18px;
   padding:10px
@@ -134,20 +118,16 @@ span {
 button {
   background-color: #065BA7;
   color: #dadae3;
-  padding: 10px 20px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
   background-color: #00529F;
-}
-
-#reportQuestion {
-  padding-top: 10px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  padding-left: 20px;
 }
 
  /* The side navigation menu */
@@ -189,7 +169,7 @@ button:hover {
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
+  right: 10px;
   font-size: 36px;
   margin-left: 50px;
 }
@@ -200,14 +180,14 @@ button:hover {
     padding: 20px;
   }
 
-@media screen and (max-height: 700px) {
+@media screen and (max-height: 600px) and (max-width: 100px) {
   .sidenav {
     padding-top: 10px; /* Reduced padding for mobile */
     max-width:200%;
   }
 
   .sidenav a {
-    font-size: 10px; /* Smaller font size for mobile */
+    font-size: 6px; /* Smaller font size for mobile */
   }
 
   #asciilogo {
