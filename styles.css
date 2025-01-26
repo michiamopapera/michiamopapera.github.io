@@ -1,14 +1,20 @@
 body {
   font-family: "Garamond", Times, serif;
   background-color: #feffe0;
-  color: #76767a;
+  color:#4c4c4f;
   padding: 20px;
   text-align: left;
+  margin:40px
+  auto;max-width:650px;
+  line-height:1.6;
+  font-size:18px;
+  padding:10px
 }
 
 header {
   text-align: center;
   margin-bottom: 20px;
+  line-height:1.2
 }
 
 header-container {
@@ -22,45 +28,36 @@ main {
 }
 
 a:link {
-  color: white;
+  color: #dadae3;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:visited {
-  color: white;
+  color: #dadae3;
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: #03eeff;
+  color: #bdeff2;
   background-color: transparent;
   text-decoration: underline;
 }
 
 .disclaimer {
-  font-family: Times New Roman, sans-serif;
-  background-color: #fffec7;
   text-align: center;
-  color: #ff0000;
-  font-size: 100%;
-  padding: 20px;
+  color: #fc8383;
 }
 
 .goodnews {
-  font-family: Times New Roman, sans-serif;
-  background-color: #fffec7;
   text-align: center;
-  color: #59b21f;
-  font-size: 100%;
-  padding: 20px;
+  color: #a1d47f;
 }
 
 #menubutton {
   display: inline-block; 
-  font-family: Times New Roman, sans-serif;
-  color: #0000ff;
+  color: #697af5;
   text-align: left;
 }
 
@@ -96,7 +93,7 @@ img:hover {
 }
 
 pre {
-   color: blue;
+   color: #697af5;
    max-width:100%;
    height:auto;
    font-size: max(0.2rem, 1vmin)
@@ -108,10 +105,13 @@ span {
 }
 
 #settings, #quiz, #result {
-  background: #fffec7;
-  padding: 20px;
-  margin: 20px 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  auto;max-width:650px;
+  line-height:1.6;
+  font-size:18px;
+  padding:10px
+  
 }
 
 #quiz div {
@@ -119,15 +119,15 @@ span {
 }
 
 button {
-  background-color: blue;
-  color: white;
+  background-color: #697af5;
+  color: #dadae3;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #02abad;
+  background-color: #69a8f5;
 }
 
 #reportQuestion {
@@ -147,7 +147,8 @@ button:hover {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: blue; 
+  background-color: #697af5;
+  color:#dadae3;
   box-sizing: border-box;
   overflow-x: hidden; /* Disable horizontal scroll */
   overflow-y: auto;
