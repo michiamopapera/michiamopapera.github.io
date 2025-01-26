@@ -117,11 +117,13 @@ function displayQuiz(questions) {
     const questionDiv = document.createElement('div');
     questionDiv.innerHTML = `
       <h3>Question ${index + 1}: ${q.question}</h3>
-      <label><input type="radio" name="q${index}" value="${q.option_a}"> ${q.option_a}</label><br>
-      <label><input type="radio" name="q${index}" value="${q.option_b}"> ${q.option_b}</label><br>
-      <label><input type="radio" name="q${index}" value="${q.option_c}"> ${q.option_c}</label><br>
-      <label><input type="radio" name="q${index}" value="${q.option_d}"> ${q.option_d}</label><br>
-      <label><input type="radio" name="q${index}" value="${q.option_e}"> ${q.option_e}</label><br>
+      <ol type="A">
+      <label><input type="radio" <li>name="q${index}" value="${q.option_a}"> ${q.option_a}</label></li>
+      <label><input type="radio" <li>name="q${index}" value="${q.option_b}"> ${q.option_b}</label></li>
+      <label><input type="radio" <li>name="q${index}" value="${q.option_c}"> ${q.option_c}</label></li>
+      <label><input type="radio" <li>name="q${index}" value="${q.option_d}"> ${q.option_d}</label></li>
+      <label><input type="radio" <li>name="q${index}" value="${q.option_e}"> ${q.option_e}</label></li>
+      </ol>
     `;
     quizSection.appendChild(questionDiv);
   });
