@@ -8,17 +8,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-  <div id=menubutton>
-    <span onclick="openNav()">open menu>>></span>
-  </div>
-  
   <header>
-    <div class="header-container">
-      <div id="tinylogo">
-        <img src=logo1.png alt="logo1" class="responsive">
-      </div>
-        <div id="asciilogo">
-      <pre>███   █     █   █ ▄███▄       ▄█▄    ██   █▀▄▀█ ▄███▄   █     
+    <div class="logo-container">
+        <img src=logo1.png alt="logo1" class="pnglogo">
+      <pre class="asciilogo">███   █     █   █ ▄███▄       ▄█▄    ██   █▀▄▀█ ▄███▄   █     
 █  █  █     █   █ █▀   ▀      █▀ ▀▄  █ █  █ █ █ █▀   ▀  █     
 █ ▀ ▄ █     █   █ ██▄▄        █   ▀  █▄▄█ █ ▄ █ ██▄▄    █     
 █  ▄▀ ███▄  █▄ ▄█ █▄   ▄▀     █▄  ▄▀ █  █ █   █ █▄   ▄▀ ███▄  
@@ -26,12 +19,14 @@
                                                              
                                                              </pre>
     </div>
-    </div>
     <h1>Fed II Medicine Past Paper Database</h1>
   </header>
-  
-  <p class=goodnews>19.01.2025 - A partire da oggi il Blue Camel parla due lingue! Al momento abbiamo più domande in inglese, se ci aiuti a raccogliere domande possiamo migliorare il sito.</p>
-  <p class=disclaimer>DISCLAIMER: Blue Camel is a work in progress and a high level of accuracy of the information contained within cannot yet be guaranteed. <br>You can help by checking answers and reporting erroneous questions.</p>
+  <div id=menubutton>
+    <span onclick="openNav()">open menu>>></span>
+  </div>
+
+<p class=goodnews>19.01.2025 - A partire da oggi il Blue Camel parla due lingue! Al momento abbiamo più domande in inglese, se ci aiuti a raccogliere domande possiamo migliorare il sito.</p>
+<p class=disclaimer>DISCLAIMER: Blue Camel is a work in progress and a high level of accuracy of the information contained within cannot yet be guaranteed. <br>You can help by checking answers and reporting erroneous questions.</p>
   
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -44,12 +39,8 @@
     <section id="settings">
       <label for="numQuestions">Number of questions:</label>
       <input type="number" id="numQuestions" min="1" required>
-      <button id="startQuiz">Start Quiz</button>
-      <button id="reportQuestion"><a href="https://forms.gle/YBUmUqqxwQ3qMJSK9" target="_blank">Report a question</a> 
-    </section>
-
-<!-- Module Selection Dropdown -->
-<label for="moduleSelect">Choose a module:</label>
+      <br>
+      <label for="moduleSelect">Choose a module:</label>  
   <select id="moduleSelect">
     <option value="">All Modules</option>
     <option value="Chemistry">Chemistry</option>
@@ -57,7 +48,7 @@
     <option value="Human Anatomy">Human Anatomy</option>
     <option value="Histology and Embryology">Histology and Embryology</option>
     <option value="Biochemistry">Biochemistry</option>
-    <option value="Laboratory Medicine"><p class=disclaimer>Laboratory Medicine COMING SOON!</p></option>
+    <option value="Laboratory Medicine">Laboratory Medicine COMING SOON!</option>
     <option value="Methodology I">Methodology I</option>
     <option value="Methodology II">Methodology II</option>
     <option value="Pharmacology I">Pharmacology I</option>
@@ -65,17 +56,20 @@
     <option value="Hygiene and Community Medicine">Hygiene</option>
     <option value="Cardiology and Respiratory Medicine">Cardiology and Respiratory Medicine</option>
     <option value="Microbiology and Immunology">Microbiology and Immunology</option>
-    <option value="Head and Neck"><p class=disclaimer>Head and Neck COMING SOON!</p></option>
-    <option value="Neurology and Psychiatry"><p class=disclaimer>Neuro and Psych COMING SOON!</p></option>
+    <option value="Head and Neck">Head and Neck COMING SOON!</option>
+    <option value="Neurology and Psychiatry">Neuro and Psych COMING SOON!</option>
     <option value="Admissions">Medical Admissions/IMAT</option>
   </select>
-
 <label for="languageSelect">Choose a language:</label>
   <select id="languageSelect">
     <option value="">All Languages</option>
     <option value="EN">English</option>
     <option value="IT">Italian</option>
   </select>
+        <br>
+      <button id="startQuiz">Start Quiz</button>
+      <button id="reportQuestion"><a href="https://forms.gle/YBUmUqqxwQ3qMJSK9" target="_blank">Report a question</a></button>
+        </section>
     
     <section id="quiz" style="display: none;"></section>
     <section id="result" style="display: none;">
