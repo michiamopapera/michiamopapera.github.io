@@ -201,6 +201,36 @@ table {
     padding: 20px;
   }
 
+/* Styling for the refinery which will probably get deleted later */
+
+.question-card {
+  border: 1px solid #ddd;
+  padding: 1em;
+  margin: 1em 0;
+  border-radius: 8px;
+  background-color: #feffe0;
+}
+.question-card h3 {
+  margin: 0 0 0.5em;
+}
+.question-card ol {
+  margin: 0 0 1em;
+  padding-left: 1.5em;
+}
+.suggest-answer-button {
+  background-color: #065BA7;
+  color: #dadae3;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.suggest-answer-button:hover {
+  background-color: #00529F;
+}
+
+/* mobile compatibility styling - return to me later! */
+
 @media screen and (max-height: 600px) and (max-width: 100px) {
   .sidenav {
     padding-top: 10px; /* Reduced padding for mobile */
