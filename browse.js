@@ -1,35 +1,31 @@
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const moduleFilter = document.getElementById('moduleFilter');
   const yearFilter = document.getElementById('yearFilter');
   const languageFilter = document.getElementById('languageFilter');
-  const verifiedFilter = document.getElementById('verifiedFilter');
   const questionTable = document.getElementById('questionTable').querySelector('tbody');
 
-  let questions = await fetchQuestions();
+  fetchQuestions().then(questions => {
+    populateFilters(questions);
+    displayQuestions(questions);
 
-  populateFilters(questions);
-  displayQuestions(questions);
-
-  // Event listeners for search and filters
-  [searchInput, moduleFilter, yearFilter, languageFilter, verifiedFilter].forEach(filter =>
-    filter.addEventListener('input', () => displayQuestions(filterQuestions(questions)))
-  );
+    [searchInput, moduleFilter, yearFilter, languageFilter].forEach(filter =>
+      filter.addEventListener('input', () => displayQuestions(filterQuestions(questions)))
+    );
+  });
 });
 
-async function fetchQuestions(selectedModule) {
-  const timestamp = new Date().getTime();  // Generate a timestamp
-  const response = await fetch(`cameldb_v1.csv?timestamp=${timestamp}`);  // Append the timestamp to avoid cache
+async function fetchQuestions() {
+  const response = await fetch('cameldb_v1.csv', { cache: 'no-store' });
   const csvData = await response.text();
-  return parseCSV(csvData, selectedModule); // Pass the module to the parser
+  return parseCSV(csvData);
 }
-
 
 function parseCSV(csv) {
   const lines = csv.trim().split('\n').slice(1); // Skip header row
   return lines.map(line => {
-    const [question, wahlA, wahlB, wahlC, wahlD, wahlE, answer, module, language, tags, year, verified] = line.split(';');
-    return { question, module, year, language, verified: verified.trim() === "Verified" ? "Yes" : "No" };
+    const [question, , , , , , answer, module, language, , year, , , , , entryID] = line.split(';');
+    return { question, answer, module, year, language, entryID };
   });
 }
 
@@ -60,14 +56,12 @@ function filterQuestions(questions) {
   const module = document.getElementById('moduleFilter').value;
   const year = document.getElementById('yearFilter').value;
   const language = document.getElementById('languageFilter').value;
-  const verified = document.getElementById('verifiedFilter').value;
 
   return questions.filter(q =>
     (q.question.toLowerCase().includes(searchText) || !searchText) &&
     (q.module === module || !module) &&
     (q.year === year || !year) &&
-    (q.language === language || !language) &&
-    (q.verified === verified || !verified)
+    (q.language === language || !language)
   );
 }
 
@@ -79,10 +73,11 @@ function displayQuestions(questions) {
     const row = document.createElement('tr');
     row.innerHTML = `
       <td>${q.question}</td>
+      <td>${q.answer}</td>
       <td>${q.module}</td>
       <td>${q.year}</td>
       <td>${q.language}</td>
-      <td>${q.verified}</td>
+      <td>${q.entryID}</td>
     `;
     tbody.appendChild(row);
   });
