@@ -11,7 +11,7 @@ body {
   padding:10px
 }
 
-body-browse {
+#body-browse {
   font-family: Garamond, Times, serif;
   background-color: #feffe0;
   color:#444444;
