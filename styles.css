@@ -23,7 +23,7 @@ header {
   display: flex;                /* Use flexbox */
   justify-content: center;       /* Center items horizontally */
   align-items: flex-start;       /* Align items to the top */
-  height: 15vh;                 /* Make the container full height */
+  height: 5vh;                 /* Make the container full height */
   width: 100%;                   /* Full width of the page */
   padding: 5px;                 /* Optional padding around the content */
   box-sizing: border-box;        /* Make sure padding doesn't mess up layout */
