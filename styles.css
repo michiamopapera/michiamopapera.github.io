@@ -212,4 +212,8 @@ button:hover {
   #asciilogo {
   visibility: hidden;
 }
+  
+  pre {
+  visibility: hidden;
+}
 }
