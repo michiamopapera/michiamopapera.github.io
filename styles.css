@@ -11,17 +11,6 @@ body {
   padding:10px
 }
 
-#body-browse {
-  font-family: Garamond, Times, serif;
-  background-color: #feffe0;
-  color:#444444;
-  padding: 20px;
-  text-align: left;
-  line-height:1.4;
-  font-size:16px;
-  padding:10px
-}
-
 header {
   text-align: center;
   margin-bottom: 28px;
@@ -200,7 +189,7 @@ button:hover {
     padding: 20px;
   }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 700px) {
   .sidenav {
     padding-top: 10px; /* Reduced padding for mobile */
     max-width:200%;
