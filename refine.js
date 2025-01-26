@@ -47,7 +47,7 @@ function populateFilters(questions) {
       const option = document.createElement('option');
       option.value = module;
       option.textContent = module;
-      moduleFilter.appendChild(option);
+      moduleSelect.appendChild(option);
     }
   });
 
@@ -56,7 +56,7 @@ function populateFilters(questions) {
       const option = document.createElement('option');
       option.value = language;
       option.textContent = language;
-      languageFilter.appendChild(option);
+      languageSelect.appendChild(option);
     }
   });
 }
@@ -68,7 +68,7 @@ function filterQuestions(questions) {
   return questions.filter(q =>
     (q.module === module || !module) &&
     (q.language === language || !language) &&
-    (q.answer.toLowerCase() === 'unknown!' || q.answer.toLowerCase() === 'idk')
+    (['unknown!', 'idk'].includes(q.answer.toLowerCase()))
   );
 }
 
