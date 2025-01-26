@@ -4,17 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>"Blue Camel" MCQ Database</title>
-  <link rel="icon" type="image/x-icon" href="/logo2.png">
+  <link rel="icon" type="image/x-icon" href="/logo1.png">
   <link rel="stylesheet" href="styles.css">
 </head>
- 
+
   <header>
-    <div class="header-container">
-      <div id="tinylogo">
-        <img src=logo1.png alt="logo1" class="responsive">
-      </div>
-        <div id="asciilogo">
-      <pre>███   █     █   █ ▄███▄       ▄█▄    ██   █▀▄▀█ ▄███▄   █     
+    <div class="logo-container">
+        <img src=logo1.png alt="logo1" class="pnglogo">
+      <pre class="asciilogo">███   █     █   █ ▄███▄       ▄█▄    ██   █▀▄▀█ ▄███▄   █     
 █  █  █     █   █ █▀   ▀      █▀ ▀▄  █ █  █ █ █ █▀   ▀  █     
 █ ▀ ▄ █     █   █ ██▄▄        █   ▀  █▄▄█ █ ▄ █ ██▄▄    █     
 █  ▄▀ ███▄  █▄ ▄█ █▄   ▄▀     █▄  ▄▀ █  █ █   █ █▄   ▄▀ ███▄  
@@ -22,9 +19,11 @@
                                                              
                                                              </pre>
     </div>
-    </div>  
     <h1>Fed II Medicine Past Paper Database</h1>
   </header>
+  <div id=menubutton>
+    <span onclick="openNav()">open menu>>></span>
+  </div>
 
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -33,21 +32,17 @@
   <a href="browse.html">browse</a>
 </div>
   
-<div id=menubutton>
-  <span onclick="openNav()">open menu>>></span>
-</div>
-  
   <body>
-    <p>Blue Camel contains over 6000 medical multiple choice questions collected over the course of nearly a decade by various students at Fed II, arranged into a simple and easily accessed site by me.</p> <strong>The Camel is a work in progress.</strong>
-    
-    <strong>Changelog:</strong>
-    <ul><li><strong>19.01.25</strong>Support for Italian language questions added.</li>
-    <li><strong>25.01.25</strong>Cardiology answers fully resolved, admissions Qs added.</li>
+    <p>Blue Camel contains over 6000 medical multiple choice questions collected over the course of nearly a decade by various students at Fed II, arranged into a simple and easily accessed site by me.<strong>The Camel is a work in progress.</strong>
+    <br><br>
+    <strong>Changelog:</strong><br>
+    <ul><li><strong>19.01.25</strong> Support for Italian language questions added.</li>
+    <li><strong>25.01.25</strong> Cardiology answers fully resolved, admissions Qs added.</li>
       <br><br>
-    <strong>The Roadmap:</strong>
+    <strong>The Roadmap:</strong><br>
     <ul>
-      <li><strong>By March 2025...</strong>Tidy up question data, resolve questions with missing answers.</li>
-      <li><strong>By Summer 2025...</strong>Add questions for Lab Med, Head and Neck, Neuro and Psych.</li>
+      <li><strong>By March 2025...</strong> Tidy up question data, resolve questions with missing answers.</li>
+      <li><strong>By Summer 2025...</strong> Add questions for Lab Med, Head and Neck, Neuro and Psych.</li>
     </ul><br><br>
     <p><strong>YOU</strong> can help too!</p><br><br><br>
     <button id="reportQuestion"><a href="https://buymeacoffee.com/patzwald" target="_blank">Donate</a>
