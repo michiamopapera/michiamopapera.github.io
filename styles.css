@@ -7,13 +7,24 @@ body {
   margin:40px
   auto;max-width:650px;
   line-height:1.6;
-  font-size:18px;
+  font-size:16px;
+  padding:10px
+}
+
+body-browse {
+  font-family: Garamond, Times, serif;
+  background-color: #feffe0;
+  color:#444444;
+  padding: 20px;
+  text-align: left;
+  line-height:1.4;
+  font-size:16px;
   padding:10px
 }
 
 header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
   line-height:1.2
 }
 
