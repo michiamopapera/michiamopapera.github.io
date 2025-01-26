@@ -130,6 +130,29 @@ button:hover {
   background-color: #00529F;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+ th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+  th {
+  background-color: #f2f2f2;
+}
+  #filters {
+  margin-bottom: 20px;
+}
+
+  label {
+  margin-right: 10px;
+}
+
  /* The side navigation menu */
 .sidenav {
   text-align: left;
