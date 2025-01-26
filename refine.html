@@ -29,8 +29,8 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="about.html">info</a>
   <a href="quiz.html">quiz</a>
-  <a href="browse.html">browse (beta)</a>
-  <a href="refine.html">refinery</a>
+  <a href="browse.html">browse</a>
+  <a href="refine.html">improve blue camel</a>
 </div>
 
 <!-- Use any element to open the sidenav AND THIS IS ME CHANGING CODE SO IT REDEPLOYS TO GITHUB PAGES -->
@@ -48,25 +48,30 @@
 <label for="moduleSelect">Choose a module:</label>
 <select id="moduleSelect">
   <option value="">All Modules</option>
-  <option value="Chemistry">!!! Chemistry</option>
-  <option value="Human Anatomy">!!! Human Anatomy</option>
+  <option value="Chemistry">Chemistry</option>
+  <option value="Human Anatomy">Human Anatomy</option>
   <option value="Histology and Embryology">Histology and Embryology</option>
-  <option value="Biochemistry">!!! Biochemistry</option>
+  <option value="Biochemistry">Biochemistry</option>
   <option value="Methodology I">Methodology I</option>
   <option value="Methodology II">Methodology II</option>
-  <option value="Pharmacology I">!!! Pharmacology I</option>
-  <option value="Pharmacology II">!!! Pharmacology II</option>
+  <option value="Pharmacology I">Pharmacology I</option>
+  <option value="Pharmacology II">Pharmacology II</option>
   <option value="Hygiene and Community Medicine">Hygiene</option>
-  <option value="Cardiology and Respiratory Medicine">!!! Cardiology and Respiratory Medicine</option>
-  <option value="Microbiology and Immunology">!!! Microbiology and Immunology</option>
-  <!-- Add other options here as needed -->
+  <option value="Cardiology and Respiratory Medicine">Cardiology and Respiratory Medicine</option>
+  <option value="Microbiology and Immunology">Microbiology and Immunology</option>
 </select>
 
-    <section id="quiz" style="display: none;"></section>
-    <section id="result" style="display: none;">
-      <h2>Your Results</h2>
-      <p id="score"></p>
-    </section>
+  <label for="languageSelect">Filter by Language:</label>
+  <select id="languageSelect">
+    <option value="">All Languages</option>
+    <option value="EN">English</option>
+    <option value="IT">Italian</option>
+  </select>
+
+  <button id="generateQuizButton">Generate Quiz</button>
+</div>
+
+<div id="quizContainer"></div>
   </main>
 
   <script src="refine.js"></script>
