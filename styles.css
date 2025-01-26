@@ -67,7 +67,7 @@ a:hover {
 }
 
 #menubutton {
-  display: inline-block; 
+  display: block; 
   color: #065BA7;
   text-align: left;
   float: left;
@@ -211,10 +211,10 @@ button:hover {
   }
 
   #asciilogo {
-  display:none;
+  display: none;
   }
   
   pre {
-  display:none;
+  display: none;
   }
 }
