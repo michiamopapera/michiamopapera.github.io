@@ -125,7 +125,7 @@ function displayQuiz(questions) {
     `;
     quizSection.appendChild(questionDiv);
   });
-  
+
   const submitButton = document.createElement('button');
   submitButton.textContent = 'Submit Answers';
   submitButton.id = 'submitButton';
