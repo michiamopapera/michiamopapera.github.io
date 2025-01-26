@@ -195,14 +195,15 @@ button:hover {
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
-}
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
 
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 10px; /* Reduced padding for mobile */
+    max-width:200%;
   }
 
   .sidenav a {
@@ -210,10 +211,10 @@ button:hover {
   }
 
   #asciilogo {
-  visibility: hidden;
-}
+  display:none;
+  }
   
   pre {
-  visibility: hidden;
-}
+  display:none;
+  }
 }
