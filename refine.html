@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>"The Camel" - Fed II Medicine Past Paper Database</title>
+  <title>"Blue Camel" MCQ Database</title>
+  <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/x-icon" href="/logo1.png">
 </head>
-<body>
 <header>
-    <div class="header-container">
-      <pre> ██████  █████  ███    ███ ███████ ██          ██████  ███████ ███████ ██ ███    ██ ███████ ██████  ██    ██ 
+    <div class="logo-container">
+        <img src=logo1.png alt="logo1" class="pnglogo">
+      <pre class="asciilogo">██████  █████  ███    ███ ███████ ██          ██████  ███████ ███████ ██ ███    ██ ███████ ██████  ██    ██ 
 ██      ██   ██ ████  ████ ██      ██          ██   ██ ██      ██      ██ ████   ██ ██      ██   ██  ██  ██  
 ██      ███████ ██ ████ ██ █████   ██          ██████  █████   █████   ██ ██ ██  ██ █████   ██████    ████   
 ██      ██   ██ ██  ██  ██ ██      ██          ██   ██ ██      ██      ██ ██  ██ ██ ██      ██   ██    ██    
@@ -18,12 +18,12 @@
                                                                                                              
                                                                                                              </pre>
     </div>
-    <h1></h1>
+    <h1>Fed II Medicine Past Paper Database</h1>
   </header>
-
-  <p class=disclaimer>This page is for our testing groups. Please choose a high priority module with three exclamation marks and research an answer for each question.
-    <br>For each question: Copy and paste the question number into the provided google form, choose your answer, and if possible give us a link to a source for your answer.
-  <br> thanks for helping improve the camel</p>
+  
+  <div id=menubutton>
+    <span onclick="openNav()">open menu>>></span>
+  </div>
   
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -34,15 +34,14 @@
 </div>
 
 <!-- Use any element to open the sidenav AND THIS IS ME CHANGING CODE SO IT REDEPLOYS TO GITHUB PAGES -->
-<span onclick="openNav()">open menu>>></span>
+<p class=disclaimer>The "Suggest Answer" button will open a Google form. Please submit the Entry ID, your suggested answer, and any sources (eg web links) for your suggested answer.</p>
+      <br><button><a href="https://forms.gle/K8A1Hix2akDoBSnB7">Suggest Answer</a><br>
 
   <main>
     <section id="settings">
       <label for="numQuestions">Number of questions:</label>
       <input type="number" id="numQuestions" min="1" required>
-      <button id="reportQuestion"><a href="https://forms.gle/K8A1Hix2akDoBSnB7" target="_blank">Refining Form</a> 
     
-
 <!-- Module Selection Dropdown -->
 <label for="moduleSelect">Choose a module:</label>
 <select id="moduleSelect">
