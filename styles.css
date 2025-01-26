@@ -46,18 +46,18 @@ a:hover {
 }
 
 .disclaimer {
-  text-align: center;
+  text-align: left;
   color: #fc5353;
 }
 
 .goodnews {
-  text-align: center;
+  text-align: left;
   color: #75cf3a;
 }
 
 #menubutton {
   display: inline-block; 
-  color: #697af5;
+  color: #065BA7;
   text-align: left;
 }
 
