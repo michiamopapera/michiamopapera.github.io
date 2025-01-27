@@ -252,10 +252,10 @@ button:hover {
 
 /* mobile compatibility styling - return to me later! */
 
-@media screen and (max-height: 700px) and (max-width: 300px) {
+@media screen and (max-width: 600px) {
   .sidenav {
     padding-top: 10px; /* Reduced padding for mobile */
-    max-width:450%;
+    max-width:700%;
   }
 
   .sidenav a {
