@@ -43,7 +43,7 @@ header {
   width: 100%;
   max-width: 100px;
   height: auto;
-  display: inline-block; 
+  display: none; 
   vertical-align: top;
   padding-right: 200px;
 }
@@ -53,7 +53,7 @@ header {
   width: 100%;
   max-width: 100px;
   height: auto;
-  display: inline-block; 
+  display: none; 
   vertical-align: top;
   padding-right: 230px;
 }
