@@ -28,7 +28,28 @@ header {
   box-sizing: border-box;        /* Make sure padding doesn't mess up layout */
 }
 
-.asciilogo {
+#asciilogo {
+  color: #065BA7;
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  display: inline-block; 
+  vertical-align: top;
+  padding-right: 200px;
+}
+
+#asciilogo-halloween {
+  color: #ba0003;
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  display: inline-block; 
+  vertical-align: top;
+  padding-right: 200px;
+}
+
+#asciilogo-xmas {
+  color: #1a8c00;
   width: 100%;
   max-width: 100px;
   height: auto;
@@ -88,7 +109,6 @@ a:hover {
 }
 
 pre {
-   color: #065BA7;
    max-width:100%;
    height:auto;
    font-size: max(0.2rem, 1vmin);
