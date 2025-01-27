@@ -110,32 +110,40 @@ function shuffleArray(array) {
 
 function displayQuiz(questions) {
   const quizSection = document.getElementById('quiz');
-  quizSection.innerHTML = '';
+  quizSection.innerHTML = ''; // Clear any previous content
   quizSection.style.display = 'block';
 
   questions.forEach((q, index) => {
-    const questionDiv = document.createElement('div');
-    questionDiv.innerHTML = `
-      <h3>Question ${index + 1}: ${q.question}</h3>
-      <label><input type="radio" name="q${index}" value="${q.option_a}"> ${q.option_a}</label><br>
-      <label><input type="radio" name="q${index}" value="${q.option_b}"> ${q.option_b}</label><br>
-      <label><input type="radio" name="q${index}" value="${q.option_c}"> ${q.option_c}</label><br>
-      <label><input type="radio" name="q${index}" value="${q.option_d}"> ${q.option_d}</label><br>
-      <label><input type="radio" name="q${index}" value="${q.option_e}"> ${q.option_e}</label><br>
+    // Create a question card div
+    const questionCard = document.createElement('div');
+    questionCard.classList.add('question-card');
+
+    // Build the inner HTML structure for each card
+    questionCard.innerHTML = `
+      <p><strong>Question ${index + 1}:</strong> ${q.question}</p>
+        <label><input type="radio" name="q${index}" value="${q.option_a}"> A. ${q.option_a}</label><br>
+        <label><input type="radio" name="q${index}" value="${q.option_b}"> B. ${q.option_b}</label><br>
+        <label><input type="radio" name="q${index}" value="${q.option_c}"> C. ${q.option_c}</label><br>
+        <label><input type="radio" name="q${index}" value="${q.option_d}"> D. ${q.option_d}</label><br>
+        <label><input type="radio" name="q${index}" value="${q.option_e}"> E. ${q.option_e}</label><br>
     `;
-    quizSection.appendChild(questionDiv);
+
+    // Append the question card to the quiz section
+    quizSection.appendChild(questionCard);
   });
 
+  // Add the submit button
   const submitButton = document.createElement('button');
   submitButton.textContent = 'Submit Answers';
   submitButton.id = 'submitButton';
   submitButton.addEventListener('click', () => gradeQuiz(questions));
   quizSection.appendChild(submitButton);
 
+  // Add the retry button (initially hidden)
   const retryButton = document.createElement('button');
   retryButton.textContent = 'Retry';
   retryButton.id = 'retryButton';
-  retryButton.style.display = 'none'; // Hidden initially
+  retryButton.style.display = 'none';
   retryButton.addEventListener('click', resetFeedback);
   quizSection.appendChild(retryButton);
 }

@@ -16,7 +16,7 @@ header {
   line-height:1.2
 }
 
-.logo-container {
+#logo-container {
   font-size: max(0.2rem, 1vmin);
   text-align: center;
   display: flex;                /* Use flexbox */
@@ -35,7 +35,7 @@ header {
   height: auto;
   display: inline-block; 
   vertical-align: top;
-  padding-right: 200px;
+  padding-right: 250px;
 }
 
 #asciilogo-halloween {
@@ -55,13 +55,21 @@ header {
   height: auto;
   display: inline-block; 
   vertical-align: top;
-  padding-right: 200px;
+  padding-right: 230px;
 }
 
-.pnglogo {
-  width: 70%;
+#pnglogo {
+  width: 100%;
   max-width: 100px;
   height: auto;
+}
+
+#subtitle {
+  display: flex;
+}
+
+#oasis {
+  display: none;
 }
 
 main {
@@ -133,20 +141,6 @@ span {
   margin-bottom: 20px;
 }
 
-button {
-  background-color: #065BA7;
-  color: #dadae3;
-  padding-top: 10px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #00529F;
-}
 
 table {
   width: 100%;
@@ -229,6 +223,7 @@ table {
   margin: 1em 0;
   border-radius: 8px;
   background-color: #feffe0;
+  line-height:1.4;
 }
 .question-card h3 {
   margin: 0 0 0.5em;
@@ -236,22 +231,28 @@ table {
 .question-card ol {
   margin: 0 0 1em;
   padding-left: 1.5em;
+  
 }
-.suggest-answer-button {
+
+button {
   background-color: #065BA7;
   color: #dadae3;
+  padding-top: 7px;
+  padding-right: 12px;
+  padding-bottom: 7px;
+  padding-left: 12px;
+  border-radius: 7px;
   border: none;
-  padding: 0.5em 1em;
-  border-radius: 5px;
   cursor: pointer;
 }
-.suggest-answer-button:hover {
+
+button:hover {
   background-color: #00529F;
 }
 
 /* mobile compatibility styling - return to me later! */
 
-@media screen and (max-height: 600px) and (max-width: 100px) {
+@media screen and (max-height: 700px) and (max-width: 300px) {
   .sidenav {
     padding-top: 10px; /* Reduced padding for mobile */
     max-width:200%;
@@ -266,6 +267,6 @@ table {
   }
   
   pre {
-  display: none;
+    display: none;
   }
 }

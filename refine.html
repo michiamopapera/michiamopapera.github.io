@@ -8,15 +8,15 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <header>
-    <div class="logo-container">
-        <img src=logo1.png alt="logo1" class="pnglogo">
-      <pre class="asciilogo"> ██████  █████  ███    ███ ███████ ██          ██████  ███████ ███████ ██ ███    ██ ███████ ██████  ██    ██ 
-██      ██   ██ ████  ████ ██      ██          ██   ██ ██      ██      ██ ████   ██ ██      ██   ██  ██  ██  
-██      ███████ ██ ████ ██ █████   ██          ██████  █████   █████   ██ ██ ██  ██ █████   ██████    ████   
-██      ██   ██ ██  ██  ██ ██      ██          ██   ██ ██      ██      ██ ██  ██ ██ ██      ██   ██    ██    
- ██████ ██   ██ ██      ██ ███████ ███████     ██   ██ ███████ ██      ██ ██   ████ ███████ ██   ██    ██    
-                                                                                                             
-                                                                                                             </pre>
+    <div id="logo-container">
+        <img src=logo1.png alt="logo1" id="pnglogo">
+      <pre id="asciilogo">██████      ██████         █████  ███    ██ ███████ ██     ██ ███████ ██████  ███████ 
+██   ██    ██             ██   ██ ████   ██ ██      ██     ██ ██      ██   ██ ██      
+██████     ██             ███████ ██ ██  ██ ███████ ██  █  ██ █████   ██████  ███████ 
+██   ██    ██             ██   ██ ██  ██ ██      ██ ██ ███ ██ ██      ██   ██      ██ 
+██████  ██  ██████ ██     ██   ██ ██   ████ ███████  ███ ███  ███████ ██   ██ ███████ 
+                                                                                      
+                                                                                      </pre>
     </div>
     <h1>Fed II Medicine Past Paper Database</h1>
   </header>
@@ -33,25 +33,26 @@
   <a href="refine.html">we need you!</a>
 </div>
 
-<!-- Use any element to open the sidenav AND THIS IS ME CHANGING CODE SO IT REDEPLOYS TO GITHUB PAGES -->
-<p class=disclaimer>The "Suggest Answer" button will open a Google form. Please submit the Entry ID, your suggested answer, and any sources (eg web links) for your suggested answer.</p>
-      <button><a href="https://forms.gle/K8A1Hix2akDoBSnB7">Suggest Answer</a></button>
+<p class=disclaimer>Use this page to view questions which are currently missing answers.<br>If you find any questions that you believe you know the answer to, or can research the answer to, then you can use the "Suggest Answer" button to open a Google form.<br><strong>Please include the Question ID</strong>, your suggested answer, and any sources (e.g. web links) when submitting.</p>
 
   <main>
     <section id="settings">
+    <div>
       <label for="numQuestions">Number of questions:</label>
       <input type="number" id="numQuestions" min="1" required>
-    
+    </div>
+    <div>
 <!-- Module Selection Dropdown -->
-<label for="moduleSelect">Choose a module:</label>
+<label for="moduleSelect">Module:</label>
 <select id="moduleSelect">
   <option value="">All Modules</option>
 </select>
 
-<label for="languageSelect">Filter by Language:</label>
+<label for="languageSelect">Language:</label>
 <select id="languageSelect">
   <option value="">All Languages</option>
-</select>      
+</select>     
+</div> 
   </section>
     
   <button id="generateQuizButton">Generate Quiz</button>

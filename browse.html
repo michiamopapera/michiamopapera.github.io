@@ -9,9 +9,9 @@
 </head>
 
   <header>
-    <div class="logo-container">
-        <img src=logo1.png alt="logo1" class="pnglogo">
-      <pre class="asciilogo">███   █     █   █ ▄███▄       ▄█▄    ██   █▀▄▀█ ▄███▄   █     
+    <div id="logo-container">
+        <img src=logo1.png alt="logo1" id="pnglogo">
+      <pre id="asciilogo">███   █     █   █ ▄███▄       ▄█▄    ██   █▀▄▀█ ▄███▄   █     
 █  █  █     █   █ █▀   ▀      █▀ ▀▄  █ █  █ █ █ █▀   ▀  █     
 █ ▀ ▄ █     █   █ ██▄▄        █   ▀  █▄▄█ █ ▄ █ ██▄▄    █     
 █  ▄▀ ███▄  █▄ ▄█ █▄   ▄▀     █▄  ▄▀ █  █ █   █ █▄   ▄▀ ███▄  
@@ -41,29 +41,29 @@
   
 <div id=body-browse>
 
-  <h1>Browse Questions</h1>
+  <h2>Browse Questions</h2>
 
   <div id="filters">
-    <label for="searchInput">Search:</label>
-    <input type="text" id="searchInput" placeholder="Enter keywords...">
-
+    <div>
+     <label for="searchInput">Search:</label>
+     <input type="text" id="searchInput" placeholder="Enter keywords...">
+    </div><br>
+    <div>
     <label for="moduleFilter">Module:</label>
     <select id="moduleFilter">
       <option value="">All</option>
     </select>
-
     <label for="yearFilter">Year:</label>
     <select id="yearFilter">
       <option value="">All</option>
     </select>
-
     <label for="languageFilter">Language:</label>
     <select id="languageFilter">
       <option value="">All</option>
       <option value="EN">English</option>
       <option value="IT">Italian</option>
     </select>
-
+    </div>
   </div>
 
   <table id="questionTable">

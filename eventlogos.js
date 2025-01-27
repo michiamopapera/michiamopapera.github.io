@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const asciilogoXmas = document.getElementById('asciilogo-xmas');
 
   // Determine which element to display
-  if (month === 9 && day >= 18) {
+  if (month === 9 && day >= 30) {
     // Last two weeks of October (Halloween)
     if (asciilogo) asciilogo.style.display = 'none';
     if (asciilogoHalloween) asciilogoHalloween.style.display = 'block';
     if (asciilogoXmas) asciilogoXmas.style.display = 'none';
-  } else if (month === 11 && day >= 8) {
+  } else if (month === 11 && day >= 23) {
     // December 8th to 31st (Christmas)
     if (asciilogo) asciilogo.style.display = 'none';
     if (asciilogoHalloween) asciilogoHalloween.style.display = 'none';
