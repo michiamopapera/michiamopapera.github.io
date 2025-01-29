@@ -3,8 +3,8 @@ body {
   background-color: #feffe0;
   color:#444444;
   text-align: left;
-  margin:40px
-  auto;max-width:700px;
+  margin:40px auto;
+  max-width:700px;
   line-height:1.4;
   font-size:16px;
   padding-top: 20px;
@@ -251,22 +251,28 @@ button:hover {
 }
 
 /* mobile compatibility styling - return to me later! */
-
 @media screen and (max-width: 600px) {
-  .sidenav {
-    padding-top: 10px; /* Reduced padding for mobile */
-    max-width:100%;
-  }
-
-  .sidenav a {
-    font-size: 18px; /* Smaller font size for mobile */
-  }
-
   #asciilogo {
   display: none;
   }
   
-  pre {
-    display: none;
+  #asciilogo-halloween {
+  display: none;
+  }
+  
+  #asciilogo-xmas {
+  display: none;
+  }
+  
+  body {
+  margin:40px 10px;
+  }
+  
+  #menubutton {
+  position: static;
   }
 }
+  
+}
+
+

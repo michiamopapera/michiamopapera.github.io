@@ -58,30 +58,18 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
    <p>Welcome to Blue Camel, the easiest way to practise written exams for Medicine in English at Federico II.</p><strong> This resource is strictly for educational purposes.</strong>
    <p>By proceeding, you acknowledge that you understand this.</p>
    
-   <button id="crossDesert">I am ready to cross the desert.</a></button>
+   <button id="crossDesert" onclick="openNav()">I am ready to cross the desert.</button>
 <br><br>
-  <div id="oasis">
-    <button class=water> <a href=quiz.html>Quiz</a></button>
-    <button class=water> <a href=browse.html>Browse</a></button>
-    <button class=water> <a href=about.html>About this site</a></button>
-    <button class=water> <a href=refine.html>Help us find missing answers</a></button>
-  </div>
 
-  <script>
-    // JavaScript to handle the visibility toggle
-    document.getElementById("crossDesert").addEventListener("click", function() {
-      // Get the oasis div
-      const oasis = document.getElementById("oasis");
-
-      // Toggle the display property between 'none' and 'block'
-      if (oasis.style.display === "none" || oasis.style.display === "") {
-        oasis.style.display = "block";  // Show the oasis div
-      } else {
-        oasis.style.display = "none";   // Hide the oasis div
-      }
-    });
-  </script>
-
-  <script src=eventlogos.js></script>
+   <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="about.html">info</a>
+  <a href="quiz.html">quiz</a>
+  <a href="browse.html">browse</a>
+  <a href="refine.html">we need you!</a>
+    </div>
+<!-- 知足者富。-->
+<script src=nav.js></script>
+  <script src=event.js></script>
 </body>
 </html>
