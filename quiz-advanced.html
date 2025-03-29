@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Camel - Free Medical, Surgical & Biomedical Multiple Choice Questions and University Med School Exam Practice</title>
+  <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+    <header>
+    <div id="logo-container">
+        <img src=logo1.png alt="logo1" id="pnglogo">
+<pre id="asciilogo">███   █    █   █ ▄███▄      ▄█▄    ██   █▀▄▀█ ▄███▄   █     
+█  █  █    █   █ █▀   ▀     █▀ ▀▄  █ █  █ █ █ █▀   ▀  █     
+█ ▀ ▄ █    █   █ ██▄▄       █   ▀  █▄▄█ █ ▄ █ ██▄▄    █     
+█  ▄▀ ███▄ █▄ ▄█ █▄   ▄▀    █▄  ▄▀ █  █ █   █ █▄   ▄▀ ███▄  
+███              ▀███▀      ▀███▀             ▀███▀        
+                                                             
+                                                             </pre>
+<pre id="asciilogo-halloween"> ▄▄▄▄    ██▓     █    ██ ▓█████     ▄████▄   ▄▄▄       ███▄ ▄███▓▓█████  ██▓    
+▓█████▄ ▓██▒     ██  ▓██▒▓█   ▀    ▒██▀ ▀█  ▒████▄    ▓██▒▀█▀ ██▒▓█   ▀ ▓██▒    
+▒██▒ ▄██▒██░    ▓██  ▒██░▒███      ▒▓█    ▄ ▒██  ▀█▄  ▓██    ▓██░▒███   ▒██░    
+▒██░█▀  ▒██░    ▓▓█  ░██░▒▓█  ▄    ▒▓▓▄ ▄██▒░██▄▄▄▄██ ▒██    ▒██ ▒▓█  ▄ ▒██░    
+░▓█  ▀█▓░██████▒▒▒█████▓ ░▒████▒   ▒ ▓███▀ ░ ▓█   ▓██▒▒██▒   ░██▒░▒████▒░██████▒
+░▒▓███▀▒░ ▒░▓  ░░▒▓▒ ▒ ▒ ░░ ▒░ ░   ░ ░▒ ▒  ░ ▒▒   ▓▒█░░ ▒░   ░  ░░░ ▒░ ░░ ▒░▓  ░
+▒░▒   ░ ░ ░ ▒  ░░░▒░ ░ ░  ░ ░  ░     ░  ▒     ▒   ▒▒ ░░  ░      ░ ░ ░  ░░ ░ ▒  ░
+ ░    ░   ░ ░    ░░░ ░ ░    ░      ░          ░   ▒   ░      ░      ░     ░ ░   
+ ░          ░  ░   ░        ░  ░   ░ ░            ░  ░       ░      ░  ░    ░  ░
+      ░                            ░                                            </pre>
+<pre id="asciilogo-xmas">   ___      _                               ___                              _      __/ \__
+  | _ )    | |    _  _     ___      o O O  / __|   __ _    _ __     ___     | |     \     /
+  | _ \    | |   | +| |   / -_)    o      | (__   / _` |  | '  \   / -_)    | |     /.'o'.\
+  |___/   _|_|_   \_,_|   \___|   TS__[O]  \___|  \__,_|  |_|_|_|  \___|   _|_|_     .o.'.
+_|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|   .'.'o'.
+"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'./o--000'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'  o'.o.'.o.
+                                                                                  .'.o.'.'.o.
+                                                                                 .o.'.o.'.o.'.
+                                                                                    [_____]
+                                                                                     \___/    </pre>
+    </div>
+    <div><h1>Advanced Quiz Generator</h1></div>
+    </header>
+          <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
+  <div id=menubutton>
+    <span onclick="openNav()">open menu>>></span>
+  </div>
+  
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="about.html">info</a>
+  <a href="quiz.html">quiz</a>
+  <a href="browse.html">browse</a>
+</div>
+<!-- Сорок восемь дней тому назад я кончил факультет с отличием, но отличие само по себе, а грыжа сама по себе. -->
+<!-- Один раз я видел, как профессор делал операцию ущемленной грыжи. Он делал, а я сидел в амфитеатре. И только. -->
+  <main>
+<div class=ad-q-SettingContainer>
+    <label for="numQuestions"><strong>Number of questions:</strong></label>
+    <input type="number" id="numQuestions" min="1" required>
+</div>
+<div class=ad-q-SettingContainer id="moduleSelectContainer"><strong>Modules </strong><label>(Include All: <input type="checkbox" onclick="allModules(this)" id="selectAll">)</label>
+<div class=ad-q-SettingSubContainer>
+<details><summary><strong>Federico II Past Exam Questions</strong></summary>
+  <label><input type="checkbox" class="moduleCheckbox" value="Chemistry"> Chemistry</option></label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Cell and Molecular Biology"> Cell and Molecular Biology</option></label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Human Anatomy"> Human Anatomy</option></label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Histology and Embryology"> Histology and Embryology</option></label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Biochemistry"> Biochemistry</option></label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Laboratory Medicine"> Laboratory Medicine</option></label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Methodology I"> Methodology I</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Methodology II"> Methodology II</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Pharmacology I"> Pharmacology I</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Pharmacology II"> Pharmacology II</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Hygiene and Community Medicine"> Hygiene and Community Medicine</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Cardiology and Respiratory Medicine"> Cardiology and Respiratory Medicine</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Microbiology and Immunology"> Microbiology and Immunology</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Head and Neck"> Head and Neck</label></details>
+</div>
+<div class=ad-q-SettingSubContainer>
+<details><summary><strong>ADE Questions</strong></summary>
+    <label><input type="checkbox" class="moduleCheckbox" value="ADE - Human Genetics"> Human Genetics</label><br>
+    <label><input type="checkbox" class="moduleCheckbox" value="ADE - Pharmacology II"> Pharmacology II</label></details>
+</div>
+<div class=ad-q-SettingSubContainer>
+<details><summary><strong>Blue Camel Original Questions</strong></summary>
+    <label><input type="checkbox" class="moduleCheckbox" value="BCO - Nephrology and Urology"> Nephrology and Urology</label><br>
+     <label><input type="checkbox" class="moduleCheckbox" value="BCO - Immunology and Dermatology"> Immunology and Dermatology</label><br>
+     <label><input type="checkbox" class="moduleCheckbox" value="BCO - Pharmacology II"> Pharmacology II</label></details>
+</div>
+<div class=ad-q-SettingSubContainer>
+<details><summary><strong>Miscellaneous</strong></summary>
+     <label><input type="checkbox" class="moduleCheckbox" value="Admissions"> Admissions Tests / IMAT</label></details>
+</div>
+</div>
+<div class=ad-q-SettingContainer><strong>Language</strong>
+<div class=ad-q-SettingSubContainer id="languageSelectContainer">
+        <label><input type="checkbox" class="languageCheckbox" value="EN"> English</label>
+        <label><input type="checkbox" class="languageCheckbox" value="IT"> Italian</label>
+        <label><input type="checkbox" class="languageCheckbox" value="DE"> German</label>
+</div>
+</div>
+<div class=ad-q-SettingContainer id="yearSelectContainer"><strong>Year </strong><label>(Include All: <input type="checkbox" onclick="allYears(this)" id="selectAll">)</label>
+    <div class=ad-q-SettingSubContainer>
+    <details><summary><strong>2000s exam questions</strong></summary>
+        <label><input type="checkbox" class="yearCheckbox" value="2009"> 2009</label><br>
+    </details>
+    </div>
+    <div class=ad-q-SettingSubContainer>
+    <details><summary><strong>2010s exam questions</strong></summary>
+        <label><input type="checkbox" class="yearCheckbox" value="2010"> 2010</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2011"> 2011</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2012"> 2012</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2013"> 2013</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2014"> 2014</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2015"> 2015</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2016"> 2016</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2017"> 2017</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2018"> 2018</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2019"> 2019</label><br>
+    </details>
+    </div>
+    <div class=ad-q-SettingSubContainer>
+    <details><summary><strong>2020s exam questions</strong></summary>
+        <label><input type="checkbox" class="yearCheckbox" value="2020"> 2020</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2021"> 2021</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2022"> 2022</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2023"> 2023</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2024"> 2024</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="2025"> 2025</label><br>
+    </details>
+    </div>
+        <label><input type="checkbox" class="yearCheckbox" value="Unknown"> Year unknown or not provided</label><br>
+</div>
+</div>
+
+<button id="startQuiz">Start Quiz</button>
+<a href="https://forms.gle/YBUmUqqxwQ3qMJSK9" target="_blank"><button id="reportQuestion">Report a question</button></a>
+<a href="quiz.html">Simple Settings</a>
+        </section>
+<!-- 为无为，事无事，味无味 -->
+    <section id="quiz" style="display: none;"></section>
+    <section id="result" style="display: none;">
+      <h3>Your Results</h3>
+      <p id="score"></p>
+    </section>
+  </main>
+
+  <script src="quiz-advanced.js"></script>
+  <script src="nav.js"></script>
+  <script src="event.js"></script>
+<script>
+        function allModules(source) {
+            var checkboxes = document.querySelectorAll('.moduleCheckbox');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = source.checked;
+            });
+        }
+        
+        function allYears(source) {
+            var checkboxes = document.querySelectorAll('.yearCheckbox');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = source.checked;
+            });
+        }
+</script>
+</body>
+</html>

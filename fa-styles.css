@@ -2,7 +2,7 @@ body {
   font-family: Baskerville, Times New Roman, serif;
   background-color: #feffe0;
   color:#333333;
-  text-align: left;
+  text-align: right;
   margin:40px auto;
   max-width:700px;
   line-height:1.4;
@@ -18,7 +18,7 @@ header {
 
 #logo-container {
   font-size: max(0.2rem, 1vmin);
-  text-align: center;
+  text-align: left;
   display: flex;                /* Use flexbox */
   justify-content: center;       /* Center items horizontally */
   align-items: flex-start;       /* Align items to the top */
@@ -27,7 +27,6 @@ header {
   padding: 5px;                 /* Optional padding around the content */
   box-sizing: border-box;        /* Make sure padding doesn't mess up layout */
 }
-
 
 #asciilogo {
   color: #065BA7;
@@ -39,33 +38,13 @@ header {
   padding-right: 250px;
 }
 
-#asciilogo-halloween {
-  color: #ba0003;
-  width: 100%;
-  max-width: 100px;
-  height: auto;
-  display: none; 
-  vertical-align: top;
-  padding-right: 200px;
-}
-
-#asciilogo-xmas {
-  color: #1a8c00;
-  width: 100%;
-  max-width: 100px;
-  height: auto;
-  display: none; 
-  vertical-align: top;
-  padding-right: 230px;
-}
-
 #pnglogo {
   width: 70%;
   max-width: 100px;
   height: auto;
 }
 
-#flag, #en-flag, #it-flag, #de-flag, #fa-flag {
+#flag {
   width: 50%;
   max-width: 40px;
   height: auto;
@@ -74,12 +53,13 @@ header {
 
 #idflag {
   width: 50%;
-  max-width: 40px;
+  max-width: 45px;
   height: auto;
-  display: flex;
+  display:flex;
+  float: left;
   position: fixed;
   top: 50px;   /* Distance from top margin */
-  left: 20px; /* Distance from right margin */
+  right: 20px; /* Distance from right margin */
   width: auto;
   cursor: pointer;
 }
@@ -115,7 +95,7 @@ a:hover {
   color: #065BA7;
   position: fixed;
   top: 100px;   /* Distance from top margin */
-  left: 20px; /* Distance from right margin */
+  right: 20px; /* Distance from right margin */
   width: auto;
   height: 30px;
   font-size: 14px;
@@ -128,38 +108,28 @@ pre {
    font-size: max(0.2rem, 1vmin);
 }
 
+p .fafix {
+  color:#333333;
+  text-align: right;
+  line-height:1.4;
+  font-size:16px;
+  display: inline-block; 
+}
+
 span {
     color: #065BA7;
     font-size: 150%;
-    float: left;
+    float: right;
 }
 
 #settings, #result {
-  text-align: left;
+  text-align: right;
   auto;max-width:750px;
   line-height:1.8;
   border-radius: 8px;
   border: 1px solid #ddd;
   padding:1em;
   margin: 0;
-}
-
-.ad-q-SettingContainer {
-  border: 1px solid #ddd;
-  padding: 0.6em;
-  margin: 0.6em 0;
-  border-radius: 8px;
-  background-color: #ecedbe;
-  line-height:1.2;
-}
-
-.ad-q-SettingSubContainer {
-  border: 1px solid #ddd;
-  padding: 0.4em;
-  margin: 0.4em 0;
-  border-radius: 8px;
-  line-height:1.2;
-  column-count: 2;
 }
 
 #result {
@@ -179,6 +149,7 @@ span {
 .notif-card {
   border: 1px solid #ddd;
   padding: 1em;
+  text-align: right;
   margin: 1em 0;
   border-radius: 8px;
   background-color: #7ce698;
@@ -200,6 +171,7 @@ p {
 
 .question-card {
   border: 1px solid #ddd;
+  text-align: right;
   padding: 1em;
   margin: 1em 0;
   border-radius: 8px;
@@ -217,7 +189,7 @@ table {
  th, td {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align: left;
+  text-align: right;
 }
 
   th {
@@ -231,7 +203,7 @@ table {
   margin-right: 10px;
 }
 
- /* sidenav settings */
+ /* The side navigation menu */
 .sidenav {
   text-align: left;
   height: 100%; /* 100% Full-height */
@@ -240,7 +212,7 @@ table {
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
-  left: 0;
+  right: 0;
   background-color: #065BA7;
   color:#dadae3;
   box-sizing: border-box;
@@ -250,7 +222,7 @@ table {
   transition: 0.2s; /* 0.2 second transition effect to slide in the sidenav */
 }
 
-/* nav menu links */
+/* The navigation menu links */
 .sidenav a {
   text-align: left;
   padding: 8px 8px 8px 32px;
@@ -272,15 +244,16 @@ table {
   top: 0;
   right: 10px;
   font-size: 36px;
-  margin-left: 50px;
+  margin-right: 50px;
 }
 
 button {
   background-color: #065BA7;
   color: #dadae3;
   padding: 7px 12px 7px 12px;
-  margin:11px 7px 2px 7px;
+  margin:7px;
   border-radius: 7px;
+  float: right;
   border: none;
   cursor: pointer;
 }
@@ -289,7 +262,7 @@ button:hover {
   background-color: #00529F;
 }
 
-/* mobile compatibility styling*/
+/* mobile compatibility styling */
 @media screen and (max-width: 900px) {
   #menubutton {
   position: static;
@@ -297,14 +270,6 @@ button:hover {
 }
 @media screen and (max-width: 730px) {
   #asciilogo {
-  display: none;
-  }
-  
-  #asciilogo-halloween {
-  display: none;
-  }
-  
-  #asciilogo-xmas {
   display: none;
   }
   
@@ -316,10 +281,11 @@ button:hover {
   position: static;
   top: 10px;   /* Distance from top margin */
   left: 150px; /* Distance from right margin */
-  float: right;
+  float: left;
   }
 }
   
 }
+
 
 

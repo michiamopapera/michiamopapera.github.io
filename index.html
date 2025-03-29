@@ -3,31 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>"Blue Camel" MCQ Database</title>
+  <title>Blue Camel - Free Medical, Surgical & Biomedical Multiple Choice Questions and University Med School Exam Practice</title>
   <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Initially hide oasis */
-    #oasis {
-      display: none;
-    }
-    .water {
-      padding-top: 10px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 10px;
-    }
-  </style>
 </head>
 
   <header>
     <div id="logo-container">
         <img src=logo1.png alt="logo1" id="pnglogo">
-      <pre id="asciilogo">███   █     █   █ ▄███▄       ▄█▄    ██   █▀▄▀█ ▄███▄   █     
-█  █  █     █   █ █▀   ▀      █▀ ▀▄  █ █  █ █ █ █▀   ▀  █     
-█ ▀ ▄ █     █   █ ██▄▄        █   ▀  █▄▄█ █ ▄ █ ██▄▄    █     
-█  ▄▀ ███▄  █▄ ▄█ █▄   ▄▀     █▄  ▄▀ █  █ █   █ █▄   ▄▀ ███▄  
-███               ▀███▀       ▀███▀             ▀███▀        
+      <pre id="asciilogo">███   █    █   █ ▄███▄      ▄█▄    ██   █▀▄▀█ ▄███▄   █     
+█  █  █    █   █ █▀   ▀     █▀ ▀▄  █ █  █ █ █ █▀   ▀  █     
+█ ▀ ▄ █    █   █ ██▄▄       █   ▀  █▄▄█ █ ▄ █ ██▄▄    █     
+█  ▄▀ ███▄ █▄ ▄█ █▄   ▄▀    █▄  ▄▀ █  █ █   █ █▄   ▄▀ ███▄  
+███              ▀███▀      ▀███▀             ▀███▀        
                                                              
                                                              </pre>
 <pre id="asciilogo-halloween"> ▄▄▄▄    ██▓     █    ██ ▓█████     ▄████▄   ▄▄▄       ███▄ ▄███▓▓█████  ██▓    
@@ -55,10 +43,12 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
   </header>
 
   <body>
-   <p>Welcome to Blue Camel, the easiest way to practise written exams for Medicine in English at Federico II.</p><strong> This resource is strictly for educational purposes.</strong>
-   <p>By proceeding, you acknowledge that you understand this.</p>
-   
-   <button id="crossDesert" onclick="openNav()">I am ready to cross the desert.</button>
+   	<br><br>
+   	<a href="quiz.html"><img src=en-gb.png alt="en" id="en-flag"></a><a href="quiz.html">I would like to view Blue Camel in English.</a><br><br>
+   	<a href="it-quiz.html"><img src=it-it.png alt="it" id="it-flag"></a><a href="it-quiz.html">Vorrei accedere al Blue Camel in italiano.</a><br><br>
+	<a href="de-quiz.html"><img src=de-de.png alt="de" id="de-flag"></a><a href="de-quiz.html">Ich möchte Blue Camel auf Deutsch ansehen.</a><br><br>
+	<a href="fa-quiz.html"><img src=fa.png alt="fa" id="fa-flag"></a><a href="fa-quiz.html">.من می خواهم وب سایت را به زبان فارسی ببینم</a><br><br>
+
 <br><br>
 
    <div id="mySidenav" class="sidenav">
@@ -71,5 +61,57 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
 <!-- 知足者富。-->
 <script src=nav.js></script>
   <script src=event.js></script>
+
+<script>
+  const deimages = [
+    'de-de.png',
+    'de-au.png',
+    'ch.png',
+  ];
+
+  const enimages = [
+    'en-gb.png',
+    'en-ca.png',
+    'en-au.png',
+    'en-nz.png',
+    'en-ie.png',
+    'en-hi.png',
+  ];
+
+  const itimages = [
+    'it-it.png',
+    'it-sm.png',
+    'ch.png',
+  ];
+
+  let indexDe = 0;
+  let indexEn = 0;
+  let indexIt = 0;
+
+  const imgElementDe = document.getElementById('de-flag');
+  const imgElementEn = document.getElementById('en-flag');
+  const imgElementIt = document.getElementById('it-flag');
+
+
+  function changeImageDe() {
+      indexDe = (indexDe + 1) % deimages.length;
+      imgElementDe.src = deimages[indexDe];
+  }
+
+  function changeImageEn() {
+      indexEn = (indexEn + 1) % enimages.length;
+      imgElementEn.src = enimages[indexEn];
+  }
+  
+  function changeImageIt() {
+      indexIt = (indexIt + 1) % itimages.length;
+      imgElementIt.src = itimages[indexIt];
+  }
+  
+  setInterval(changeImageDe, 2000);
+  setInterval(changeImageEn, 2000);
+  setInterval(changeImageIt, 2000);
+</script>
+
 </body>
 </html>

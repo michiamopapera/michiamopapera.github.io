@@ -72,12 +72,12 @@ function displayQuestions(questions) {
   questions.forEach(q => {
     const row = document.createElement('tr');
     row.innerHTML = `
-      <td>${q.question}</td>
-      <td>${q.answer}</td>
-      <td>${q.module}</td>
-      <td>${q.year}</td>
-      <td>${q.language}</td>
-      <td>${q.entryID}</td>
+    <td>${q.entryID}</td>
+    <td>${q.language}</td>
+    <td>${q.year}</td>
+    <td>${q.module}</td>
+    <td>${q.answer}</td>
+    <td>${q.question}</td>
     `;
     tbody.appendChild(row);
   });
