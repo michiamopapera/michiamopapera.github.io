@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Camel - Free Medical, Surgical & Biomedical Multiple Choice Questions and University Med School Exam Practice</title>
+  <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
+  <link rel="stylesheet" href="fa-styles.css">
+</head>
+
+  <header>
+
+    <div id="logo-container">
+        <img src=logo1.png alt="logo1" id="pnglogo">
+<pre id="asciilogo">
+                 ▄▀▀▄▄▀                      ▄▀          
+                   ▄           ▄▀ ▄▀      ▄▀  ▄▀          
+                   █                                      
+               █   █        █    ██   █     █   ██        
+  ▄           ▄█   █         ██▄▄█▄  ▄█▄   ▄█▄ ▄█         
+ █     ▄▀▀▀▀▀▀▀       ▄   ▄▄▄█    ▀▀▀▀ ▀▀▀▀▀ ▀▀▀            
+ ██    ▀▀▄▄  ▄▀        ▀▀▀▀                                    
+  ▀█▄    ▄█
+    ▀▀▀▀▀▀                                                  
+                                                        </pre>
+    </div>
+    <div><h1>ایجاد آزمون</h1></div>
+  </header>
+        <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
+  <div id=menubutton>
+    <span onclick="openNav()"><<<باز کردن منو </span>
+  </div>
+<div class=warning>.سلب مسئولیت: بسته آبی هنوز در حال پیشرفت است و دقت بالای اطلاعات موجود در آن هنوز نمی‌تواند تضمین شود<br>شما می‌توانید با بررسی پاسخ‌ها و گزارش سوالات. نادرست کمک کنید</div>
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="fa-about.html">درباره</a>
+  <a href="fa-quiz.html">آزمون</a>
+  <a href="fa-browse.html">مرور</a>
+</div>
+<!-- 知者不言言者不知 -->
+  <main>
+    <section id="settings">
+      <input type="number" id="numQuestions" min="1" required>
+      <label for="numQuestions">:تعداد سوالات</label>
+      <br>
+  <select id="moduleSelect">
+    <option value=""> همه موضوعات</option>
+    <option value="Chemistry">شیمی</option>
+    <option value="Cell and Molecular Biology">بیولوژی سلولی و مولکولی</option>
+    <option value="Human Anatomy">آناتومی</option>
+    <option value="Histology and Embryology">بافت‌شناسی و جنین‌شناسی</option>
+    <option value="Biochemistry">بیوشیمی</option>
+    <option value="Laboratory Medicine">پزشکی آزمایشگاهی</option>
+    <option value="Methodology I">روش‌شناسی I</option>
+    <option value="Methodology II">روش‌شناسی II</option>
+    <option value="Pharmacology I">داروشناسی I</option>
+    <option value="Pharmacology II">داروشناسی II</option>
+    <option value="Hygiene and Community Medicine">بهداشت و پزشکی جامعه</option>
+    <option value="Cardiology and Respiratory Medicine">قلب و عروق و پزشکی تنفسی</option>
+    <option value="Microbiology and Immunology">میکروبیولوژی و ایمونولوژی</option>
+    <option value="Head and Neck">سر و گردن</option>
+    <option value="Neurology and Psychiatry"> نورولوژی و روانپزشکی (به زودی)</option>
+    <option value="Admissions">سوالات پذیرش / IMAT</option>
+  </select>
+  <label for="moduleSelect">:موضوع را انتخاب کنید</label>
+  <br>
+  <select id="languageSelect">
+    <option value=""> همه زبان‌ها</option>
+    <option value="EN">انگلیسی</option>
+    <option value="IT">ایتالیایی</option>
+  </select>
+  <label for="languageSelect">:زبان سوال</label>
+        <br><br>
+      <button id="startQuiz">شروع</button>
+      <a href="https://forms.gle/YBUmUqqxwQ3qMJSK9" target="_blank"><button id="reportQuestion">گزارش یک مشکل</button></a>
+        </section>
+<!-- 为无为，事无事，味无味 -->
+    <section id="quiz" style="display: none;"></section>
+    <section id="result" style="display: none;">
+      <br><br><h3>نتایج شما</h3>
+      <p id="score"></p>
+    </section>
+  </main>
+
+  <script src="fa-quiz2.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

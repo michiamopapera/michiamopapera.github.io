@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Camel - Free Medical, Surgical & Biomedical Multiple Choice Questions and University Med School Exam Practice</title>
+  <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+  <header>
+
+    <div id="logo-container">
+        <img src=logo1.png alt="logo1" id="pnglogo">
+      <pre id="asciilogo">███   █    ██   █   █     █  █  ██   █▀▄▀█ ▄███▄   █     
+█  █  █    █ █  █   █     █▄█   █ █  █ █ █ █▀   ▀  █     
+█ ▀ ▄ █    █▄▄█ █   █     █▀▄   █▄▄█ █ ▄ █ ██▄▄    █     
+█  ▄▀ ███▄ █  █ █▄ ▄█     █  █  █  █ █   █ █▄   ▄▀ ███▄  
+███                                        ▀███▀         
+                                                         
+                                                         </pre>
+<pre id="asciilogo-halloween"> ▄▄▄▄    ██▓     █    ██ ▓█████     ▄████▄   ▄▄▄       ███▄ ▄███▓▓█████  ██▓    
+▓█████▄ ▓██▒     ██  ▓██▒▓█   ▀    ▒██▀ ▀█  ▒████▄    ▓██▒▀█▀ ██▒▓█   ▀ ▓██▒    
+▒██▒ ▄██▒██░    ▓██  ▒██░▒███      ▒▓█    ▄ ▒██  ▀█▄  ▓██    ▓██░▒███   ▒██░    
+▒██░█▀  ▒██░    ▓▓█  ░██░▒▓█  ▄    ▒▓▓▄ ▄██▒░██▄▄▄▄██ ▒██    ▒██ ▒▓█  ▄ ▒██░    
+░▓█  ▀█▓░██████▒▒▒█████▓ ░▒████▒   ▒ ▓███▀ ░ ▓█   ▓██▒▒██▒   ░██▒░▒████▒░██████▒
+░▒▓███▀▒░ ▒░▓  ░░▒▓▒ ▒ ▒ ░░ ▒░ ░   ░ ░▒ ▒  ░ ▒▒   ▓▒█░░ ▒░   ░  ░░░ ▒░ ░░ ▒░▓  ░
+▒░▒   ░ ░ ░ ▒  ░░░▒░ ░ ░  ░ ░  ░     ░  ▒     ▒   ▒▒ ░░  ░      ░ ░ ░  ░░ ░ ▒  ░
+ ░    ░   ░ ░    ░░░ ░ ░    ░      ░          ░   ▒   ░      ░      ░     ░ ░   
+ ░          ░  ░   ░        ░  ░   ░ ░            ░  ░       ░      ░  ░    ░  ░
+      ░                            ░                                            </pre>
+<pre id="asciilogo-xmas">   ___      _                               ___                              _      __/ \__
+  | _ )    | |    _  _     ___      o O O  / __|   __ _    _ __     ___     | |     \     /
+  | _ \    | |   | +| |   / -_)    o      | (__   / _` |  | '  \   / -_)    | |     /.'o'.\
+  |___/   _|_|_   \_,_|   \___|   TS__[O]  \___|  \__,_|  |_|_|_|  \___|   _|_|_     .o.'.
+_|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|   .'.'o'.
+"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'./o--000'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'  o'.o.'.o.
+                                                                                  .'.o.'.'.o.
+                                                                                 .o.'.o.'.o.'.
+                                                                                    [_____]
+                                                                                     \___/    </pre>
+    </div>
+    <div><h1>Quiz erstellen</h1></div>
+  </header>
+  <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
+  <div id=menubutton>
+    <span onclick="openNav()">Menu öffnen>>></span>
+  </div>
+
+<div class=notif-card><strong>Neue Version der Website! Mehr als 2000 neue Fragen wurden auf der Website hinzugefügt!</strong></div>
+<div class=warning>Haftungsausschluss: Blue Camel ist ein Projekt in Arbeit, und ein hohes Maß an Genauigkeit der enthaltenen Informationen kann derzeit nicht garantiert werden. <br> Sie können helfen, indem Sie Antworten überprüfen und fehlerhafte Fragen melden.</div>
+  
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="de-about.html">Über uns</a>
+  <a href="de-quiz.html">Quiz</a>
+  <a href="de-browse.html">Fragen suchen</a>
+</div>
+<!-- 知者不言言者不知 -->
+  <main>
+    <section id="settings">
+      <label for="numQuestions">Anzahl der Fragen auswählen:</label>
+      <input type="number" id="numQuestions" min="1" required>
+      <br>
+      <label for="moduleSelect">Modul auswählen:</label>  
+  <select id="moduleSelect">
+    <option value="">Alle Modulen</option>
+    <option value="Chemistry">Chemie</option>
+    <option value="Cell and Molecular Biology">Zell- und Molekularbiologie</option>
+    <option value="Human Anatomy">Humananatomie</option>
+    <option value="Histology and Embryology">Histologie und Embryologie</option>
+    <option value="Biochemistry">Biochemie</option>
+    <option value="Laboratory Medicine">Laboratoriumsmedizin</option>
+    <option value="Methodology I">Methodologie I</option>
+    <option value="Methodology II">Metodologie II</option>
+    <option value="Pharmacology I">Pharmacologie I</option>
+    <option value="Pharmacology II">Pharmacologie II</option>
+    <option value="Hygiene and Community Medicine">Hygiene </option>
+    <option value="Cardiology and Respiratory Medicine">Kardiologie und Pneumologie</option>
+    <option value="Microbiology and Immunology">Mikrobiologie und Immunologie</option>
+    <option value="Head and Neck">Kopf und Hals</option>
+    <option value="Neurology and Psychiatry">Neurologie und Psychiatrie (Demnächst!)</option>
+    <option value="ADE - Human Genetics">ADE - Genetik</option>
+    <option value="ADE - Pharmacology II">ADE - Pharmacologie II</option>
+    <option value="Admissions">Zulassungstestfragen/IMAT</option>
+  </select>
+  <br>
+<label for="languageSelect">Sprache der Fragen:</label>
+  <select id="languageSelect">
+    <option value="">Alle Sprachen</option>
+    <option value="EN">Englisch</option>
+    <option value="IT">Italienisch</option>
+    <option value="DE">Deutsch</option>
+  </select>
+        </section>
+      <button id="startQuiz">Anfangen</button>
+      <a href="https://forms.gle/YBUmUqqxwQ3qMJSK9" target="_blank"><button id="reportQuestion">Fehler melden</button></a>
+      <a href="de-quiz-advanced.html">Weitere Einstellungen</a>
+<!-- 为无为，事无事，味无味 -->
+    <section id="quiz" style="display: none;"></section>
+    <section id="result" style="display: none;">
+      <h3>Ihre Punkte</h3>
+      <p id="score"></p>
+    </section>
+  </main>
+
+  <script src="de-quiz2.js"></script>
+  <script src="nav.js"></script>
+  <script src="event.js"></script>
+
+</body>
+</html>

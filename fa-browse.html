@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Camel - Free Medical, Surgical & Biomedical Multiple Choice Questions and University Med School Exam Practice</title>
+  <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
+  <link rel="stylesheet" href="fa-styles.css">
+</head>
+
+  <header>
+    <div id="logo-container">
+<img src=logo1.png alt="logo1" id="pnglogo"><pre id="asciilogo">
+                 ▄▀▀▄▄▀                      ▄▀          
+                   ▄           ▄▀ ▄▀      ▄▀  ▄▀          
+                   █                                      
+               █   █        █    ██   █     █   ██        
+  ▄           ▄█   █         ██▄▄█▄  ▄█▄   ▄█▄ ▄█         
+ █     ▄▀▀▀▀▀▀▀       ▄   ▄▄▄█    ▀▀▀▀ ▀▀▀▀▀ ▀▀▀            
+ ██    ▀▀▄▄  ▄▀        ▀▀▀▀                                    
+  ▀█▄    ▄█
+    ▀▀▀▀▀▀                                                  
+                                                        </pre>
+    </div>
+    <h1>جستجوی پایگاه داده</h1>
+  </header>
+  <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
+  <div id=menubutton>
+    <span onclick="openNav()"><<<باز کردن منو </span>
+  </div>
+   <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="fa-about.html">درباره</a>
+  <a href="fa-quiz.html">آزمون</a>
+  <a href="fa-browse.html">مرور</a>
+</div>
+  <div class=warning>.اگر سوالات کتبی دارید که نمی‌توانید در پایگاه داده پیدا کنید، لطفاً آن‌ها را برای ما ارسال کنید تا به آن‌ها اضافه کنیم</div>
+
+
+
+<!-- 夫唯不争，故天下莫能与之争。 -->
+  
+<div id=body-browse>
+  <div id="filters">
+    <div>
+      <input type="text" id="searchInput" placeholder="کلمات کلیدی را وارد کنید">
+     <label for="searchInput">:جستجو</label>
+    </div>
+    <br>
+    
+    <div>
+    <select id="moduleFilter">
+      <option value="">همه موضوعات</option>
+    </select>
+    <label for="moduleFilter">:موضوع</label>
+    <br>
+    <select id="yearFilter">
+      <option value="">همه سال‌ها</option>
+    </select>
+    <label for="yearFilter">:سال</label>
+    <br>
+    <select id="languageFilter">
+      <option value="">همه زبان‌ها</option>
+      <option value="EN">انگلیسی</option>
+      <option value="IT">ایتالیایی</option>
+    </select>
+     <label for="languageFilter">:زبان</label>
+    </div>
+    
+  </div>
+<div style="overflow-x: auto;">
+  <table id="questionTable">
+    <thead>
+      <tr>
+        <th>کد شناسایی</th>
+        <th>زبان</th>
+        <th>سال</th>
+        <th>موضوع</th>
+        <th>پاسخ</th>
+        <th>سوال</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows will be dynamically inserted -->
+    </tbody>
+  </table>
+  </div>
+</div>
+  <script src="fa-browse.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

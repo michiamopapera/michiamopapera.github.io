@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +7,18 @@
   <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
   <link rel="stylesheet" href="styles.css">
 </head>
+
   <header>
     <div id="logo-container">
+        <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
         <img src=logo1.png alt="logo1" id="pnglogo">
-<pre id="asciilogo">███   █    █   █ ▄███▄      ▄█▄    ██   █▀▄▀█ ▄███▄   █     
-█  █  █    █   █ █▀   ▀     █▀ ▀▄  █ █  █ █ █ █▀   ▀  █     
-█ ▀ ▄ █    █   █ ██▄▄       █   ▀  █▄▄█ █ ▄ █ ██▄▄    █     
-█  ▄▀ ███▄ █▄ ▄█ █▄   ▄▀    █▄  ▄▀ █  █ █   █ █▄   ▄▀ ███▄  
-███              ▀███▀      ▀███▀             ▀███▀        
-                                                             
-                                                             </pre>
+      <pre id="asciilogo">███   █    ██   █   █     █  █  ██   █▀▄▀█ ▄███▄   █     
+█  █  █    █ █  █   █     █▄█   █ █  █ █ █ █▀   ▀  █     
+█ ▀ ▄ █    █▄▄█ █   █     █▀▄   █▄▄█ █ ▄ █ ██▄▄    █     
+█  ▄▀ ███▄ █  █ █▄ ▄█     █  █  █  █ █   █ █▄   ▄▀ ███▄  
+███                                        ▀███▀         
+                                                         
+                                                         </pre>
 <pre id="asciilogo-halloween"> ▄▄▄▄    ██▓     █    ██ ▓█████     ▄████▄   ▄▄▄       ███▄ ▄███▓▓█████  ██▓    
 ▓█████▄ ▓██▒     ██  ▓██▒▓█   ▀    ▒██▀ ▀█  ▒████▄    ▓██▒▀█▀ ██▒▓█   ▀ ▓██▒    
 ▒██▒ ▄██▒██░    ▓██  ▒██░▒███      ▒▓█    ▄ ▒██  ▀█▄  ▓██    ▓██░▒███   ▒██░    
@@ -38,63 +40,62 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
                                                                                     [_____]
                                                                                      \___/    </pre>
     </div>
-    <h1>Database Browser</h1>
+    <h1>Datenbank suchen</h1>
   </header>
   <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
   <div id=menubutton>
-    <span onclick="openNav()">open menu>>></span>
+    <span onclick="openNav()">Menu öffnen>>></span>
   </div>
-<div class=warning>If you have written questions that you can't find in the Camel with our search function, please send them to us for addition.</div>
+  
+  <div class=warning>Wenn Sie Fragen finden, die nicht in der Datenbank sind, dann bitte melden Sie sie bitte bei uns, um die Datenbank aktuell zu halten.</div>
+  
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="about.html">info</a>
-  <a href="quiz.html">quiz</a>
-  <a href="browse.html">browse</a>
+  <a href="de-about.html">Über uns</a>
+  <a href="de-quiz.html">Quiz</a>
+  <a href="de-browse.html">Fragen suchen</a>
 </div>
-<!-- Помню государственный последний экзамен по судебной медицине. Профессор сказал:  -->
-<!-- – Расскажите о ранах в упор. Я развязно стал рассказывать и рассказывал долго, и в зрительной памяти проплывала страница толстейшего учебника.  -->
-<!-- – Наконец я выдохся, профессор поглядел на меня брезгливо и сказал скрипуче: – Ничего подобного тому, что вы рассказали, при ранах в упор не бывает. Сколько у вас пятерок?  -->
-<!-- – Пятнадцать,  -->
-<!-- – ответил я. -->
-<!-- Он поставил против моей фамилии тройку, и я вышел в тумане и позоре вон… Вышел, потом вскоре поехал в Мурьево, и вот я здесь один. -->
-<!-- Черт его знает, что бывает при ранах в упор, но когда здесь передо мной на операционном столе лежал человек и пузыристая пена, розовая от крови, вскакивала у него на губах, разве я потерялся?  -->
-<!-- Нет, хотя вся грудь у него в упор была разнесена волчьей дробью и было видно легкое, и  мясо груди висело клоками, разве я потерялся? И через полтора месяца он ушел у меня из больницыc живой. -->
+
+<!-- 夫唯不争，故天下莫能与之争。 -->
+  
 <div id=body-browse>
   <div id="filters">
     <div>
-     <label for="searchInput">Search:</label>
-     <input type="text" id="searchInput" placeholder="Enter keywords...">
+     <label for="searchInput">Suche:</label>
+     <input type="text" id="searchInput" placeholder="Stichwörter eingeben">
     </div><br>
     <div>
-    <label for="moduleFilter">Module:</label>
+    <label for="moduleFilter">Modul:</label>
     <select id="moduleFilter">
-      <option value="">All</option>
+      <option value="">Alle</option>
     </select>
-    <label for="yearFilter">Year:</label>
+    <label for="yearFilter">Jahr:</label>
     <select id="yearFilter">
-      <option value="">All</option>
+      <option value="">Alle</option>
     </select>
-    <label for="languageFilter">Language:</label>
+    <label for="languageFilter">Sprache:</label>
     <select id="languageFilter">
       <option value="">All</option>
-      <option value="EN">English</option>
-      <option value="IT">Italian</option>
-      <option value="DE">German</option>
+      <option value="EN">Englisch</option>
+      <option value="IT">Italienisch</option>
+      <option value="DE">Deutsch</option>
     </select>
     </div>
   </div>
+
   <table id="questionTable">
     <thead>
       <tr>
-        <th>Question</th>
-        <th>Answer</th>
-        <th>Module</th>
-        <th>Year</th>
-        <th>Language</th>
-        <th>Entry ID</th>
+        <th>Frage</th>
+        <th>Antwort</th>
+        <th>Modul</th>
+        <th>Jahr</th>
+        <th>Sprache</th>
+        <th>Identifikationscode</th>
       </tr>
     </thead>
     <tbody>
+      <!-- Rows will be dynamically inserted -->
     </tbody>
   </table>
 </div>

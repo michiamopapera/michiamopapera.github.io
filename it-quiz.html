@@ -10,13 +10,13 @@
 <header>
     <div id="logo-container">
         <img src=logo1.png alt="logo1" id="pnglogo">
-<pre id="asciilogo">███   █    █   █ ▄███▄      ▄█▄    ██   █▀▄▀█ ▄███▄   █     
-█  █  █    █   █ █▀   ▀     █▀ ▀▄  █ █  █ █ █ █▀   ▀  █     
-█ ▀ ▄ █    █   █ ██▄▄       █   ▀  █▄▄█ █ ▄ █ ██▄▄    █     
-█  ▄▀ ███▄ █▄ ▄█ █▄   ▄▀    █▄  ▄▀ █  █ █   █ █▄   ▄▀ ███▄  
-███              ▀███▀      ▀███▀             ▀███▀        
-                                                             
-                                                             </pre>
+<pre id="asciilogo">▄█▄    ██   █▀▄▀█ ▄███▄   █    █    ████▄     ███   █    █   █ 
+█▀ ▀▄  █ █  █ █ █ █▀   ▀  █    █    █   █     █  █  █    █   █ 
+█   ▀  █▄▄█ █ ▄ █ ██▄▄    █    █    █   █     █ ▀ ▄ █    █   █ 
+█▄  ▄▀ █  █ █   █ █▄   ▄▀ ███▄ ███▄ ▀████     █  ▄▀ ███▄ █▄ ▄█ 
+▀███▀             ▀███▀                       ███               
+                                                                
+                                                                </pre>
 <pre id="asciilogo-halloween"> ▄▄▄▄    ██▓     █    ██ ▓█████     ▄████▄   ▄▄▄       ███▄ ▄███▓▓█████  ██▓    
 ▓█████▄ ▓██▒     ██  ▓██▒▓█   ▀    ▒██▀ ▀█  ▒████▄    ▓██▒▀█▀ ██▒▓█   ▀ ▓██▒    
 ▒██▒ ▄██▒██░    ▓██  ▒██░▒███      ▒▓█    ▄ ▒██  ▀█▄  ▓██    ▓██░▒███   ▒██░    
@@ -38,74 +38,74 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
                                                                                     [_____]
                                                                                      \___/    </pre>
     </div>
-    <div><h1>Create Quiz</h1></div>
+    <div><h1>Creare Quiz</h1></div>
   </header>
-          <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
+  <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
   <div id=menubutton>
-    <span onclick="openNav()">open menu>>></span>
+    <span onclick="openNav()">aprire il menu>>></span>
   </div>
 <!-- Вот читал я как-то, где-то… где – забыл… об одном англичанине, попавшем на необитаемый остров. Интересный был англичанин. Досиделся он на острове даже до галлюцинаций. -->
 <!-- И когда подошел корабль к острову и лодка выбросила людей-спасателей, он – отшельник – встретил их револьверной стрельбой, приняв за мираж, обман пустого водяного поля. Но он был выбрит. --> 
 <!-- Брился каждый день на необитаемом острове. Помнится, громаднейшее уважение вызвал во мне этот гордый сын Британии. -->
 <!-- И когда я ехал сюда, в чемодане у меня лежала и безопасная «Жиллет», а к ней дюжина клинков, и опасная, и кисточка. -->
 <!-- И твердо решил я, что буду бриться через день, потому что у меня здесь ничем не хуже необитаемого острова.-->
-<div class=notif-card><strong>Version 2: The Head and Neck Update is now live! Over 2000 questions added!</strong></div>
-<div class=warning>Disclaimer: Blue Camel is a work in progress and a high level of accuracy of the information contained within cannot yet be guaranteed. You can help by checking answers and reporting erroneous questions.</div>
+<div class=notif-card><strong>Versione 2: L'Update di Testa-Collo è caricato! Più di 2000 domande aggiunte!</strong></div>
+<div class=warning>Blue Camel è un lavoro in corso e non è ancora possibile garantire un elevato livello di accuratezza delle informazioni contenute. Potete contribuire controllando le risposte e segnalando le domande e/o le risposte errate.</div>
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="about.html">info</a>
-  <a href="quiz.html">quiz</a>
-  <a href="browse.html">browse</a>
+  <a href="it-about.html">informazioni</a>
+  <a href="it-quiz.html">quiz</a>
+  <a href="it-browse.html">cerca domande</a>
 </div>
 <!-- 知者不言言者不知 -->
   <main>
     <section id="settings">
-      <label for="numQuestions">Number of questions:</label>
+      <label for="numQuestions">Numero di domande:</label>
       <input type="number" id="numQuestions" min="1" required>
       <br>
-      <label for="moduleSelect">Choose a module:</label>  
+      <label for="moduleSelect">Scegli modulo:</label>  
   <select id="moduleSelect">
-    <option value="">All Modules</option>
-    <option value="Chemistry">Chemistry</option>
-    <option value="Cell and Molecular Biology">Cell and Molecular Biology</option>
-    <option value="Human Anatomy">Human Anatomy</option>
-    <option value="Histology and Embryology">Histology and Embryology</option>
-    <option value="Biochemistry">Biochemistry</option>
-    <option value="Laboratory Medicine">Laboratory Medicine</option>
-    <option value="Methodology I">Methodology I</option>
-    <option value="Methodology II">Methodology II</option>
-    <option value="Pharmacology I">Pharmacology I</option>
-    <option value="Pharmacology II">Pharmacology II</option>
-    <option value="Hygiene and Community Medicine">Hygiene</option>
-    <option value="Cardiology and Respiratory Medicine">Cardiology and Respiratory Medicine</option>
-    <option value="Microbiology and Immunology">Microbiology and Immunology</option>
-    <option value="Head and Neck">Head and Neck</option>
+    <option value="">Tutti</option>
+    <option value="Chemistry">Chimica</option>
+    <option value="Cell and Molecular Biology">Biologia Cellulare e Moleculare</option>
+    <option value="Human Anatomy">Anatomia</option>
+    <option value="Histology and Embryology">Istologia</option>
+    <option value="Biochemistry">Biochimica</option>
+    <option value="Laboratory Medicine">Medicina del Laboratorio</option>
+    <option value="Methodology I">Metodologia I</option>
+    <option value="Methodology II">Metodologia II</option>
+    <option value="Pharmacology I">Farmacologia I</option>
+    <option value="Pharmacology II">Farmacologia II</option>
+    <option value="Hygiene and Community Medicine">Igiene</option>
+    <option value="Cardiology and Respiratory Medicine">Cardiologia</option>
+    <option value="Microbiology and Immunology">Microbiologia</option>
+    <option value="Head and Neck">Testa-Collo</option>
     <option value="Neurology and Psychiatry">Neuro and Psych COMING SOON!</option>
-    <option value="ADE - Human Genetics">ADE - Human Genetics</option>
-    <option value="ADE - Pharmacology II">ADE - Pharmacology II</option>
-    <option value="Admissions">Medical Admissions/IMAT</option>
+    <option value="ADE - Human Genetics">ADE - Genetica</option>
+    <option value="ADE - Pharmacology II">ADE - Farmacologia II (Malattie Neurodegenerative)</option>
+    <option value="Admissions">Domande di Ammissioni/IMAT</option>
   </select>
 <br>
 <!-- Handle nur nach derjenigen Maxime, durch die du zugleich wollen kannst, dass sie ein allgemeines Gesetz werde. -->
-<label for="languageSelect">Choose a language:</label>
+<label for="languageSelect">Lingua delle domande:</label>
   <select id="languageSelect">
-    <option value="">All Languages</option>
-    <option value="EN">English</option>
-    <option value="IT">Italian</option>
-    <option value="DE">German</option>
+    <option value="">Tutte le lingue disponibile</option>
+    <option value="EN">Inglese</option>
+    <option value="IT">Italiano</option>
+    <option value="DE">Tedesco</option>
   </select>
-          </section>
-      <button id="startQuiz">Start Quiz</button>
-      <a href="https://forms.gle/YBUmUqqxwQ3qMJSK9" target="_blank"><button id="reportQuestion">Report a question</button></a>
-      <a href="quiz-advanced.html">Advanced Settings</a>
+        </section>
+        <button id="startQuiz">Comincia</button>
+      <a href="https://forms.gle/YBUmUqqxwQ3qMJSK9" target="_blank"><button id="reportQuestion">Segnalare un problema</button></a>
+<a href="it-quiz-advanced.html">Impostazioni avanzate</a>
 <!-- 为无为，事无事，味无味 -->
     <section id="quiz" style="display: none;"></section>
     <section id="result" style="display: none;">
-      <h3>Your Results</h3>
+      <h3>I tuoi risultati</h3>
       <p id="score"></p>
     </section>
   </main>
-  <script src="quiz2.js"></script>
+  <script src="it-quiz2.js"></script>
   <script src="nav.js"></script>
   <script src="event.js"></script>
 </body>

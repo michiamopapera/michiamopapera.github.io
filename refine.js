@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 async function fetchQuestions() {
-  const response = await fetch('cameldb_v1.csv', { cache: 'no-store' });
+  const response = await fetch('cameldbv2.csv', { cache: 'no-store' });
   const csvData = await response.text();
   return parseCSV(csvData);
 }
@@ -83,7 +83,7 @@ function displayQuiz(questions) {
     questionCard.innerHTML = `
       <h3>Question ${index + 1} (ID: ${q.entryID})</h3>
       <p>${q.question}</p>
-      <ol type="A">
+      <ol type="a">
         <li>${q.wahlA}</li>
         <li>${q.wahlB}</li>
         <li>${q.wahlC}</li>
