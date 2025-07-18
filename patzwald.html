@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <style>
-body {
-	min-height: 100vh;
-	display: grid;
-	place-items: center;
-	font-size: 1.4rem;
-	font-family: "Caladea", serif;
-}
-
 main {
 	width: 90%;
 	max-width: 60rem;
@@ -17,25 +9,83 @@ main {
 	padding-bottom: 1.5rem;
 }
 
-h1 {
-	font-weight: 700;
-	color: $purple;
-	margin: 4rem 0 1rem;
+#deathclock {
+	float: center;
+	position: relative;
+	  text-align: center;
+ box-sizing: border-box;
+   font-size: max(15rem, 15vmin);
+}
+
+h2 {
+	float: center;
+	position: relative;
+}
+
+p  {
+	float: center;
+	position: relative;
 }
 
 body {
-  	font-family: Baskerville, Times New Roman, serif;
- 	 background-color: #09308c;
- 	 color:#dddddd;
+ 	background-color: #000000;
+ 	color: #00ff1e;
+ 	font-family: Courier New;
 }
+a:link {
+  color: #00ff1e;
+}
+
+a:visited {
+  color: #00ff1e;
+}
+
+#links {
+	float: center;
+	position: relative;
+	  text-align: right;
+ box-sizing: border-box;
+   font-size: max(2rem, 2vmin);
+}
+
 </style>
 
 <title>The Red Elixir is the Source</title>
 <meta name="robots" content="noindex">
 <meta name="googlebot" content="noindex">
-<main>
-	<h1>知者不言言者不知</h1>
-	<p>Do without doing.</p>
-	    <a href="changelog.html"><img src=ee.png></a>
+<body>
+		        <h2>知者不言言者不知</h2>
+		        <p>Do without doing.</p>
+		        <div id="links"><a href="chatgpt.com" target="_blank">gpt</a>
+<a href="https://www.amboss.com/de" target="_blank">amboss</a>
+<a href="https://sci-hub.st/" target="_blank">scihub</a>
+<a href="https://orcid.org/" target="_blank">orcid</a>
+<a href="https://www.crd.york.ac.uk/PROSPERO/" target="_blank">prospero</a>
+<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">pubmed</a>
+<a href="https://orcid.org/" target="_blank">orcid</a>
+</div>
+		        
+		        		       <div id="deathclock"> </div>
 
-</main>
+
+
+<script>
+var DeathDay = new Date("May 9 2077 00:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = DeathDay - now;
+
+    var seconds = Math.floor((distance) / 1000);
+    
+    document.getElementById("deathclock").innerHTML = seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("deathclock").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+</body>
