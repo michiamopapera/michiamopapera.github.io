@@ -1,72 +1,148 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <style>
-main {
-	width: 90%;
-	max-width: 60rem;
-	margin: auto;
-	position: relative;
-	padding-bottom: 1.5rem;
-}
-
-#deathclock {
-	float: center;
-	position: relative;
-	  text-align: center;
- box-sizing: border-box;
-   font-size: max(15rem, 15vmin);
-}
-
-h2 {
-	float: center;
-	position: relative;
-}
-
-p  {
-	float: center;
-	position: relative;
-}
-
 body {
- 	background-color: #000000;
- 	color: #00ff1e;
- 	font-family: Courier New;
-}
-a:link {
+  background-color: #000000;
   color: #00ff1e;
-}
-
-a:visited {
-  color: #00ff1e;
+  font-family: "Courier New", monospace;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #links {
-	float: center;
-	position: relative;
-	  text-align: right;
- box-sizing: border-box;
-   font-size: max(2rem, 2vmin);
+  position: absolute;   /* stick it top-right */
+  top: 10px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: max(2rem, 2vmin);
 }
 
+#deathclock, #examclock, #examclock2, #examclock3 {
+  font-size: max(4rem, 4vmin);
+  text-align: right;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+/* Labels for the clocks */
+.labels {
+  font-size: max(4rem, 4vmin);
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+h2, p {
+  display: inline-block;
+  margin: 20px 0;
+}
+
+a:link, a:visited {
+  color: #00ff1e;
+  text-decoration: none;
+}
 </style>
 
 <title>The Red Elixir is the Source</title>
 <meta name="robots" content="noindex">
 <meta name="googlebot" content="noindex">
 <body>
-		        <h2>知者不言言者不知</h2>
-		        <p>Do without doing.</p>
-		        <div id="links"><a href="https://www.chatgpt.com" target="_blank">gpt</a>
-<a href="https://www.amboss.com/de" target="_blank">amboss</a>
-<a href="https://www.sci-hub.st/" target="_blank">scihub</a>
-<a href="https://www.orcid.org/" target="_blank">orcid</a>
-<a href="https://www.crd.york.ac.uk/PROSPERO/" target="_blank">prospero</a>
-<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">pubmed</a>
+<div id="links">
+<a href="chatgpt.com" target="_blank">gpt</a><br>
+<a href="https://www.amboss.com/de" target="_blank">amboss</a><br>
+<a href="https://sci-hub.st/" target="_blank">scihub</a><br>
+<a href="https://orcid.org/" target="_blank">orcid</a><br>
+<a href="https://www.crd.york.ac.uk/PROSPERO/" target="_blank">prospero</a><br>
+<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">pubmed</a><br>
 </div>
-		        
-		        		       <div id="deathclock"> </div>
 
+		        <h2>知者不言言者不知</h2><br>
 
+<div class=labels>HYGIENE EXAM</div><br>
+<div id="examclock"> </div><br>
+<div class=labels>IMMUNO/DERMO EXAM</div><br>
+<div id="examclock2"> </div><br>
+<div class=labels>PHARMACOLOGY II EXAM</div><br>
+<div id="examclock3"> </div><br>
+<div class=labels>MY DEATH</div><br>
+<div id="deathclock"> </div><br>
+
+<script>
+var ExamDay = new Date("September 23 2025 00:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = ExamDay - now;
+
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("examclock").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("examclock").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+
+<script>
+var ExamDay2 = new Date("September 29 2025 00:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = ExamDay2 - now;
+
+   	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("examclock2").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("examclock2").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+
+<script>
+var ExamDay3 = new Date("October 15 2025 00:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = ExamDay3 - now;
+
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("examclock3").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("examclock3").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
 
 <script>
 var DeathDay = new Date("May 9 2077 00:04:00");
@@ -78,8 +154,9 @@ var x = setInterval(function() {
 	var distance = DeathDay - now;
 
     var seconds = Math.floor((distance) / 1000);
+    var days = Math.floor((distance) / (1000 * 60 * 60 * 24));
     
-    document.getElementById("deathclock").innerHTML = seconds;
+    document.getElementById("deathclock").innerHTML = days + " days";
     
     if (distance < 0) {
     	clearInterval(x);

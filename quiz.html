@@ -6,9 +6,10 @@
   <meta name="author" content="patzwald">
   <meta name="keywords" content="medicine, surgery, medical, university, study, revise, revision, exam, multiple choice, question, questions, blue camel, biomedicine, biomedical">
   <title>Blue Camel - Free Medical, Surgical & Biomedical Multiple Choice Questions and University Med School Exam Practice</title>
-  <meta name="description" content=“Multiple Choice Question (MCQ) database for medical exam prep. Nonprofit, donation funded, cookie and tracker-free, no sign-up required.”>
+  <meta name="description" content=“Multiple choice question (MCQ) database for preparing medicine and surgery examinations. Nonprofit, cookie & tracker-free, no sign-up required.”>
   <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="nav.js"></script>
 </head>
 <header>
     <div id="logo-container">
@@ -44,16 +45,16 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
     <div><h1>Create Quiz</h1></div>
   </header>
           <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
-  <div id=menubutton>
-    <span onclick="openNav()">open menu>>></span>
-  </div>
+          <div class="icon" id="toggle-theme">🌙/☀️</div>
+          <div id=menubutton>
+          <span onclick="openNav()">open menu>>></span>
+          </div>
 <!-- Вот читал я как-то, где-то… где – забыл… об одном англичанине, попавшем на необитаемый остров. Интересный был англичанин. Досиделся он на острове даже до галлюцинаций. -->
 <!-- И когда подошел корабль к острову и лодка выбросила людей-спасателей, он – отшельник – встретил их револьверной стрельбой, приняв за мираж, обман пустого водяного поля. Но он был выбрит. --> 
 <!-- Брился каждый день на необитаемом острове. Помнится, громаднейшее уважение вызвал во мне этот гордый сын Британии. -->
 <!-- И когда я ехал сюда, в чемодане у меня лежала и безопасная «Жиллет», а к ней дюжина клинков, и опасная, и кисточка. -->
 <!-- И твердо решил я, что буду бриться через день, потому что у меня здесь ничем не хуже необитаемого острова.-->
-<div class=notif-card><strong>Version 2: The Head and Neck Update is now live! Over 2000 questions added!</strong></div>
-<div class=warning>Disclaimer: Blue Camel is a work in progress and a high level of accuracy of the information contained within cannot yet be guaranteed. You can help by checking answers and reporting erroneous questions.</div>
+<div class=warning>Disclaimer: Blue Camel is a work in progress and a high level of accuracy of the information contained within cannot yet be guaranteed. You can help by checking answers and reporting erroneous questions by clicking the red flag. Please make sure to include the Question ID when sending an error report to us.</div>
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="about.html">info</a>
@@ -69,24 +70,25 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
       <label for="moduleSelect">Choose a module:</label>  
   <select id="moduleSelect">
     <option value="">All Modules</option>
-    <option value="Chemistry">Chemistry</option>
-    <option value="Cell and Molecular Biology">Cell and Molecular Biology</option>
-    <option value="Human Anatomy">Human Anatomy</option>
-    <option value="Histology and Embryology">Histology and Embryology</option>
-    <option value="Biochemistry">Biochemistry</option>
-    <option value="Laboratory Medicine">Laboratory Medicine</option>
-    <option value="Methodology I">Methodology I</option>
-    <option value="Methodology II">Methodology II</option>
-    <option value="Pharmacology I">Pharmacology I</option>
-    <option value="Pharmacology II">Pharmacology II</option>
-    <option value="Hygiene and Community Medicine">Hygiene</option>
-    <option value="Cardiology and Respiratory Medicine">Cardiology and Respiratory Medicine</option>
-    <option value="Microbiology and Immunology">Microbiology and Immunology</option>
-    <option value="Head and Neck">Head and Neck</option>
-    <option value="Neurology and Psychiatry">Neuro and Psych COMING SOON!</option>
     <option value="ADE - Human Genetics">ADE - Human Genetics</option>
     <option value="ADE - Pharmacology II">ADE - Pharmacology II</option>
     <option value="Admissions">Medical Admissions/IMAT</option>
+    <option value="Biochemistry">Biochemistry</option>
+    <option value="Cardiology and Respiratory Medicine">Cardiology and Respiratory Medicine</option>
+    <option value="Chemistry">Chemistry</option>
+    <option value="Cell and Molecular Biology">Cell and Molecular Biology</option>
+    <option value="Forensics and Occupational Medicine">Forensics and Occupational Medicine</option>
+    <option value="Head and Neck">Head and Neck</option>
+    <option value="Histology and Embryology">Histology and Embryology</option>
+    <option value="Human Anatomy">Human Anatomy</option>
+    <option value="Hygiene and Community Medicine">Hygiene</option>
+    <option value="Laboratory Medicine">Laboratory Medicine</option>
+    <option value="Methodology I">Methodology I</option>
+    <option value="Methodology II">Methodology II</option>
+    <option value="Microbiology and Immunology">Microbiology and Immunology</option>
+    <option value="Neurology and Psychiatry">Neuro and Psych COMING SOON!</option>
+    <option value="Pharmacology I">Pharmacology I</option>
+    <option value="Pharmacology II">Pharmacology II</option>
   </select>
 <br>
 <!-- Handle nur nach derjenigen Maxime, durch die du zugleich wollen kannst, dass sie ein allgemeines Gesetz werde. -->
@@ -99,7 +101,6 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
   </select>
           </section>
       <button id="startQuiz">Start Quiz</button>
-      <a href="https://forms.gle/YBUmUqqxwQ3qMJSK9" target="_blank"><button id="reportQuestion">Report a question</button></a>
       <a href="quiz-advanced.html">Advanced Settings</a>
 <!-- 为无为，事无事，味无味 -->
     <section id="quiz" style="display: none;"></section>
@@ -109,7 +110,5 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
     </section>
   </main>
   <script src="quiz2.js"></script>
-  <script src="nav.js"></script>
-  <script src="event.js"></script>
 </body>
 </html>

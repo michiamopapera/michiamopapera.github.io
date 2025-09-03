@@ -34,7 +34,7 @@ function parseCSV(csv, selectedModule, selectedLanguage) {
     const columns = line.split(';');
     if (columns.length < 8) return null;
 
-    const [question, option_a, option_b, option_c, option_d, option_e, correct_option, module, language] = columns;
+    const [question, option_a, option_b, option_c, option_d, option_e, correct_option, module, language, tags, year, verif, date, notes, sol, qid] = columns;
     return {
       question,
       option_a,
@@ -44,7 +44,14 @@ function parseCSV(csv, selectedModule, selectedLanguage) {
       option_e: option_e === '#LEER!' ? null : option_e,
       correct_option,
       module,
-      language
+      language,
+      tags,
+      year,
+      verif: verif === 'Unverified' ? null : verif,
+      date,
+      notes,
+      sol,
+      qid
     };
   }).filter(q => q);
 
@@ -71,9 +78,18 @@ function displayQuiz(questions) {
   questions.forEach((q, index) => {
     const questionCard = document.createElement('div');
     questionCard.classList.add('question-card');
+    
+    let verificationIcon = q.verif
+        ? `<div class="icon">✔️<span class="tooltiptext">Antwort bestätigt</span></div>`
+        : `<div class="icon">✖️<span class="tooltiptext">Antwort noch nicht bestätigt</span></div>`;
 
     let optionsHTML = `
-      <p><strong>Frage ${index + 1}:</strong> ${q.question}</p>
+    <div class="icon-group">
+    <div class="icon">🆔<span class=tooltiptext>${q.qid}</span></div>
+    ${verificationIcon}
+    <a href="https://forms.gle/YBUmUqqxwQ3qMJSK9" target="_blank" class="icon">🚩<span class=tooltiptext>Frage melden</span></a>
+    </div>
+    <p><strong>Frage ${index + 1}:</strong> ${q.question}</p>
       <label><input type="radio" name="q${index}" value="${q.option_a}"> A. ${q.option_a}</label><br>
       <label><input type="radio" name="q${index}" value="${q.option_b}"> B. ${q.option_b}</label><br>
       <label><input type="radio" name="q${index}" value="${q.option_c}"> C. ${q.option_c}</label><br>

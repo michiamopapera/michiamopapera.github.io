@@ -6,9 +6,10 @@
   <meta name="author" content="patzwald">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blue Camel - Domande gratuite di Medicina e Chirurgia per esercitarsi all'esame</title>
-  <meta name="description" content=“Database di domande a scelta multipla (MCQ) per supportare gli studenti nella preparazione agli esami di medicina e altri. Senza scopo di lucro. Nessun cookie, nessun tracker, nessuna registrazione richiesta.”>
+  <meta name="description" content=“Database di domande per studenti nella preparazione agli esami di medicina e altri. Senza scopo di lucro. Nessun cookie, nessuna registrazione richiesta.”>
   <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="nav.js"></script>
 </head>
   <header>
     <div id="logo-container">
@@ -51,11 +52,11 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
     </div>
     <h1>Informazioni su questo sito</h1>
   </header>
-  <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
-  <div id=menubutton>
-    <span onclick="openNav()">aprire il menu>>></span>
-  </div>
-
+        <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
+          <div class="icon" id="toggle-theme">🌙/☀️</div>
+          <div id=menubutton>
+          <span onclick="openNav()">aprire il menu>>></span>
+          </div>
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="it-about.html">informazioni</a>
@@ -67,19 +68,13 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
     <h3>Benvenuto/a a Blue Camel!</h3><p>Blue Camel contiene più di 8400 domande a risposte multiple che siano utile per chi segue corsi di Medicina e Chirurgia, Biotecnologia e altri corsi simili. Le domande sono state raccolte nel percorso degli anni dagli studenti del corso di Medicine e Chirurgia in lingua inglese. Il database contiene maggiormente domande da vecchi esami scritti, insieme con vecchi esami di certe ADE e pure qualche domanda dai test di ammissioni a vari corsi di medicina.<br><br><strong>Blue Camel ha due obiettivi:</strong> <ol><li>Ad essere il modo più semplice e facile di preperare esami scritti di medicina alla Federico II.</li><li>A diventare il database più grande di domande a risposte multiple per lo studio di medicina e chirurgia che è anche completemante gratis.</li></ol>
     </div>
     <div class=notif-card>
-        <h3>29.03.25 VERSIONE 2 È CARICATO!</h3>
-            <p>Tante novità sul sito:</p>
+        <h3>29.03.25 VERSIONE 3 È CARICATO!</h3>
+            <p>Novità:</p>
             <ul>
-            <li>Domande di Medicina del Laboratorio sono state aggiunte!</li>
-            <li>Domande per l'ADE (Neurodeveopmental disease) di Farmacologia II sono state aggiunte!</li>
-            <li>Più di 1000 domande di Testa-Collo sono state aggiunte, sia in inglese che in italiano!</li>
-            <li>Il sito è accessibile in italiano, tedesco e persiano.</li>
+            <li>Modalità notturna!</li>
+            <li>È più facile controllare codici d'identificazione per ogni domanda dopo la creazione di un quiz.</li>
             </ul>
             <a href=changelog.html>Una lista completa dei cambiamenti è disponibile qua.</a>
-    </div>
-    <div class=question-card>
-        <strong>Il futuro:</strong><br>
-        <ul><li><strong>Entro l'estate 2025...</strong> Speriamo di aggiungere domande di Neurologia e Psichiatria.</li></ul>
     </div>
     <div class=question-card>
         <strong>Se ti piace Blue Camel, considera di fare una donazione.</strong><br><br>
@@ -95,7 +90,5 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
         }
         </style>
     </div>
-<script src="event.js"></script>
-<script src="nav.js"></script>
 </body>
 </html>

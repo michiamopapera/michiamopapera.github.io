@@ -6,9 +6,10 @@
   <meta name="author" content="patzwald">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blue Camel - Domande gratuite di Medicina e Chirurgia per esercitarsi all'esame</title>
-  <meta name="description" content=“Database di domande a scelta multipla (MCQ) per supportare gli studenti nella preparazione agli esami di medicina e altri. Senza scopo di lucro. Nessun cookie, nessun tracker, nessuna registrazione richiesta.”>
+  <meta name="description" content=“Database di domande per studenti nella preparazione agli esami di medicina e altri. Senza scopo di lucro. Nessun cookie, nessuna registrazione richiesta.”>
   <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="nav.js"></script>
 </head>
 <header>
     <div id="logo-container">
@@ -43,17 +44,17 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
     </div>
     <div><h1>Creare Quiz</h1></div>
   </header>
-  <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
-  <div id=menubutton>
-    <span onclick="openNav()">aprire il menu>>></span>
-  </div>
+        <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
+          <div class="icon" id="toggle-theme">🌙/☀️</div>
+          <div id=menubutton>
+          <span onclick="openNav()">aprire il menu>>></span>
+          </div>
 <!-- Вот читал я как-то, где-то… где – забыл… об одном англичанине, попавшем на необитаемый остров. Интересный был англичанин. Досиделся он на острове даже до галлюцинаций. -->
 <!-- И когда подошел корабль к острову и лодка выбросила людей-спасателей, он – отшельник – встретил их револьверной стрельбой, приняв за мираж, обман пустого водяного поля. Но он был выбрит. --> 
 <!-- Брился каждый день на необитаемом острове. Помнится, громаднейшее уважение вызвал во мне этот гордый сын Британии. -->
 <!-- И когда я ехал сюда, в чемодане у меня лежала и безопасная «Жиллет», а к ней дюжина клинков, и опасная, и кисточка. -->
 <!-- И твердо решил я, что буду бриться через день, потому что у меня здесь ничем не хуже необитаемого острова.-->
-<div class=notif-card><strong>Versione 2: L'Update di Testa-Collo è caricato! Più di 2000 domande aggiunte!</strong></div>
-<div class=warning>Blue Camel è un lavoro in corso e non è ancora possibile garantire un elevato livello di accuratezza delle informazioni contenute. Potete contribuire controllando le risposte e segnalando le domande e/o le risposte errate.</div>
+<div class=warning>Blue Camel è un lavoro in corso e non è ancora possibile garantire un elevato livello di accuratezza delle informazioni contenute. Clicca sulla bandiera per segnalare errori e include sempre la codice di identificazione della domanda.</div>
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="it-about.html">informazioni</a>
@@ -109,7 +110,6 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
     </section>
   </main>
   <script src="it-quiz2.js"></script>
-  <script src="nav.js"></script>
   <script src="event.js"></script>
 </body>
 </html>

@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="keywords" content="medizin, chirurgie, medizinische, universität, studium, prüfung, prüfungen, multiple-choice-fragen, frage, fragen, blue camel, biomedizin, blaues, blau kamel, kamel, arzt, ärzte, ärztin, ärztinnen">
   <meta name="author" content="patzwald">
-  <meta name=“description" content="Datenbank mit Multiple-Choice-Fragen (MCQ) zur Unterstützung von Studenten bei der Vorbereitung auf medizinische Prüfungen. Nicht gewinnorientiert, spendenfinanziert. Keine Anmeldung erforderlich.”>
+  <meta name=“description" content="Multiple-Choice-Fragen Datenbank für Studenten bei der Vorbereitung auf medizinische Prüfungen. Nicht gewinnorientiert, keine Anmeldung erforderlich.”>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blue Camel - Kostenlose Fragen zu Medizin und Chirurgie für die Prüfungsvorbereitung</title>
   <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="nav.js"></script>
 </head>
   <header>
 
@@ -44,12 +45,11 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
     </div>
     <div><h1>Quiz erstellen</h1></div>
   </header>
-  <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
-  <div id=menubutton>
-    <span onclick="openNav()">Menu öffnen>>></span>
-  </div>
-
-<div class=notif-card><strong>Neue Version der Website! Mehr als 2000 neue Fragen wurden auf der Website hinzugefügt!</strong></div>
+          <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
+          <div class="icon" id="toggle-theme">🌙/☀️</div>
+          <div id=menubutton>
+          <span onclick="openNav()">Menu öffnen>>></span>
+          </div>
 <div class=warning>Haftungsausschluss: Blue Camel ist ein Projekt in Arbeit, und ein hohes Maß an Genauigkeit der enthaltenen Informationen kann derzeit nicht garantiert werden. <br> Sie können helfen, indem Sie Antworten überprüfen und fehlerhafte Fragen melden.</div>
   
  <div id="mySidenav" class="sidenav">
@@ -70,6 +70,7 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
     <option value="Chemistry">Chemie</option>
     <option value="Cell and Molecular Biology">Zell- und Molekularbiologie</option>
     <option value="Human Anatomy">Humananatomie</option>
+    <option value="Forensics and Occupational Medicine">Forensik und Arbeitsmedizin</option>
     <option value="Histology and Embryology">Histologie und Embryologie</option>
     <option value="Biochemistry">Biochemie</option>
     <option value="Laboratory Medicine">Laboratoriumsmedizin</option>
@@ -106,10 +107,6 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
       <p id="score"></p>
     </section>
   </main>
-
   <script src="de-quiz2.js"></script>
-  <script src="nav.js"></script>
-  <script src="event.js"></script>
-
 </body>
 </html>
