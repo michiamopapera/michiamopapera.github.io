@@ -9,6 +9,7 @@
   <meta name="description" content=“Multiple Choice Question (MCQ) database for medical exam prep. Nonprofit, donation funded, cookie and tracker-free, no sign-up required.”>
   <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="nav.js"></script>
 </head>
     <header>
     <div id="logo-container">
@@ -44,10 +45,10 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
     <div><h1>Advanced Quiz Generator</h1></div>
     </header>
           <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
-  <div id=menubutton>
-    <span onclick="openNav()">open menu>>></span>
-  </div>
-  
+          <div class="icon" id="toggle-theme">🌙/☀️</div>
+          <div id=menubutton>
+          <span onclick="openNav()">open menu>>></span>
+          </div>
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="about.html">info</a>
@@ -64,20 +65,21 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
 <div class=ad-q-SettingContainer id="moduleSelectContainer"><strong>Modules </strong><label>(Include All: <input type="checkbox" onclick="allModules(this)" id="selectAll">)</label>
 <div class=ad-q-SettingSubContainer>
 <details><summary><strong>Federico II Past Exam Questions</strong></summary>
+  <label><input type="checkbox" class="moduleCheckbox" value="Biochemistry"> Biochemistry</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Cardiology and Respiratory Medicine"> Cardiology and Respiratory Medicine</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Chemistry"> Chemistry</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Cell and Molecular Biology"> Cell and Molecular Biology</label><br>
-  <label><input type="checkbox" class="moduleCheckbox" value="Human Anatomy"> Human Anatomy</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Forensics and Occupational Medicine"> Forensics and Occupational Medicine</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Head and Neck"> Head and Neck</label></details>
   <label><input type="checkbox" class="moduleCheckbox" value="Histology and Embryology"> Histology and Embryology</label><br>
-  <label><input type="checkbox" class="moduleCheckbox" value="Biochemistry"> Biochemistry</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Human Anatomy"> Human Anatomy</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Hygiene and Community Medicine"> Hygiene and Community Medicine</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Laboratory Medicine"> Laboratory Medicine</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Methodology I"> Methodology I</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Methodology II"> Methodology II</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Microbiology and Immunology"> Microbiology and Immunology</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Pharmacology I"> Pharmacology I</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Pharmacology II"> Pharmacology II</label><br>
-  <label><input type="checkbox" class="moduleCheckbox" value="Hygiene and Community Medicine"> Hygiene and Community Medicine</label><br>
-  <label><input type="checkbox" class="moduleCheckbox" value="Cardiology and Respiratory Medicine"> Cardiology and Respiratory Medicine</label><br>
-  <label><input type="checkbox" class="moduleCheckbox" value="Microbiology and Immunology"> Microbiology and Immunology</label><br>
-  <label><input type="checkbox" class="moduleCheckbox" value="Head and Neck"> Head and Neck</label></details>
 </div>
 <div class=ad-q-SettingSubContainer>
 <details><summary><strong>ADE Questions</strong></summary>
@@ -86,9 +88,9 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
 </div>
 <div class=ad-q-SettingSubContainer>
 <details><summary><strong>Blue Camel Original Questions</strong></summary>
-    <label><input type="checkbox" class="moduleCheckbox" value="BCO - Nephrology and Urology"> Nephrology and Urology</label><br>
-     <label><input type="checkbox" class="moduleCheckbox" value="BCO - Immunology and Dermatology"> Immunology and Dermatology</label><br>
-     <label><input type="checkbox" class="moduleCheckbox" value="BCO - Pharmacology II"> Pharmacology II</label></details>
+  <label><input type="checkbox" class="moduleCheckbox" value="BCO - Immunology and Dermatology"> Immunology and Dermatology</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="BCO - Nephrology and Urology"> Nephrology and Urology</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="BCO - Pharmacology II"> Pharmacology II</label></details>
 </div>
 <div class=ad-q-SettingSubContainer>
 <details><summary><strong>Miscellaneous</strong></summary>
@@ -137,7 +139,6 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
 </div>
 
 <button id="startQuiz">Start Quiz</button>
-<a href="https://forms.gle/YBUmUqqxwQ3qMJSK9" target="_blank"><button id="reportQuestion">Report a question</button></a>
 <a href="quiz.html">Simple Settings</a>
         </section>
 <!-- 为无为，事无事，味无味 -->
@@ -149,7 +150,6 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
   </main>
 
   <script src="quiz-advanced.js"></script>
-  <script src="nav.js"></script>
   <script src="event.js"></script>
 <script>
         function allModules(source) {

@@ -1,13 +1,48 @@
+:root {
+  --bg: #feffe0;
+  --text: #333333;
+  --btntxt: #dadae3;
+  --link: #065BA7;
+  --link-hover: #dadae3;
+  --warning-bg: #f29896;
+  --notif-bg: #7ce698;
+  --setting-bg: #ecedbe;
+  --latin: left;
+  --farsi: right;
+}
+
 body {
   font-family: Baskerville, Times New Roman, serif;
-  background-color: #feffe0;
-  color:#333333;
-  text-align: left;
+  background-color: var(--bg);
+  color: var(--text);
+  text-align: var(--latin);
   margin:40px auto;
   max-width:700px;
   line-height:1.4;
   font-size:16px;
   padding-top: 20px;
+  transition: none;
+}
+
+body.farsi {
+  text-align: var(--farsi);
+}
+
+body.transition-enabled {
+  transition: background-color 1s ease, color 1s ease;
+}
+
+body.darkmode {
+  --bg: #333333;
+  --text: #feffe0;
+  --btntxt: #333333;
+  --link: #6db4e3;
+  --link-hover: #dadae3;
+  --warning-bg: #9c6160;
+  --notif-bg: #366944;
+  --setting-bg: #4e4f3f;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 header {
@@ -28,9 +63,61 @@ header {
   box-sizing: border-box;        /* Make sure padding doesn't mess up layout */
 }
 
+.icon-group {
+  position: relative;
+  top: 2px;
+  padding: 0 3px;
+  right: 0px;
+  display: flex;
+  gap: 2px;
+  float: right;
+}
+
+.icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 1px 1px;
+  position: relative; 
+  display: inline-block;
+}
+
+.icon .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  font-size: 0.8rem;
+  font-family: Arial;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.icon .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.icon:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 
 #asciilogo {
-  color: #065BA7;
+  color: var(--link);
   width: 100%;
   max-width: 100px;
   height: auto;
@@ -63,6 +150,12 @@ header {
   width: 70%;
   max-width: 100px;
   height: auto;
+  filter: none;
+  transition: filter 0.8s ease;
+}
+
+.darkmode #pnglogo {
+  filter: invert(1) hue-rotate(180deg);
 }
 
 #flag, #en-flag, #it-flag, #de-flag, #fa-flag {
@@ -70,6 +163,17 @@ header {
   max-width: 40px;
   height: auto;
   display:flex;
+}
+
+#toggle-theme {
+  font-size: 2rem;
+  height: auto;
+  display: relative;
+  position: fixed;
+  top: 10px;   /* Distance from top margin */
+  left: 20px; /* Distance from right margin */
+  width: auto;
+  cursor: pointer;
 }
 
 #idflag {
@@ -93,26 +197,20 @@ main {
   margin: 0 auto;
 }
 
-a:link {
-  color: #065BA7;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #065BA7;
+a:link, a:visited {
+  color: var(--link);
   background-color: transparent;
   text-decoration: none;
 }
 
 a:hover {
-  color: #dadae3;
+  color: var(--link-hover);
   background-color: transparent;
   text-decoration: none;
 }
 
 #menubutton {
-  color: #065BA7;
+  color: var(--link);
   position: fixed;
   top: 100px;   /* Distance from top margin */
   left: 20px; /* Distance from right margin */
@@ -122,6 +220,10 @@ a:hover {
   cursor: pointer;
 }
 
+.farsi #menubutton {
+  right: 20px; /* Distance from right margin */
+}
+
 pre {
    max-width:100%;
    height:auto;
@@ -129,13 +231,25 @@ pre {
 }
 
 span {
-    color: #065BA7;
+    color: var(--link);
     font-size: 150%;
-    float: left;
+    float: var(--latin);
+}
+
+.farsi span {
+    float: var(--farsi);
+}
+
+p .fafix {
+  color: var(--text);
+  text-align: var(--farsi);
+  line-height:1.4;
+  font-size:16px;
+  display: inline-block; 
 }
 
 #settings, #result {
-  text-align: left;
+  text-align: var(--latin);
   auto;max-width:750px;
   line-height:1.8;
   border-radius: 8px;
@@ -144,12 +258,16 @@ span {
   margin: 0;
 }
 
+.farsi #settings, #result {
+  text-align: var(--farsi);
+}
+
 .ad-q-SettingContainer {
   border: 1px solid #ddd;
   padding: 0.6em;
   margin: 0.6em 0;
   border-radius: 8px;
-  background-color: #ecedbe;
+  background-color: var(--setting-bg);
   line-height:1.2;
 }
 
@@ -160,20 +278,24 @@ span {
   border-radius: 8px;
   line-height:1.2;
   column-count: 2;
+  background-color: var(--setting-bg);
 }
 
 #result {
   line-height:1.4;
 }
 
-/* Styling for the old refinery page which I am repurposing for cleaner layout on quiz + about pages */
 .warning {
   border: 1px solid #ddd;
   padding: 1em;
   margin: 1em 0;
   border-radius: 8px;
-  background-color: #f29896;
+  background-color: var(--warning-bg);
   line-height:1.4;
+}
+
+.darkmode .warning {
+  background-color: var(--warning-bg);
 }
 
 .notif-card {
@@ -181,8 +303,17 @@ span {
   padding: 1em;
   margin: 1em 0;
   border-radius: 8px;
-  background-color: #7ce698;
+  background-color: var(--notif-bg);
+  text-align: var(--latin);
   line-height:1.4;
+}
+
+.farsi .notif-card {
+  text-align: var(--farsi);
+}
+
+.darkmode .notif-card {
+  background-color: var(--notif-bg);
 }
 
 h3 {
@@ -200,11 +331,20 @@ p {
 
 .question-card {
   border: 1px solid #ddd;
-  padding: 1em;
+  padding: 0.6em 0.8em;
+  text-align: var(--latin);
   margin: 1em 0;
   border-radius: 8px;
-  background-color: #feffe0;
+  background-color: var(--bg);
   line-height:1.4;
+}
+
+.farsi .question-card {
+  text-align: var(--farsi);
+}
+
+.darkmode .question-card {
+  background-color: var(--bg);
 }
 
 /* Styling for browse table */
@@ -221,7 +361,7 @@ table {
 }
 
   th {
-  background-color: #f2f2f2;
+  background-color: var(--setting-bg);
 }
   #filters {
   margin-bottom: 20px;
@@ -241,8 +381,9 @@ table {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #065BA7;
-  color:#dadae3;
+  right: auto;
+  background-color: var(--link);
+  color:var(--link-hover);
   box-sizing: border-box;
   overflow-x: hidden; /* Disable horizontal scroll */
   overflow-y: auto;
@@ -250,7 +391,11 @@ table {
   transition: 0.2s; /* 0.2 second transition effect to slide in the sidenav */
 }
 
-/* nav menu links */
+.farsi .sidenav {
+  right: 0;
+  left: auto;
+}
+
 .sidenav a {
   text-align: left;
   padding: 8px 8px 8px 32px;
@@ -261,12 +406,10 @@ table {
   transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #000000;
 }
 
-/* Position and style the close button (top right corner) */
 .sidenav .closebtn {
   position: absolute;
   top: 0;
@@ -276,13 +419,14 @@ table {
 }
 
 button {
-  background-color: #065BA7;
-  color: #dadae3;
+  background-color: var(--link);
+  color: var(--btntxt);
   padding: 7px 12px 7px 12px;
   margin:11px 7px 2px 7px;
   border-radius: 7px;
   border: none;
   cursor: pointer;
+  transition: background-color 1s;
 }
 
 button:hover {
@@ -295,6 +439,7 @@ button:hover {
   position: static;
   }
 }
+
 @media screen and (max-width: 730px) {
   #asciilogo {
   display: none;
@@ -314,8 +459,8 @@ button:hover {
   
   #idflag {
   position: static;
-  top: 10px;   /* Distance from top margin */
-  left: 150px; /* Distance from right margin */
+  top: 10px;
+  left: 150px;
   float: right;
   }
 }

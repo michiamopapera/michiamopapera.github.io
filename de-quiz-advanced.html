@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="keywords" content="medizin, chirurgie, medizinische, universität, studium, prüfung, prüfungen, multiple-choice-fragen, frage, fragen, blue camel, biomedizin, blaues, blau kamel, kamel, arzt, ärzte, ärztin, ärztinnen">
   <meta name="author" content="patzwald">
-  <meta name=“description" content="Datenbank mit Multiple-Choice-Fragen (MCQ) zur Unterstützung von Studenten bei der Vorbereitung auf medizinische Prüfungen. Nicht gewinnorientiert, spendenfinanziert. Keine Anmeldung erforderlich.”>
+  <meta name=“description" content="Multiple-Choice-Fragen Datenbank für Studenten bei der Vorbereitung auf medizinische Prüfungen. Nicht gewinnorientiert, keine Anmeldung erforderlich.”>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blue Camel - Kostenlose Fragen zu Medizin und Chirurgie für die Prüfungsvorbereitung</title>
   <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="nav.js"></script>
 </head>
   <header>
 
@@ -45,9 +46,10 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
     <div><h1>Fortgeschrittene Quizerstellung</h1></div>
   </header>
           <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
-  <div id=menubutton>
-    <span onclick="openNav()">Menu öffnen>>></span>
-  </div>
+          <div class="icon" id="toggle-theme">🌙/☀️</div>
+          <div id=menubutton>
+          <span onclick="openNav()">Menu öffnen>>></span>
+          </div>
 <!-- Вот читал я как-то, где-то… где – забыл… об одном англичанине, попавшем на необитаемый остров. Интересный был англичанин. Досиделся он на острове даже до галлюцинаций. -->
 <!-- И когда подошел корабль к острову и лодка выбросила людей-спасателей, он – отшельник – встретил их револьверной стрельбой, приняв за мираж, обман пустого водяного поля. Но он был выбрит. --> 
 <!-- Брился каждый день на необитаемом острове. Помнится, громаднейшее уважение вызвал во мне этот гордый сын Британии. -->
@@ -136,7 +138,7 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
         <label><input type="checkbox" class="yearCheckbox" value="2025"> 2025</label><br>
     </details>
     </div>
-        <label><input type="checkbox" class="yearCheckbox" value="Unknown"> Year unknown or not provided</label><br>
+        <label><input type="checkbox" class="yearCheckbox" value="Unknown"> Unbekanntes Jahr</label><br>
 </div>
 </div>
 <button id="startQuiz">Anfangen</button>
@@ -152,8 +154,6 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
   </main>
 
   <script src="de-quiz-advanced.js"></script>
-  <script src="nav.js"></script>
-  <script src="event.js"></script>
 <script>
         function allModules(source) {
             var checkboxes = document.querySelectorAll('.moduleCheckbox');

@@ -6,9 +6,10 @@
   <meta name="author" content="patzwald">
   <meta name="keywords" content="medicine, surgery, medical, university, study, revise, revision, exam, multiple choice, question, questions, blue camel, biomedicine, biomedical">
   <title>Blue Camel - Free Medical, Surgical & Biomedical Multiple Choice Questions and University Med School Exam Practice</title>
-  <meta name="description" content=“Multiple Choice Question (MCQ) database for medical exam prep. Nonprofit, donation funded, cookie and tracker-free, no sign-up required.”>
+  <meta name="description" content=“Multiple choice question (MCQ) database for preparing medicine and surgery examinations. Nonprofit, cookie & tracker-free, no sign-up required.”>
   <link rel="icon" type="image/x-icon" href="/logo-noseal.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="nav.js"></script>
 </head>
   <header>
     <div id="logo-container">
@@ -51,11 +52,11 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
     </div>
     <h1>About</h1>
   </header>
-  <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
-  <div id=menubutton>
-    <span onclick="openNav()">open menu>>></span>
-  </div>
-
+          <a href="index.html"><img src=lang.png alt="change language" id="idflag"></a>
+          <div class="icon" id="toggle-theme">🌙<span class="tooltiptext">Toggle dark mode</span></div>
+          <div id=menubutton>
+          <span onclick="openNav()">open menu>>></span>
+          </div>
  <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="about.html">info</a>
@@ -67,23 +68,19 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
     <h3>Welcome to Blue Camel!</h3><p>Blue Camel contains over 8400 medical multiple choice questions collected over the course of nearly a decade by various students of Medicine and Surgery in English at the University of Naples 'Federico II'. All of the questions available here are from past exams, past ADE exams, with a few medical admissions questions thrown in as an extra. <br><br><strong>Blue Camel has two simple goals:</strong> <ol><li>To be the simplest and easiest way to practise multiple choice exams at Federico II.</li><li>To become the biggest completely free repository of medical multiple choice questions on the internet</li></ol>...and we really mean free! <strong>No paying with your time or data either.</strong><br> Blue Camel uses <strong>no cookies</strong>, <strong>no trackers</strong>, <strong>no ads</strong>, <strong>no paywalls</strong>. Just free information and learning with a simple static site, the way that the internet was intended to be used.
     </div>
     <div class=notif-card>
-        <h3>29.03.25 VERSION 2 IS LIVE!</h3>
-            <p>Major updates to the site!</p>
+        <h3>15.08.25 THE <u>WITCHING HOURS UPDATE</u> IS LIVE!</h3>
             <ul>
-            <li>Big database update...
-            <ul><li>About 1800 Head and Neck past exam questions</li><li>Pharmacology II ADE questions</li><li>About 500 Blue Camel Originals (BCO), completely original questions separated but still available from the advanced settings for extra practise.</li><li>A few Laboratory Medicine questions</li></ul>
-            <li>The website can now be viewed in Italian, German and Persian.</li>
-            <li>New advanced quiz creation settings (not yet available in Persian).</li>
+            <li>Are you a night owl? THEN BE KIND TO YOUR EYES! Our new dark mode can be toggled on and off from the top left.</li>
+            <li>Some answers have been confirmed by editors - whether the answer to the question you are editing has been verified is indicated by a small tick or cross in the top right of each question card.</li>
+            <li>Pharmacology II questions are fully resolved AND verified.</li>
+            <li>Question report button added in the top right of each question card.</li>
+            <li>Question Identification Codes are viewable easily in the quiz by hovering over the 'ID' icon.</li>
             </ul>
             <a href=changelog.html>Full changelog available here.</a>
     </div>
     <div class=question-card>
         <strong>Please consider donating to support the maintenance and development of the site.</strong><br><br>
         <a href="https://www.buymeacoffee.com/patzwald"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=🐪&slug=patzwald&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>
-    </div>
-    <div class=question-card>
-        <strong>Roadmap:</strong><br>
-        <ul><li><strong>By Summer 2025...</strong> Add questions for Neuro and Psych.</li></ul>
     </div>
     <div class=question-card>
         <strong>The state of the database:</strong><br>
@@ -95,7 +92,5 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
         }
         </style>
     </div>
-<script src="event.js"></script>
-<script src="nav.js"></script>
 </body>
 </html>
