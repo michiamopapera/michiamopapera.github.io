@@ -150,5 +150,20 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
   </main>
 
   <script src="quiz-advanced.js"></script>
+  <script>
+        function allModules(source) {
+            var checkboxes = document.querySelectorAll('.moduleCheckbox');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = source.checked;
+            });
+        }
+        
+        function allYears(source) {
+            var checkboxes = document.querySelectorAll('.yearCheckbox');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = source.checked;
+            });
+        }
+</script>
 </body>
 </html>
