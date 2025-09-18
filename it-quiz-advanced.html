@@ -66,25 +66,26 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
 <div class=ad-q-SettingContainer id="moduleSelectContainer"><strong>Moduli </strong><label>(Vorrei includere tutti: <input type="checkbox" onclick="allModules(this)" id="selectAll">)</label>
 <div class=ad-q-SettingSubContainer>
 <details><summary>Domande di vecchi esami scritti della Fed II</summary>
-  <label><input type="checkbox" class="moduleCheckbox" value="Chemistry"> Chimica</label><br>
-  <label><input type="checkbox" class="moduleCheckbox" value="Cell and Molecular Biology"> Biologia Cellulare e Moleculare</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Human Anatomy"> Anatomia</label><br>
-  <label><input type="checkbox" class="moduleCheckbox" value="Histology and Embryology"> Istologia</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Biochemistry"> Biochimica</label><br>
-  <label><input type="checkbox" class="moduleCheckbox" value="Laboratory Medicine"> Medicina del Laboratorio</label><br>
-  <label><input type="checkbox" class="moduleCheckbox" value="Methodology I"> Metodologia I</label><br>
-  <label><input type="checkbox" class="moduleCheckbox" value="Methodology II"> Metodologia II</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Cell and Molecular Biology"> Biologia Cellulare e Moleculare</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Cardiology and Respiratory Medicine"> Cardiologia</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Chemistry"> Chimica</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Pharmacology I"> Farmacologia I</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Pharmacology II"> Farmacologia II</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Hygiene and Community Medicine"> Igiene</label><br>
-  <label><input type="checkbox" class="moduleCheckbox" value="Cardiology and Respiratory Medicine"> Cardiologia</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Histology and Embryology"> Istologia</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Laboratory Medicine"> Medicina del Laboratorio</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Methodology I"> Metodologia I</label><br>
+  <label><input type="checkbox" class="moduleCheckbox" value="Methodology II"> Metodologia II</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Microbiology and Immunology"> Microbiologia ed Immunologia</label><br>
   <label><input type="checkbox" class="moduleCheckbox" value="Head and Neck"> Testa-Collo</label></details>
 </div>
 <div class=ad-q-SettingSubContainer>
 <details><summary>Domande dalle ADE</summary>
-    <label><input type="checkbox" class="moduleCheckbox" value="ADE - Human Genetics"> Genetica</label><br>
-    <label><input type="checkbox" class="moduleCheckbox" value="ADE - Pharmacology II"> Farmacologia II (Malattie Neurodegenerative)</label></details>
+    <label><input type="checkbox" class="moduleCheckbox" value="ADE - Pharmacology II"> Farmacologia II (Malattie Neurodegenerative)</label><br>
+    <label><input type="checkbox" class="moduleCheckbox" value="ADE - Human Genetics"> Genetica</label>
+</details>
 </div>
 <div class=ad-q-SettingSubContainer>
 <details><summary>Domande originali del Camello Blu</summary>
@@ -150,21 +151,5 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
   </main>
 
   <script src="it-quiz-advanced.js"></script>
-  <script src="event.js"></script>
-<script>
-        function allModules(source) {
-            var checkboxes = document.querySelectorAll('.moduleCheckbox');
-            checkboxes.forEach(function(checkbox) {
-                checkbox.checked = source.checked;
-            });
-        }
-        
-        function allYears(source) {
-            var checkboxes = document.querySelectorAll('.yearCheckbox');
-            checkboxes.forEach(function(checkbox) {
-                checkbox.checked = source.checked;
-            });
-        }
-</script>
 </body>
 </html>
