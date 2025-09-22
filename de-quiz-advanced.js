@@ -199,9 +199,11 @@ function displayQuiz(questions) {
 function gradeQuiz(questions) {
   let score = 0;
 
+  const questionCards = document.querySelectorAll('#quiz .question-card');
+
   questions.forEach((q, index) => {
     const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
-    const questionDiv = document.querySelector(`#quiz div:nth-child(${index + 1})`);
+    const questionDiv = questionCards[index]; 
     const resultMessage = document.createElement('p');
     resultMessage.style.fontWeight = 'bold';
 
@@ -224,3 +226,4 @@ function gradeQuiz(questions) {
   const submitButton = document.getElementById('submitButton');
   if (submitButton) submitButton.disabled = true;
 }
+

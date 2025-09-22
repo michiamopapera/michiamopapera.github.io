@@ -117,18 +117,20 @@ function displayQuiz(questions) {
 function gradeQuiz(questions) {
   let score = 0;
 
+  const questionCards = document.querySelectorAll('#quiz .question-card');
+
   questions.forEach((q, index) => {
     const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
-    const questionDiv = document.querySelector(`#quiz div:nth-child(${index + 1})`);
+    const questionDiv = questionCards[index]; 
     const resultMessage = document.createElement('p');
     resultMessage.style.fontWeight = 'bold';
 
     if (selectedOption && selectedOption.value.trim() === q.correct_option.trim()) {
       score++;
-      resultMessage.textContent = 'Giusto!';
+      resultMessage.textContent = 'Corretto!';
       resultMessage.style.color = 'green';
     } else {
-      resultMessage.textContent = `Sbagliato. La risposta corretta è: ${q.correct_option}`;
+      resultMessage.textContent = `Risposta sbagliata. Quella giusta è: ${q.correct_option}`;
       resultMessage.style.color = 'red';
     }
 
@@ -137,7 +139,7 @@ function gradeQuiz(questions) {
 
   const resultSection = document.getElementById('result');
   resultSection.style.display = 'block';
-  document.getElementById('score').textContent = `Hai fatto ${score} punti di un massimo ${questions.length}.`;
+  document.getElementById('score').textContent = `Il tuo punteggio è ${score} di un massimo ${questions.length}`;
 
   const submitButton = document.getElementById('submitButton');
   if (submitButton) submitButton.disabled = true;

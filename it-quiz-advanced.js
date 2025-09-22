@@ -7,22 +7,22 @@ async function startQuiz() {
     const selectedYears = getSelectedYears();
 
     if (isNaN(numQuestions) || numQuestions < 1) {
-        alert('Inserisci un numero valido di domande.');
+        alert('Please enter a valid number of questions.');
         return;
     }
 
     if (selectedModules.length === 0) {
-        alert('Non hai scelto un modulo.');
+        alert('Please select at least one module.');
         return;
     }
 
     if (selectedLanguages.length === 0) {
-        alert('Non hai scelto una lingua.');
+        alert('Please select at least one language.');
         return;
     }
     
     if (selectedYears.length === 0) {
-        alert('Non hai scelto un anno.');
+        alert('Please select at least one year or "Unknown year".');
         return;
     }
 
@@ -35,7 +35,7 @@ async function startQuiz() {
             throw new Error("fetchQuestions my arse. Where's the fucking array?")
         }
         if (allQuestions.length === 0) {
-            alert('Non è stata trovata nessuna domanda con queste impostazioni.');
+            alert('No questions found for the selected conditions.');
             return;
         }
 
@@ -164,15 +164,15 @@ function displayQuiz(questions) {
         questionDiv.classList.add('question-card');
         
         let verificationIcon = q.verif
-            ? `<div class="icon">✔️<span class="tooltiptext">Risposta verificata</span></div>`
-            : `<div class="icon">✖️<span class="tooltiptext">Risposta non confermata</span></div>`;
+            ? `<div class="icon">✔️<span class="tooltiptext">Answer verified by an editor</span></div>`
+            : `<div class="icon">✖️<span class="tooltiptext">Answer not yet verified by an editor</span></div>`;
 
         let questionHTML = `
         
         <div class="icon-group">
             <div class="icon">🆔<span class=tooltiptext>${q.qid}</span></div>
             ${verificationIcon}
-            <a href="https://forms.gle/YBUmUqqxwQ3qMJSK9" target="_blank" class="icon">🚩<span class=tooltiptext>Segnala errore</span></a>
+            <a href="https://forms.gle/YBUmUqqxwQ3qMJSK9" target="_blank" class="icon">🚩<span class=tooltiptext>Report question</span></a>
         </div>
             <p><strong>Question ${index + 1}:</strong> ${q.question}</p>
             <label><input type="radio" name="q${index}" value="${q.option_a}"> A. ${q.option_a}</label><br>
@@ -191,7 +191,7 @@ function displayQuiz(questions) {
 
 
   const submitButton = document.createElement('button');
-  submitButton.textContent = 'Conferma Risposte';
+  submitButton.textContent = 'Submit Answers';
   submitButton.id = 'submitButton';
   submitButton.addEventListener('click', () => gradeQuiz(questions));
   quizSection.appendChild(submitButton);
@@ -200,18 +200,20 @@ function displayQuiz(questions) {
 function gradeQuiz(questions) {
   let score = 0;
 
+  const questionCards = document.querySelectorAll('#quiz .question-card');
+
   questions.forEach((q, index) => {
     const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
-    const questionDiv = document.querySelector(`#quiz div:nth-child(${index + 1})`);
+    const questionDiv = questionCards[index]; 
     const resultMessage = document.createElement('p');
     resultMessage.style.fontWeight = 'bold';
 
     if (selectedOption && selectedOption.value.trim() === q.correct_option.trim()) {
       score++;
-      resultMessage.textContent = 'Giusto!';
+      resultMessage.textContent = 'Corretto!';
       resultMessage.style.color = 'green';
     } else {
-      resultMessage.textContent = `Sbagliato. La risposta corretta è: ${q.correct_option}`;
+      resultMessage.textContent = `Sbagliato. La risposta giusta è: ${q.correct_option}`;
       resultMessage.style.color = 'red';
     }
 
@@ -220,7 +222,7 @@ function gradeQuiz(questions) {
 
   const resultSection = document.getElementById('result');
   resultSection.style.display = 'block';
-  document.getElementById('score').textContent = `Hai fatto ${score} punti di un massimo ${questions.length}.`;
+  document.getElementById('score').textContent = `Hai preso ${score} punti di un massimo ${questions.length}`;
 
   const submitButton = document.getElementById('submitButton');
   if (submitButton) submitButton.disabled = true;

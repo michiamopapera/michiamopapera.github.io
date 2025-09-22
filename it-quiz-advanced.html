@@ -145,11 +145,26 @@ _|"""""|_|"""""|_|"""""|_|"""""| {======|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""
 <!-- I won't call doctors murderers, that would be too harsh, but I will call them casual untalented hacks. - M. Bulgakov -->
     <section id="quiz" style="display: none;"></section>
     <section id="result" style="display: none;">
-      <h3>Your Results</h3>
+      <h3>Il tuo punteggio</h3>
       <p id="score"></p>
     </section>
   </main>
 
   <script src="it-quiz-advanced.js"></script>
+    <script>
+        function allModules(source) {
+            var checkboxes = document.querySelectorAll('.moduleCheckbox');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = source.checked;
+            });
+        }
+        
+        function allYears(source) {
+            var checkboxes = document.querySelectorAll('.yearCheckbox');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = source.checked;
+            });
+        }
+</script>
 </body>
 </html>
