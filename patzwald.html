@@ -63,17 +63,29 @@ a:link, a:visited {
 
 		        <h2>知者不言言者不知</h2><br>
 
-<div class=labels>IMMUNO/DERMO</div><br>
-<div id="examclock"> </div><br>
-<div class=labels>INFECTIOUS DISEASES (TBC)</div><br>
-<div id="examclock2"> </div><br>
-<div class=labels>HYGIENE</div><br>
-<div id="examclock3"> </div><br>
+<div class=labels>Infectious Diseases - 7th November</div><br>
+<div id="infectiousclock"> </div><br>
+<div class=labels>Hygiene and Community Medicine - 24th November</div><br>
+<div id="hygieneclock"> </div><br>
+<div class=labels>Pharmakologie II - 24th February</div><br>
+<div id="pharmaclock"> </div><br>
+<div class=labels>Immunologie/Dermatologie - 31st March</div><br>
+<div id="immunoclock"> </div><br>
+<div class=labels>Kardiologie/Pneumologie - 27th April</div><br>
+<div id="cardioclock"> </div><br>
+<div class=labels>Diagnostic Imaging - 9th June</div><br>
+<div id="imagingclock"> </div><br>
+<div class=labels>Kopf und Hals - 6th July</div><br>
+<div id="headclock"> </div><br>
+<div class=labels>Paediatrics - 28th July</div><br>
+<div id="paedoclock"> </div><br>
+<div class=labels>General Surgery - 9th September</div><br>
+<div id="butcherclock"> </div><br>
 <div class=labels>MY DEATH</div><br>
 <div id="deathclock"> </div><br>
 
 <script>
-var ExamDay = new Date("November 10 2025 00:04:00");
+var InfectiousDiseases = new Date("November 7 2025 00:04:00");
 
 var x = setInterval(function() {
 
@@ -86,18 +98,18 @@ var x = setInterval(function() {
   	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
  	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    document.getElementById("examclock").innerHTML = days + " days " + hours + ":"
+    document.getElementById("infectiousclock").innerHTML = days + " days " + hours + ":"
   + minutes + ":" + seconds;
     
     if (distance < 0) {
     	clearInterval(x);
-    	document.getElementById("examclock").innerHTML = "Time's up.";
+    	document.getElementById("infectiousclock").innerHTML = "Time's up.";
     	}
     }, 1000);
 </script>
 
 <script>
-var ExamDay2 = new Date("November 1 2025 00:04:00");
+var Hygiene = new Date("November 24 2025 00:04:00");
 
 var x = setInterval(function() {
 
@@ -110,18 +122,18 @@ var x = setInterval(function() {
   	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
  	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    document.getElementById("examclock2").innerHTML = days + " days " + hours + ":"
+    document.getElementById("hygieneclock").innerHTML = days + " days " + hours + ":"
   + minutes + ":" + seconds;
     
     if (distance < 0) {
     	clearInterval(x);
-    	document.getElementById("examclock2").innerHTML = "Time's up.";
+    	document.getElementById("hygieneclock").innerHTML = "Time's up.";
     	}
     }, 1000);
 </script>
 
 <script>
-var ExamDay3 = new Date("November 24 2025 00:04:00");
+var PharmacologyII = new Date("February 24 2025 00:04:00");
 
 var x = setInterval(function() {
 
@@ -134,16 +146,161 @@ var x = setInterval(function() {
   	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
  	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    document.getElementById("examclock3").innerHTML = days + " days " + hours + ":"
+    document.getElementById("pharmaclock").innerHTML = days + " days " + hours + ":"
   + minutes + ":" + seconds;
     
     if (distance < 0) {
     	clearInterval(x);
-    	document.getElementById("examclock3").innerHTML = "Time's up.";
+    	document.getElementById("pharmaclock").innerHTML = "Time's up.";
     	}
     }, 1000);
 </script>
 
+<script>
+var immuno = new Date("March 31 2026 00:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = ExamDay3 - now;
+
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("immunoclock").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("immunoclock").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+
+<script>
+var Cardiology = new Date("April 27 2026 00:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = ExamDay3 - now;
+
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("cardioclock").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("cardioclock").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+
+<script>
+var imaging = new Date("June 9 2026 00:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = ExamDay3 - now;
+
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("imagingclock").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("imagingclock").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+
+<script>
+var head = new Date("July 6 2026 00:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = ExamDay3 - now;
+
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("headclock").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("headclock").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+
+	
+<script>
+var paedotrish = new Date("July 28 2026 00:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = ExamDay3 - now;
+
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("paedoclock").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("paedoclock").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+	
+<script>
+var butcherclock = new Date("September 9 2026 00:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = ExamDay3 - now;
+
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("butcherclock").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("butcherclock").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+	
 <script>
 var DeathDay = new Date("May 9 2077 00:04:00");
 
