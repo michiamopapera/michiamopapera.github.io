@@ -23,8 +23,8 @@ body {
   font-size: max(2rem, 2vmin);
 }
 
-#deathclock, #examclock, #examclock2, #examclock3 {
-  font-size: max(4rem, 4vmin);
+.examclock {
+  font-size: max(2rem, 2vmin);
   text-align: right;
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -32,8 +32,8 @@ body {
 
 /* Labels for the clocks */
 .labels {
-  font-size: max(4rem, 4vmin);
-  text-align: right;
+  font-size: max(2rem, 2vmin);
+  text-align: left;
   margin-bottom: 5px;
 }
 
@@ -64,25 +64,25 @@ a:link, a:visited {
 		        <h2>知者不言言者不知</h2><br>
 
 <div class=labels>Infectious Diseases - 7th November</div><br>
-<div id="infectiousclock"> </div><br>
+<div id="infectiousclock" class="examclock"> </div><br>
 <div class=labels>Hygiene and Community Medicine - 24th November</div><br>
-<div id="hygieneclock"> </div><br>
+<div id="hygieneclock" class="examclock"> </div><br>
 <div class=labels>Pharmakologie II - 24th February</div><br>
-<div id="pharmaclock"> </div><br>
+<div id="pharmaclock" class="examclock"> </div><br>
 <div class=labels>Immunologie/Dermatologie - 31st March</div><br>
-<div id="immunoclock"> </div><br>
+<div id="immunoclock" class="examclock"> </div><br>
 <div class=labels>Kardiologie/Pneumologie - 27th April</div><br>
-<div id="cardioclock"> </div><br>
+<div id="cardioclock" class="examclock"> </div><br>
 <div class=labels>Diagnostic Imaging - 9th June</div><br>
-<div id="imagingclock"> </div><br>
+<div id="imagingclock" class="examclock"> </div><br>
 <div class=labels>Kopf und Hals - 6th July</div><br>
-<div id="headclock"> </div><br>
+<div id="headclock" class="examclock"> </div><br>
 <div class=labels>Paediatrics - 28th July</div><br>
-<div id="paedoclock"> </div><br>
+<div id="paedoclock" class="examclock"> </div><br>
 <div class=labels>General Surgery - 9th September</div><br>
-<div id="butcherclock"> </div><br>
+<div id="butcherclock" class="examclock"> </div><br>
 <div class=labels>MY DEATH</div><br>
-<div id="deathclock"> </div><br>
+<div id="deathclock" class="examclock"> </div><br>
 
 <script>
 var InfectiousDiseases = new Date("November 7 2025 00:04:00");
@@ -91,7 +91,7 @@ var x = setInterval(function() {
 
 	var now = new Date().getTime();
 	
-	var distance = ExamDay - now;
+	var distance = InfectiousDiseases - now;
 
   	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -115,7 +115,7 @@ var x = setInterval(function() {
 
 	var now = new Date().getTime();
 	
-	var distance = ExamDay2 - now;
+	var distance = Hygiene - now;
 
    	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -139,7 +139,7 @@ var x = setInterval(function() {
 
 	var now = new Date().getTime();
 	
-	var distance = ExamDay3 - now;
+	var distance = PharmacologyII - now;
 
   	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -157,13 +157,13 @@ var x = setInterval(function() {
 </script>
 
 <script>
-var immuno = new Date("March 31 2026 00:04:00");
+var Immuno = new Date("March 31 2026 00:04:00");
 
 var x = setInterval(function() {
 
 	var now = new Date().getTime();
 	
-	var distance = ExamDay3 - now;
+	var distance = Immuno - now;
 
   	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -187,7 +187,7 @@ var x = setInterval(function() {
 
 	var now = new Date().getTime();
 	
-	var distance = ExamDay3 - now;
+	var distance = Cardiology - now;
 
   	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -211,7 +211,7 @@ var x = setInterval(function() {
 
 	var now = new Date().getTime();
 	
-	var distance = ExamDay3 - now;
+	var distance = imaging - now;
 
   	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -235,7 +235,7 @@ var x = setInterval(function() {
 
 	var now = new Date().getTime();
 	
-	var distance = ExamDay3 - now;
+	var distance = head - now;
 
   	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -260,7 +260,7 @@ var x = setInterval(function() {
 
 	var now = new Date().getTime();
 	
-	var distance = ExamDay3 - now;
+	var distance = paedotrish - now;
 
   	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -278,13 +278,13 @@ var x = setInterval(function() {
 </script>
 	
 <script>
-var butcherclock = new Date("September 9 2026 00:04:00");
+var Surgery = new Date("September 9 2026 00:04:00");
 
 var x = setInterval(function() {
 
 	var now = new Date().getTime();
 	
-	var distance = ExamDay3 - now;
+	var distance = Surgery - now;
 
   	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
