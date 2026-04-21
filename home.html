@@ -28,25 +28,32 @@ body {
   top: 10px;
   left: 40px;
   display: flex;
-	text-align: left;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start; /* better than center */
   font-size: max(1.5rem, 1.5vmin);
+  gap: 8px; /* controls spacing cleanly */
+  max-width: 700px;
 }
-	
-#linkssubcontainer {
-  border: 2px #00ff1e;
-  border-radius: 10px;
+
+#leftpanel * {
+  margin: 0; /* remove default spacing */
 }
 
 #done, #unassigned {
-  font-size: max(1.5rem, 1.5vmin);
-  border: 2px #00ff1e;
-	border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 10px; /* space between them */
-	line-height: 1.2px;
+  border: 2px solid #00ff1e;
+  border-radius: 10px;
+  padding: 8px;
+  width: 100%; /* makes them consistent */
+  box-sizing: border-box;
 }
+
+	
+#linkssubcontainer {
+  border: 2px solid #00ff1e;
+  border-radius: 10px;
+}
+
+
 
 .clicky:hover {
   background:#00ff1e;
@@ -66,6 +73,9 @@ body {
   text-align: right;
   margin-bottom: 20px;
   padding-bottom: 10px;
+  border: 2px solid #00ff1e;
+  padding: 8px;
+  border-radius: 10px;
 }
 
 /* Labels for the clocks */
@@ -113,13 +123,13 @@ h2, p {
 <div id="leftpanel">
 	<div id="done">
 		<div class=labels><del>Hygiene and Community Medicine - 24th November</del></div><br>
-		<div id="hygieneclock" class="examclock"> </div><br>
+		<div>PASSED.</div><br>
 	
 		<div class=labels><del>Pharmacology II - 24th February</del></div><br>
-		<div id="pharmaclock" class="examclock"> </div><br>
+		<div>PASSED.</div><br>
 	</div>
 
-	<div id="done">
+	<div id="unassigned">
 			<div>unassigned</div>
 		<div class=labels>Forensics and Occupational Medicine</div><br>
 		<div class=labels>Diagnostic Imaging</div><br>
