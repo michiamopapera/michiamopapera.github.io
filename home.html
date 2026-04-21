@@ -75,36 +75,70 @@ h2, p {
 </div>
 <br><br>
 		        <h2>知者不言言者不知</h2><br>
-
+<div class=labels><del>TODAY IS:</del></div><br>
+<div id="clock" class="examclock"> </div><br>
+	
 <div class=labels><del>Hygiene and Community Medicine - 24th November</del></div><br>
 <div id="hygieneclock" class="examclock"> </div><br>
 	
 <div class=labels><del>Pharmacology II - 24th February</del></div><br>
 <div id="pharmaclock" class="examclock"> </div><br>
 	
-<div class=labels>Cardiology and Respiratory Medicine - 27th April</div><br>
-<div id="cardioclock" class="examclock"> </div><br>
-	
 <div class=labels>Immunology/Dermatology - 11th June</div><br>
 <div id="immunoclock" class="examclock"> </div><br>
-	
-<div class=labels>Diagnostic Imaging - 9th June</div><br>
-<div id="imagingclock" class="examclock"> </div><br>
-	
-<div class=labels>Head and Neck - 6th July</div><br>
-<div id="headclock" class="examclock"> </div><br>
-<div class=labels>Paediatrics - 28th July</div><br>
-<div id="paedoclock" class="examclock"> </div><br>
-<div class=labels>General Surgery - 9th September</div><br>
+
+<div class=labels>Cardiology and Respiratory Medicine - 8th July (wrecky option 3rd June) </div><br>
+<div id="cardioclock" class="examclock"> </div><br>
+
+<div class=labels>General Surgery - 29th July</div><br>
 <div id="butcherclock" class="examclock"> </div><br>
+	
+<div class=labels>Head and Neck - 4th September</div><br>
+<div id="headnickclock" class="examclock"> </div><br>
+
+<div class=labels>Infectious Diseases - 2nd October</div><br>
+<div id="infectclock" class="examclock"> </div><br>
+
+<div class=labels>Paediatrics - 28th October</div><br>
+<div id="paedoclock" class="examclock"> </div><br>
+
+<div class=labels>Emergency Medicine - 12th January</div><br>
+<div id="neenawclock" class="examclock"> </div><br>
+
+<div class=labels>Ob/Gyn - 22nd February</div><br>
+<div id="pussyclock" class="examclock"> </div><br>
+
+<div class=labels>Neuro/Psych - 16th March</div><br>
+<div id="neuroclock" class="examclock"> </div><br>
+
 <div>unassigned</div>
-<div class=labels>Infectious Diseases</div><br>
-<div class=labels>Obstetrics and Gynaecology</div><br>
 <div class=labels>Forensics and Occupational Medicine</div><br>
-<div class=labels>Neurology and Psychiatry</div><br>
-<div class=labels>Emergency Medicine</div><br>
+<div class=labels>Diagnostic Imaging</div><br>
 <div class=labels>MY DEATH</div><br>
 <div id="deathclock" class="examclock"> </div><br>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+
+      const options = {
+        timeZone: "Europe/Rome",
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      };
+
+      const romeTime = now.toLocaleString("en-GB", options);
+      document.getElementById("clock").textContent = romeTime;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
 
 <script>
 var InfectiousDiseases = new Date("January 29 2026 00:04:00");
@@ -203,7 +237,7 @@ var x = setInterval(function() {
 </script>
 
 <script>
-var Cardiology = new Date("April 27 2026 00:04:00");
+var Cardiology = new Date("July 8 2026 09:04:00");
 
 var x = setInterval(function() {
 
@@ -227,31 +261,31 @@ var x = setInterval(function() {
 </script>
 
 <script>
-var imaging = new Date("June 9 2026 00:04:00");
+var Surgery = new Date("July 29 2026 09:04:00");
 
 var x = setInterval(function() {
 
 	var now = new Date().getTime();
 	
-	var distance = imaging - now;
+	var distance = Surgery - now;
 
   	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
  	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    document.getElementById("imagingclock").innerHTML = days + " days " + hours + ":"
+    document.getElementById("butcherclock").innerHTML = days + " days " + hours + ":"
   + minutes + ":" + seconds;
     
     if (distance < 0) {
     	clearInterval(x);
-    	document.getElementById("imagingclock").innerHTML = "Time's up.";
+    	document.getElementById("butcherclock").innerHTML = "Time's up.";
     	}
     }, 1000);
 </script>
 
 <script>
-var head = new Date("July 6 2026 00:04:00");
+var head = new Date("September 4 2026 09:04:00");
 
 var x = setInterval(function() {
 
@@ -274,9 +308,33 @@ var x = setInterval(function() {
     }, 1000);
 </script>
 
+<script>
+var infect = new Date("October 2 2026 09:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = infect - now;
+
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("infectclock").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("infectclock").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+
 	
 <script>
-var paedotrish = new Date("July 28 2026 00:04:00");
+var paedotrish = new Date("October 28 2026 00:04:00");
 
 var x = setInterval(function() {
 
@@ -299,30 +357,80 @@ var x = setInterval(function() {
     }, 1000);
 </script>
 	
+
 <script>
-var Surgery = new Date("September 9 2026 00:04:00");
+var emergency = new Date("January 12 2027 09:04:00");
 
 var x = setInterval(function() {
 
 	var now = new Date().getTime();
 	
-	var distance = Surgery - now;
+	var distance = emergency - now;
 
   	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
  	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    document.getElementById("butcherclock").innerHTML = days + " days " + hours + ":"
+    document.getElementById("headnickclock").innerHTML = days + " days " + hours + ":"
   + minutes + ":" + seconds;
     
     if (distance < 0) {
     	clearInterval(x);
-    	document.getElementById("butcherclock").innerHTML = "Time's up.";
+    	document.getElementById("neenawclock").innerHTML = "Time's up.";
     	}
     }, 1000);
 </script>
+
+<script>
+var obgyn = new Date("February 22 2027 09:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
 	
+	var distance = obgyn - now;
+
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("pussyclock").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("pussyclock").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+
+
+<script>
+var neuro = new Date("March 16 2027 09:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = neuro - now;
+
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("neuroclock").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("neuroclock").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+
 <script>
 var DeathDay = new Date("May 9 2077 00:04:00");
 
