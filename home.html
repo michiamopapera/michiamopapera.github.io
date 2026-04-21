@@ -23,6 +23,16 @@ body {
   font-size: max(1.5rem, 1.5vmin);
 }
 
+#done {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: max(1.5rem, 1.5vmin);
+}
+
 .clicky:hover {
   background:#00ff1e;
   color: #000000;
@@ -31,6 +41,13 @@ body {
 
 .examclock {
   font-size: max(1rem, 1vmin);
+  text-align: right;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.mainclock {
+  font-size: max(2rem, 2vmin);
   text-align: right;
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -76,14 +93,22 @@ h2, p {
 <br><br>
 		        <h2>知者不言言者不知</h2><br>
 <div class=labels>TODAY IS:</div><br>
-<div id="clock" class="examclock"> </div><br>
+<div id="clock" class="mainclock"> </div><br>
+
+<div id="done">
+	<div class=labels><del>Hygiene and Community Medicine - 24th November</del></div><br>
+	<div id="hygieneclock" class="examclock"> </div><br>
 	
-<div class=labels><del>Hygiene and Community Medicine - 24th November</del></div><br>
-<div id="hygieneclock" class="examclock"> </div><br>
-	
-<div class=labels><del>Pharmacology II - 24th February</del></div><br>
-<div id="pharmaclock" class="examclock"> </div><br>
-	
+	<div class=labels><del>Pharmacology II - 24th February</del></div><br>
+	<div id="pharmaclock" class="examclock"> </div><br>
+</div>
+
+<div id="done">
+		<div>unassigned</div>
+	<div class=labels>Forensics and Occupational Medicine</div><br>
+	<div class=labels>Diagnostic Imaging</div><br>
+</div>
+
 <div class=labels>Immunology/Dermatology - 11th June</div><br>
 <div id="immunoclock" class="examclock"> </div><br>
 
@@ -110,12 +135,6 @@ h2, p {
 
 <div class=labels>Neuro/Psych - 16th March</div><br>
 <div id="neuroclock" class="examclock"> </div><br>
-
-<div>unassigned</div>
-<div class=labels>Forensics and Occupational Medicine</div><br>
-<div class=labels>Diagnostic Imaging</div><br>
-<div class=labels>MY DEATH</div><br>
-<div id="deathclock" class="examclock"> </div><br>
 
   <script>
     function updateClock() {
