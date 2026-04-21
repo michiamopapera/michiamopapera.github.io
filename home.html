@@ -23,13 +23,17 @@ body {
   font-size: max(1.5rem, 1.5vmin);
 }
 
-#done {
+#leftpanel {
   position: absolute;
   top: 10px;
   left: 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  font-size: max(1.5rem, 1.5vmin);
+}
+
+#done, #unassigned {
   font-size: max(1.5rem, 1.5vmin);
 }
 
@@ -95,20 +99,22 @@ h2, p {
 <div class=labels>TODAY IS:</div><br>
 <div id="clock" class="mainclock"> </div><br>
 
-<div id="done">
-	<div class=labels><del>Hygiene and Community Medicine - 24th November</del></div><br>
-	<div id="hygieneclock" class="examclock"> </div><br>
+<div id="leftpanel">
+	<div id="done">
+		<div class=labels><del>Hygiene and Community Medicine - 24th November</del></div><br>
+		<div id="hygieneclock" class="examclock"> </div><br>
 	
-	<div class=labels><del>Pharmacology II - 24th February</del></div><br>
-	<div id="pharmaclock" class="examclock"> </div><br>
-</div>
+		<div class=labels><del>Pharmacology II - 24th February</del></div><br>
+		<div id="pharmaclock" class="examclock"> </div><br>
+	</div>
 
-<div id="done">
-		<div>unassigned</div>
-	<div class=labels>Forensics and Occupational Medicine</div><br>
-	<div class=labels>Diagnostic Imaging</div><br>
+	<div id="done">
+			<div>unassigned</div>
+		<div class=labels>Forensics and Occupational Medicine</div><br>
+		<div class=labels>Diagnostic Imaging</div><br>
+	</div>
 </div>
-
+	
 <div class=labels>Immunology/Dermatology - 11th June</div><br>
 <div id="immunoclock" class="examclock"> </div><br>
 
