@@ -133,38 +133,38 @@ h2, p {
 
 		<div class=labels><del>Ob/Gyn - 4th May</del></div><br>
 		<div>PASSED.</div><br>
-	</div>
 
-	<div id="unassigned">
-			<div>unassigned</div>
-		<div class=labels>Forensics and Occupational Medicine</div><br>
-		<div class=labels>Diagnostic Imaging</div><br>
+		<div class=labels>Immunology/Dermatology - 23rd July</div><br>
+		<div>PASSED.</div><br>
 	</div>
 </div>
-	
-<div class=labels>Immunology/Dermatology - 11th June</div><br>
-<div id="immunoclock" class="examclock"> </div><br>
 
-<div class=labels>Cardiology and Respiratory Medicine - 8th July (wrecky option 3rd June) </div><br>
+<div class=labels>Cardiology and Respiratory Medicine - 9th September</div><br>
 <div id="cardioclock" class="examclock"> </div><br>
 
-<div class=labels>General Surgery - 29th July</div><br>
-<div id="butcherclock" class="examclock"> </div><br>
-	
-<div class=labels>Head and Neck - 4th September</div><br>
-<div id="headnickclock" class="examclock"> </div><br>
-
-<div class=labels>Infectious Diseases - 2nd October</div><br>
+<div class=labels>Infectious Diseases - 16th October / 7th November</div><br>
 <div id="infectclock" class="examclock"> </div><br>
 
-<div class=labels>Paediatrics - 28th October</div><br>
-<div id="paedoclock" class="examclock"> </div><br>
+<div class=labels>Neuro/Psych - 13th October / 11th November</div><br>
+<div id="neuroclock" class="examclock"> </div><br>
 
-<div class=labels>Emergency Medicine - 12th January</div><br>
+<div class=labels>Emergency Medicine - 25th November</div><br>
 <div id="neenawclock" class="examclock"> </div><br>
 
-<div class=labels>Neuro/Psych - 16th March</div><br>
-<div id="neuroclock" class="examclock"> </div><br>
+<div class=labels>General Surgery</div><br>
+<div id="butcherclock" class="examclock"> </div><br>
+	
+<div class=labels>Head and Neck - January</div><br>
+<div id="headnickclock" class="examclock"> </div><br>
+
+<div class=labels>Paediatrics - </div><br>
+<div id="paedoclock" class="examclock"> </div><br>
+
+<div class=labels>Forensics and Occupational Medicine</div><br>
+<div id="csiclock" class="examclock"> </div><br>
+
+<div class=labels>Diagnostic Imaging</div><br>
+<div id="xrayclock" class="examclock"> </div><br>
 
   <script>
     function updateClock() {
@@ -188,30 +188,6 @@ h2, p {
     setInterval(updateClock, 1000);
     updateClock();
   </script>
-
-<script>
-var InfectiousDiseases = new Date("January 29 2026 00:04:00");
-
-var x = setInterval(function() {
-
-	var now = new Date().getTime();
-	
-	var distance = InfectiousDiseases - now;
-
-  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
- 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    document.getElementById("infectiousclock").innerHTML = days + " days " + hours + ":"
-  + minutes + ":" + seconds;
-    
-    if (distance < 0) {
-    	clearInterval(x);
-    	document.getElementById("infectiousclock").innerHTML = "Time's up.";
-    	}
-    }, 1000);
-</script>
 
 <script>
 var Hygiene = new Date("November 24 2025 00:04:00");
@@ -286,7 +262,7 @@ var x = setInterval(function() {
 </script>
 
 <script>
-var Cardiology = new Date("July 8 2026 09:04:00");
+var Cardiology = new Date("September 9 2026 09:04:00");
 
 var x = setInterval(function() {
 
@@ -310,7 +286,7 @@ var x = setInterval(function() {
 </script>
 
 <script>
-var Surgery = new Date("July 29 2026 09:04:00");
+var Surgery = new Date("July 29 2027 09:04:00");
 
 var x = setInterval(function() {
 
@@ -334,7 +310,7 @@ var x = setInterval(function() {
 </script>
 
 <script>
-var head = new Date("September 4 2026 09:04:00");
+var head = new Date("September 4 2027 09:04:00");
 
 var x = setInterval(function() {
 
@@ -358,7 +334,7 @@ var x = setInterval(function() {
 </script>
 
 <script>
-var infect = new Date("October 2 2026 09:04:00");
+var infect = new Date("October 16 2026 09:04:00");
 
 var x = setInterval(function() {
 
@@ -383,7 +359,7 @@ var x = setInterval(function() {
 
 	
 <script>
-var paedotrish = new Date("October 28 2026 00:04:00");
+var paedotrish = new Date("October 28 2027 00:04:00");
 
 var x = setInterval(function() {
 
@@ -408,7 +384,7 @@ var x = setInterval(function() {
 	
 
 <script>
-var emergency = new Date("January 12 2027 09:04:00");
+var emergency = new Date("November 25 2027 09:04:00");
 
 var x = setInterval(function() {
 
@@ -432,7 +408,7 @@ var x = setInterval(function() {
 </script>
 
 <script>
-var neuro = new Date("March 16 2027 09:04:00");
+var neuro = new Date("November 11 2026 09:04:00");
 
 var x = setInterval(function() {
 
