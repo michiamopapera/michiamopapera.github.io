@@ -134,37 +134,41 @@ h2, p {
 		<div class=labels><del>Ob/Gyn - 4th May</del></div><br>
 		<div>PASSED.</div><br>
 
-		<div class=labels>Immunology/Dermatology - 23rd July</div><br>
+		<div class=labels><del></del>Immunology/Dermatology - 23rd July</del></div><br>
 		<div>PASSED.</div><br>
 	</div>
 </div>
 
-<div class=labels>Cardiology and Respiratory Medicine - 9th September</div><br>
+<div class=labels>Cardiology and Respiratory Medicine - 11th November</div><br>
 <div id="cardioclock" class="examclock"> </div><br>
 
-<div class=labels>Infectious Diseases - 16th October / 7th November</div><br>
-<div id="infectclock" class="examclock"> </div><br>
-
-<div class=labels>Neuro/Psych - 13th October / 11th November</div><br>
-<div id="neuroclock" class="examclock"> </div><br>
-
-<div class=labels>Emergency Medicine - 25th November</div><br>
+<div class=labels>Emergency Medicine - 17th November</div><br>
 <div id="neenawclock" class="examclock"> </div><br>
 
-<div class=labels>General Surgery</div><br>
-<div id="butcherclock" class="examclock"> </div><br>
-	
-<div class=labels>Head and Neck - January</div><br>
-<div id="headnickclock" class="examclock"> </div><br>
-
-<div class=labels>Paediatrics - </div><br>
-<div id="paedoclock" class="examclock"> </div><br>
-
-<div class=labels>Forensics and Occupational Medicine</div><br>
+<div class=labels>Forensics and Occupational Medicine - 30th November</div><br>
 <div id="csiclock" class="examclock"> </div><br>
 
-<div class=labels>Diagnostic Imaging</div><br>
+<p>**********************************************************</p>
+	
+<div class=labels>Infectious Diseases - 14th January</div><br>
+<div id="infectclock" class="examclock"> </div><br>
+
+<div class=labels>Diagnostic Imaging - 10th February</div><br>
 <div id="xrayclock" class="examclock"> </div><br>
+
+<div class=labels>Head and Neck - 31st March</div><br>
+<div id="headnickclock" class="examclock"> </div><br>
+
+<p>**********************************************************</p>
+
+<div class=labels>General Surgery - 10th June</div><br>
+<div id="butcherclock" class="examclock"> </div><br>
+
+<div class=labels>Paediatrics - 28th July</div><br>
+<div id="paedoclock" class="examclock"> </div><br>
+
+<div class=labels>Neuro/Psych - Sept 2027</div><br>
+<div id="neuroclock" class="examclock"> </div><br>
 
   <script>
     function updateClock() {
@@ -262,7 +266,7 @@ var x = setInterval(function() {
 </script>
 
 <script>
-var Cardiology = new Date("September 9 2026 09:04:00");
+var Cardiology = new Date("November 11 2026 09:04:00");
 
 var x = setInterval(function() {
 
@@ -286,7 +290,7 @@ var x = setInterval(function() {
 </script>
 
 <script>
-var Surgery = new Date("July 29 2027 09:04:00");
+var Surgery = new Date("June 10 2027 09:04:00");
 
 var x = setInterval(function() {
 
@@ -310,7 +314,7 @@ var x = setInterval(function() {
 </script>
 
 <script>
-var head = new Date("September 4 2027 09:04:00");
+var head = new Date("March 31 2027 09:04:00");
 
 var x = setInterval(function() {
 
@@ -334,7 +338,7 @@ var x = setInterval(function() {
 </script>
 
 <script>
-var infect = new Date("October 16 2026 09:04:00");
+var infect = new Date("January 14 2027 09:04:00");
 
 var x = setInterval(function() {
 
@@ -359,7 +363,7 @@ var x = setInterval(function() {
 
 	
 <script>
-var paedotrish = new Date("October 28 2027 00:04:00");
+var paedotrish = new Date("July 28 2027 00:04:00");
 
 var x = setInterval(function() {
 
@@ -384,7 +388,7 @@ var x = setInterval(function() {
 	
 
 <script>
-var emergency = new Date("November 25 2027 09:04:00");
+var emergency = new Date("November 17 2027 09:04:00");
 
 var x = setInterval(function() {
 
@@ -408,7 +412,7 @@ var x = setInterval(function() {
 </script>
 
 <script>
-var neuro = new Date("November 11 2026 09:04:00");
+var neuro = new Date("September 1 2026 09:04:00");
 
 var x = setInterval(function() {
 
@@ -427,6 +431,54 @@ var x = setInterval(function() {
     if (distance < 0) {
     	clearInterval(x);
     	document.getElementById("neuroclock").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+
+<script>
+var forensic = new Date("November 30 2026 09:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = neuro - now;
+
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("csiclock").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("csiclock").innerHTML = "Time's up.";
+    	}
+    }, 1000);
+</script>
+
+<script>
+var radiography = new Date("February 10 2027 09:04:00");
+
+var x = setInterval(function() {
+
+	var now = new Date().getTime();
+	
+	var distance = neuro - now;
+
+  	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+ 	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("xrayclock").innerHTML = days + " days " + hours + ":"
+  + minutes + ":" + seconds;
+    
+    if (distance < 0) {
+    	clearInterval(x);
+    	document.getElementById("xrayclock").innerHTML = "Time's up.";
     	}
     }, 1000);
 </script>
